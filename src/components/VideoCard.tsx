@@ -100,7 +100,21 @@ export default function VideoCard() {
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
-                                onClick={() =>setActiveTab(tab.id)}
+                                onClick={() =>{
+                                    if(tab.id==="2dmages"){
+                                        handleClick()
+                                    }
+                                    if(tab.id==="detector"){
+                                        handleClick2()
+                                    }
+                                    if(tab.id==="images"){
+                                        handleClick3()
+                                    }
+                                    if(tab.id==="Audio "){
+                                        handleClick4()
+                                    }
+                                    setActiveTab(tab.id)
+                                }}
                                 className={`${activeTab === tab.id ? "" : ""
                                     } relative rounded-full text-sm font-medium text-black px-16 py-3   transition focus-visible:outline-2`}
                                 style={{

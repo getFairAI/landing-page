@@ -1,4 +1,4 @@
-import { motion, useScroll, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 export default function () {
     const scrollRef = useRef<any>(null);
@@ -34,7 +34,7 @@ export default function () {
             whileInView={{ translateY: 10, scaleX: 1.0, opacity: 1 }}
             viewport={{ root: scrollRef }}
             className="flex justify-center " >
-            <img src="public\images\animate.webp" className="w-[75%] opacity-50 skew-x-12 " style={{ transform: "rotateX(20deg)" }} alt="" />
+            <img src="public\images\animate.webp" className="w-[85%] opacity-50 skew-x-12 " style={{ transform: "rotateX(20deg)" }} alt="" />
         </motion.div>
 
     )
