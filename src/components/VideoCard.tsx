@@ -73,7 +73,7 @@ export default function VideoCard() {
 
     })
     return (
-        <div className="w-[80%] min-h-[100vh] mx-auto">
+        <div className="lg:w-[80%] w-[97%] min-h-[100vh] mx-auto">
             <motion.div
                 ref={scrollRef}
                 className="relative  "
@@ -89,34 +89,28 @@ export default function VideoCard() {
 
                 }}
             >
-                <div className=" sticky -top-6 mb-12 " >
-                    {/* <div className="flex justify-center ">
-                    <button onClick={handleClick} className="focus:border  peer-autofill:  px-12 py-2  rounded-lg  focus:border-black" >  2D Images</button>
-                    <button onClick={handleClick2} className="focus:border px-12 py-2  rounded-lg focus:border-black " > AI Detector</button>
-                    <button onClick={handleClick3} className="focus:border px-12 py-2  rounded-lg focus:border-black" > 3D Images</button>
-                    <button onClick={handleClick4} className="focus:border px-12 py-2  rounded-lg focus:border-black" >Audio (Text-To-Speech)</button>
-                </div> */}
-                    <div className="flex justify-center">
+                <div className=" sticky lg:-top-6 md:top-0 mb-12 " >
+                    <div className=" justify-center lg:flex hidden">
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
-                                onClick={() =>{
-                                    if(tab.id==="2dmages"){
+                                onClick={() => {
+                                    if (tab.id === "2dmages") {
                                         handleClick()
                                     }
-                                    if(tab.id==="detector"){
+                                    if (tab.id === "detector") {
                                         handleClick2()
                                     }
-                                    if(tab.id==="images"){
+                                    if (tab.id === "images") {
                                         handleClick3()
                                     }
-                                    if(tab.id==="Audio "){
+                                    if (tab.id === "Audio ") {
                                         handleClick4()
                                     }
                                     setActiveTab(tab.id)
                                 }}
                                 className={`${activeTab === tab.id ? "" : ""
-                                    } relative rounded-full text-sm font-medium text-black px-16 py-3   transition focus-visible:outline-2`}
+                                    } relative rounded-full text-sm font-medium text-black xl:px-16 lg:px-11 py-3   transition focus-visible:outline-2`}
                                 style={{
                                     WebkitTapHighlightColor: "transparent",
                                 }}
@@ -134,23 +128,23 @@ export default function VideoCard() {
                         ))}
                     </div>
                 </div>
-                <div ref={ref} className="justify-center flex  gap-5  sticky  top-10 w-[75%] mx-auto ">
-                    <video id="video1" className="mx-auto hover:-translate-x-7  rounded-xl border border-black  hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
+                <div ref={ref} className="justify-center flex  gap-5  sticky  top-10  xl:w-[85%] w-full mx-auto ">
+                    <video id="video1" className="mx-auto lg:hover:-translate-x-7  rounded-xl border border-black  hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
                         <source src="public/videos/lionking.mp4" type="video/mp4" />
                     </video>
                 </div>
 
-                <div ref={ref2} className="sticky top-20 hover:-translate-x-7 hover:-translate-y-7 w-[75%] mx-auto  ease-out z-10  duration-300 hover:ease-in-out">
+                <div ref={ref2} className="sticky top-20 lg:hover:-translate-x-7 hover:-translate-y-7 xl:w-[85%] w-full mx-auto  ease-out z-10  duration-300 hover:ease-in-out">
                     <video id="video2" className="mx-auto rounded-xl border border-black">
                         <source src="public/videos/lionking.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div ref={ref3} className="sticky top-28 z-20 hover:-translate-x-7 w-[75%] mx-auto     hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
+                <div ref={ref3} className="sticky top-28 z-20 lg:hover:-translate-x-7 xl:w-[85%] w-full mx-auto     hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
                     <video id="video3" className="mx-auto  rounded-xl border border-black">
                         <source src="public/videos/lionking.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div ref={ref4} className="sticky top-32 z-30 hover:-translate-x-7  w-[75%] mx-auto   hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
+                <div ref={ref4} className="sticky top-32 z-30 lg:hover:-translate-x-7 xl:w-[85%] w-full mx-auto   hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out">
                     <video id="video4" className="mx-auto  rounded-xl border border-black">
                         <source src="public\videos\lionking.mp4" type="video/mp4" />
                     </video>

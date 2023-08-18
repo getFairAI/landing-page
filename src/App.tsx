@@ -11,10 +11,8 @@ import VideoCard from "./components/VideoCard"
 function App() {
 
   return (
-    <section className="w-full min-h-screen bg-[#f4f4f6]    relative" >
-      <section className="sticky top-0  ">
+    <section className="w-full min-h-screen bg-[#f4f4f6]   relative" >
         <Header />
-      </section>
       <JamboSection />
       <ImgAnimate />
       <VideoCard />

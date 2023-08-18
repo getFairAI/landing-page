@@ -20,7 +20,7 @@ export default function Header() {
             }}
         >
 
-            <div className="flex justify-between  items-center lg:px-10 pr-3 ">
+            <div className="flex justify-between h-full  items-center lg:px-10 pr-3 ">
                 <LogoFun />
                 <div>
                     {
@@ -49,9 +49,9 @@ const LogoFun = () => {
 }
 const HeaderLeftBtn = ({ isOpen, setIsOpen }: any) => {
     return (
-        <div className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:relative lg:px-0 px-3 ${isOpen ? "lg:flex hidden" : " lg:relative  absolute lg:top-0 top-12  bg-opacity-5 h-full lg:w-fit w-full"}`}>
+        <div className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:bg-transparent bg-white  lg:relative lg:px-0 px-3 ${isOpen ? "lg:flex hidden " : "lg:z-0 z-20 lg:bg-opacity-0 bg-opacity-80 lg:relative absolute lg:top-0 top-16  h-full lg:w-fit w-full"}`}>
             <button className=" px-5 font-medium pb-[3px] text-gray-500">Docs</button>
-            <button className="border border-black rounded-lg px-5   bg-gray-50  font-medium pb-[3px] w-full  text-gray-500 hover:scale-105  duration-500">Open App</button>
+            <button className="border border-black rounded-lg px-5   bg-gray-50  font-medium  w-full lg:py-0 py-3 text-gray-500 hover:scale-105  duration-500">Open App</button>
         </div>
     )
 }

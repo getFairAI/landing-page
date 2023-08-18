@@ -30,7 +30,7 @@ function Animation(props: any) {
                     '.movingfun{animation: movingfun ease-in-out 10s infinite; transform: scale(0.5,1);transform: rotate(-25deg);} @keyframes movingfun {0% {transform: translate(0, 100);} 50% {transform: translate(0, 200px);} 120% {transform: translate(0, 0); transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); } }'
                 }
             </style>
-            <div className={`absolute  ${style} w-64 h-64 overflow-hidden`}>
+            <div className={`absolute lg:block hidden  ${style} w-64 h-64 overflow-hidden`}>
                 <div className="movingfun h-full  relative  w-full">
                     <div className="w-7 absolute top-10 rotate-12 right-0">
                         <img src={Image} alt="" />
@@ -74,7 +74,7 @@ function Animation2(props: any) {
                     '.movingfun{animation: movingfun ease-in-out 10s infinite; transform: scale(0.5,1);transform: rotate(-25deg);} @keyframes movingfun {0% {transform: translate(0, 100);} 50% {transform: translate(0, 200px);} 120% {transform: translate(0, 0); transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); } }'
                 }
             </style>
-            <div className={`absolute  ${style} w-64 h-64 overflow-hidden`}>
+            <div className={`absolute lg:block hidden  ${style} w-64 h-64 overflow-hidden`}>
                 <div className="movingfun h-full  relative  w-full">
                     <div className="w-7 absolute top-10 rotate-12 right-20 ">
                         <img src={Image} alt="" />
@@ -133,7 +133,7 @@ function Aiexper() {
                     duration: 0.30,
                 }}
             >
-                <h1 className="text-5xl  px-96 text-center font-light">Start to Decentralise
+                <h1 className="lg:text-5xl text-3xl  lg:px-96 text-center font-light">Start to Decentralise
                     Your AI Experience</h1>
             </motion.div>
 
@@ -144,9 +144,9 @@ function Aiexper() {
                     duration: 0.3,
                     delay: 3.5,
                 }}
-
+className="md:w-fit w-full"
             >
-                <button className=" text-gray-600 mt-16 border border-black bg-white hover:shadow-md   rounded-lg px-28 py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]">Try Now</button>
+                <button className=" text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]">Try Now</button>
 
             </motion.div>
 
