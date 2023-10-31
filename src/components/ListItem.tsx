@@ -16,28 +16,20 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import Crasual from './components/Crasual';
-import Header from './components/Header';
-import ImgAnimate from './components/ImgAnimate';
-import JamboSection from './components/JamboSection';
-import ScreenShotSec from './components/ScreenShotSec';
-import Teams from './components/Teams';
-import VideoCard from './components/VideoCard';
-import Footer from './components/Footer';
+import { FiArrowUpRight } from 'react-icons/fi';
 
-function App() {
-  return (
-    <section className='w-full min-h-screen bg-[#f4f4f6]   relative'>
-      <Header />
-      <JamboSection />
-      <ImgAnimate />
-      <VideoCard />
-      <ScreenShotSec />
-      <Crasual />
-      <Teams />
-      <Footer />
-    </section>
-  );
+interface ListItemProps {
+  href: string;
+  title: string;
 }
 
-export default App;
+export default function ListItem({ href, title }: ListItemProps) {
+  return (
+    <li className='mb-4 last:mb-0'>
+      <a href={href} target='_blank' className='text-[#646464] hover:text-black'>
+        <FiArrowUpRight className='inline-block mr-1 mb-1' />
+        {title}
+      </a>
+    </li>
+  );
+}
