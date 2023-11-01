@@ -16,27 +16,49 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
+import TeamMember from './TeamMember';
+
 export default function Teams() {
+  const marcio = {
+    name: 'Márcio Guia',
+    title: 'Co-Founder & COO',
+    twitterLink: 'https://twitter.com/Marcio__Guia',
+    linkedinLink: 'https://www.linkedin.com/in/marcio-guia/',
+    imgPath: 'public/images/marcio.jpg',
+  };
+
+  const tiago = {
+    name: 'Tiago Ferreira',
+    title: 'Co-Founder & CEO',
+    twitterLink: 'https://twitter.com/FairTferreira',
+    linkedinLink: 'https://www.linkedin.com/in/carlostiagoferreira/',
+    imgPath: 'public/images/tiago.jpg',
+  };
+
+  const luis = {
+    name: 'Luís Silvestre',
+    title: 'Co-Founder & CTO',
+    twitterLink: 'https://twitter.com/lsilvestre_fair',
+    linkedinLink: 'https://www.linkedin.com/in/lu%C3%ADs-silvestre98/',
+    imgPath: 'public/images/luis.jpg',
+  };
+
   return (
     <section className='bg-gradient-to-b from-[#e5e6eb] to-[#f4f4f6]  min-h-[100vh] overflow-hidden px-4 '>
       <div className='pt-32 flex flex-col justify-center items-center gap-4'>
         <h3 className='md:text-4xl text-3xl font-thin text-black'>Meet The Team</h3>
-        <p className='text-gray-500 xl:px-96 lg:px-48 px-4 text-center'>
-          As three friends scattered throughout Europe, we were looking for a way to discover books
-          and share our own recommendations. Nothing cut the mustard, so we took the challenge on.{' '}
+        <p className='text-gray-500 2xl:px-96 lg:px-48 px-4 text-center'>
+          We are a team of three software engineers with a passion for AI and technology. After
+          working as consultants for three years, we pursued a master's degree in AI, which
+          solidified our expertise in the field. We then decided to create Fair Protocol, an
+          open-source AI project, and quit our jobs to make it a reality. Our diverse skills and
+          characteristics make us the perfect team for this project and contribute to the progress
+          of open-source AI.
         </p>
         <div className='flex lg:flex-row flex-col items-center xl:gap-8 gap-6 mt-6 pb-20 lg:px-0 px-4 '>
-          <img className='lg:w-80 rounded-xl' src='public/images/teams.jpg' alt='' />
-          <img
-            className='lg:w-80 rounded-xl lg:translate-y-16 lg:-translate-x-2 '
-            src='public/images/teams.jpg'
-            alt=''
-          />
-          <img
-            className='lg:w-80 rounded-xl lg:-translate-x-5'
-            src='public/images/teams.jpg'
-            alt=''
-          />
+          <TeamMember {...tiago} />
+          <TeamMember {...marcio} />
+          <TeamMember {...luis} />
         </div>
       </div>
     </section>
