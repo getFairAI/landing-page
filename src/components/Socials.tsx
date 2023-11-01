@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { FaGithub, FaDiscord, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaDiscord, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const iconDimension = 'h-8 w-8';
@@ -50,7 +50,7 @@ export default function Socials() {
         target='_blank'
         className='text-black hover:text-blue-500'
       >
-        <FaLinkedinIn className={iconDimension} />
+        <FaLinkedin className={iconDimension} />
       </a>
     </div>
   );
