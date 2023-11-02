@@ -44,7 +44,7 @@ export default function Teams() {
   };
 
   return (
-    <section className='bg-gradient-to-b from-[#e5e6eb] to-[#f4f4f6]  min-h-[100vh] overflow-hidden px-4 '>
+    <section className='min-h-[100vh] overflow-hidden px-4 '>
       <div className='pt-32 flex flex-col justify-center items-center gap-4'>
         <h3 className='md:text-4xl text-3xl font-thin text-black'>Meet The Team</h3>
         <p className='text-gray-500 2xl:px-96 lg:px-48 px-4 text-center'>

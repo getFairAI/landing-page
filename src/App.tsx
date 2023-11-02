@@ -24,6 +24,7 @@ import ScreenShotSec from './components/ScreenShotSec';
 import Teams from './components/Teams';
 import VideoCard from './components/VideoCard';
 import Footer from './components/Footer';
+import NewsSection from './components/NewsSection';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <VideoCard />
       <ScreenShotSec />
       <Crasual />
+      <NewsSection />
       <Teams />
       <Footer />
     </section>
