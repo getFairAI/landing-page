@@ -32,20 +32,25 @@ export default function ScreenShotSec() {
             </div>
 
             <h5 className=' text-[#000000b0] text-xl'>
-              Providing a platform for a passionate Open Source community of creators{' '}
+              Providing a platform for a passionate open-source AI community
             </h5>
             <p className='text-gray-500 '>
-              53% of our members have imported their historical data from Goodreads. It's time for a
-              change. Don't loathe your reading list –– liberate it.
+              Fair is the first decentralised marketplace, powered by Arweave, where creators of
+              open-source AI models can monetise their work while users retain ownership and
+              intellectual property rights of AI-generated content.
             </p>
           </div>
           <div className='lg:w-fit w-full '>
-            <div className=' rounded-lg border-r-2 h-60 flex items-center justify-end lg:-translate-x-72 lg:px-0 px-4 lg:mb-7 mb-0'>
-              <img src='public\images\screenshot.webp' alt='' />
-            </div>
-            <div className='rounded-lg border-l-2 lg:h-64   justify-start   flex items-center  '>
-              <img src='public\images\screen2.webp' alt='' className='w-[75%] lg:px-0 px-4 ' />
-            </div>
+            <a href='https://x.com/rakis_me/status/1677415435958992896?s=20' target='_blank'>
+              <div className='h-60 flex items-center justify-end lg:hover:scale-125 transform transition lg:-translate-x-72 lg:px-0 px-4 lg:mb-7 mb-0'>
+                <img src='public\images\screenshot.webp' alt='' />
+              </div>
+            </a>
+            <a href='https://x.com/samecwilliams/status/1659033512102490114?s=20' target='_blank'>
+              <div className='rounded-lg lg:h-64 justify-start flex items-center lg:hover:scale-125 transform transition'>
+                <img src='public\images\screen2.webp' alt='' className='w-[75%] lg:px-0 px-4 ' />
+              </div>
+            </a>
           </div>
         </div>
         <button className='border lg:mt-0 mt-6 rounded-md border-black px-10 py-4 lg:ml-24 ml-4 bg-transparent text-gray-800 text-xl block '>

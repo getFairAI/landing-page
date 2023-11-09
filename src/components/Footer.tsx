@@ -71,7 +71,8 @@ export default function Footer() {
             </div>
             <p className='text-[16px] font-medium text-[#646464]'>
               Fair is the first decentralised marketplace, powered by Arweave, where creators of
-              open-source AI models can monetise their work while users retain ownership.
+              open-source AI models can monetise their work while users retain ownership and
+              intellectual property rights of AI-generated content.
             </p>
             <div className='slg:px-14 pt-4 lg:pt-6'>
               <Socials />
