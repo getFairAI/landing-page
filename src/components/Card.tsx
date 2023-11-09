@@ -21,7 +21,7 @@ interface CardProps {
   description?: string;
 }
 
-export default function SimpleCard({ title, description }: CardProps) {
+export default function Card({ title, description }: CardProps) {
   return (
     <div className='rounded-2xl border-2 border-[#dbdce0] shadow-lg bg-[#e5e6eb] p-6 my-4 h-[400px] w-full'>
       <h2 className='text-2xl font-semibold text-[#000000b0] text-left mb-2'>{title}</h2>

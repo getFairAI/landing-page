@@ -22,7 +22,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from './Card';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 
-export default function Crasual() {
+export default function Carousel() {
   const CardData = [
     {
       title: 'Censorship-Free AI',
