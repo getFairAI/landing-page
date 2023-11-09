@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import Crasual from './components/Crasual';
+import Carousel from './components/Carousel';
 import Header from './components/Header';
 import ImgAnimate from './components/ImgAnimate';
 import JamboSection from './components/JamboSection';
@@ -34,7 +34,7 @@ function App() {
       <ImgAnimate />
       <VideoCard />
       <ScreenShotSec />
-      <Crasual />
+      <Carousel />
       <NewsSection />
       <Teams />
       <Footer />
