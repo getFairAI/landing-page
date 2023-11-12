@@ -22,47 +22,41 @@ import { useEffect, useRef, useState } from 'react';
 type RefType = React.RefObject<HTMLDivElement>;
 
 const tabs = [
-  { id: '2dmages', label: '2D Images' },
-  { id: 'detector', label: 'AI Detector' },
-  { id: 'images', label: '3D Images' },
-  { id: 'Audio ', label: 'Audio (Text-To-Speech)' },
+  { id: 1, label: '2D Images' },
+  { id: 2, label: 'AI Detector' },
+  { id: 3, label: '3D Images' },
+  { id: 4, label: 'Audio (Text-To-Speech)' },
 ];
+
+const activeClass = 'bg-gray-50 text-black';
+const videoRefs: RefType[] = Array.from({ length: tabs.length }, () => useRef(null));
 export default function VideoCard() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  const ref: RefType = useRef(null);
-  const ref2: RefType = useRef(null);
-  const ref3: RefType = useRef(null);
-  const ref4: RefType = useRef(null);
 
-  const handleClick = () => {
-    const myref = ref.current;
-    if (myref) {
-      myref.scrollIntoView({ behavior: 'smooth' });
+  const handleClick = (TargetTabId: number) => {
+    const index = tabs.findIndex((tab) => tab.id === TargetTabId);
+    console.log(activeTab, TargetTabId);
+
+    if (index !== -1) {
+      const myref = videoRefs[index].current;
+      if (myref) {
+        if (TargetTabId >= activeTab) {
+          myref.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'start' });
+        } else {
+          window.scrollTo({
+            behavior: 'smooth',
+            top: window.scrollY - myref.clientHeight * (activeTab - TargetTabId),
+          });
+        }
+      }
     }
   };
-  const handleClick2 = () => {
-    const myref2 = ref2.current;
-    if (myref2) {
-      myref2.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  const handleClick3 = () => {
-    const myref3 = ref3.current;
-    if (myref3) {
-      myref3.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  const handleClick4 = () => {
-    const myref4 = ref4.current;
-    if (myref4) {
-      myref4.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
   useEffect(() => {
     videoEvent();
   }, []);
 
-  function setupVideoEvents(videoId: string) {
+  function setupVideoEvents(videoId: string, tabId: number) {
     const video: HTMLVideoElement | null = document.getElementById(
       videoId,
     ) as HTMLVideoElement | null;
@@ -72,6 +66,29 @@ export default function VideoCard() {
         video.play().catch((error: Error) => {
           console.log(error);
         });
+
+        const nextVideoIndex = tabId; // this works because tabs starts on 1
+
+        // Check if there is a next video
+        if (nextVideoIndex < tabs.length) {
+          const nextVideo: HTMLVideoElement | null = document.getElementById(
+            `video${tabs[nextVideoIndex].id}`,
+          ) as HTMLVideoElement | null;
+
+          if (nextVideo) {
+            // Get the bounding box of the current and  next video
+            const currentVideo = video.getBoundingClientRect();
+            const nextVideoRect = nextVideo.getBoundingClientRect();
+
+            if (nextVideoRect.top - currentVideo.top <= video.clientHeight / 2) {
+              // Do not update the active tab
+              return;
+            }
+          }
+        }
+
+        // Update the active tab if the conditions are met
+        setActiveTab(tabId);
       });
 
       video.addEventListener('mouseout', () => {
@@ -81,10 +98,9 @@ export default function VideoCard() {
   }
 
   const videoEvent = () => {
-    setupVideoEvents('video1');
-    setupVideoEvents('video2');
-    setupVideoEvents('video3');
-    setupVideoEvents('video4');
+    tabs.forEach((tab) => {
+      setupVideoEvents(`video${tab.id}`, tab.id);
+    });
   };
 
   const scrollRef = useRef(null);
@@ -92,6 +108,7 @@ export default function VideoCard() {
     target: scrollRef,
     offset: ['1 50', '1 1'],
   });
+
   return (
     <div className='lg:w-[80%] w-[97%] min-h-[100vh] mx-auto'>
       <motion.div
@@ -113,31 +130,19 @@ export default function VideoCard() {
               <button
                 key={tab.id}
                 onClick={() => {
-                  if (tab.id === '2dmages') {
-                    handleClick();
-                  }
-                  if (tab.id === 'detector') {
-                    handleClick2();
-                  }
-                  if (tab.id === 'images') {
-                    handleClick3();
-                  }
-                  if (tab.id === 'Audio ') {
-                    handleClick4();
-                  }
+                  handleClick(tab.id);
                   setActiveTab(tab.id);
                 }}
                 className={`${
-                  activeTab === tab.id ? 'bg-blue-500 text-white' : ''
-                } relative rounded-full text-sm font-medium text-black xl:px-16 lg:px-11 py-3   transition focus-visible:outline-2`}
+                  activeTab === tab.id ? activeClass : ''
+                } relative rounded-full text-sm font-medium text-black xl:px-16 lg:px-11 py-3 transition focus-visible:outline`}
                 style={{
                   WebkitTapHighlightColor: 'transparent',
                 }}
               >
                 {activeTab === tab.id && (
                   <motion.span
-                    // layoutId="outline"
-                    className='absolute inset-0 z-10 border border-black '
+                    className='absolute inset-0 border border-black '
                     style={{ borderRadius: 9999 }}
                     transition={{ type: 'spring', duration: 0.6 }}
                   />
@@ -148,39 +153,27 @@ export default function VideoCard() {
           </div>
         </div>
         <div
-          ref={ref}
+          ref={videoRefs[0]}
           className='justify-center flex  gap-5  sticky  top-10  xl:w-[85%] w-full mx-auto '
         >
-          <video
-            id='video1'
-            className='mx-auto lg:hover:-translate-x-7  rounded-xl border border-black  hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out'
-          >
-            <source src='public/videos/lionking.mp4' type='video/mp4' />
+          <video id='video1' className='mx-auto   rounded-xl border border-black    '>
+            <source src='public/videos/video1.mp4' type='video/mp4' />
           </video>
         </div>
 
-        <div
-          ref={ref2}
-          className='sticky top-20 lg:hover:-translate-x-7 hover:-translate-y-7 xl:w-[85%] w-full mx-auto  ease-out z-10  duration-300 hover:ease-in-out'
-        >
+        <div ref={videoRefs[1]} className='sticky top-20   xl:w-[85%] w-full mx-auto   z-10 '>
           <video id='video2' className='mx-auto rounded-xl border border-black'>
-            <source src='public/videos/lionking.mp4' type='video/mp4' />
+            <source src='public/videos/video2.mp4' type='video/mp4' />
           </video>
         </div>
-        <div
-          ref={ref3}
-          className='sticky top-28 z-20 lg:hover:-translate-x-7 xl:w-[85%] w-full mx-auto     hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out'
-        >
+        <div ref={videoRefs[2]} className='sticky top-28 z-20  xl:w-[85%] w-full mx-auto '>
           <video id='video3' className='mx-auto  rounded-xl border border-black'>
-            <source src='public/videos/lionking.mp4' type='video/mp4' />
+            <source src='public/videos/video3.mp4' type='video/mp4' />
           </video>
         </div>
-        <div
-          ref={ref4}
-          className='sticky top-32 z-30 lg:hover:-translate-x-7 xl:w-[85%] w-full mx-auto   hover:-translate-y-7 ease-out  duration-300 hover:ease-in-out'
-        >
+        <div ref={videoRefs[3]} className='sticky top-28 z-30  xl:w-[85%] w-full mx-auto'>
           <video id='video4' className='mx-auto  rounded-xl border border-black'>
-            <source src='public\videos\lionking.mp4' type='video/mp4' />
+            <source src='public\videos\video4.mp4' type='video/mp4' />
           </video>
         </div>
       </motion.div>
