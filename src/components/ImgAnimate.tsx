@@ -24,11 +24,6 @@ type RefType = React.RefObject<HTMLDivElement>;
 
 export default function ImgAnimate() {
   const scrollRef: RefType = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //     target: scrollRef,
-  //     offset: ["1 50", "1 1"],
-
-  // })
   const controls = useAnimation();
   const handleScroll = () => {
     const scrollY = window.scrollY;

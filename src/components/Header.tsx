@@ -22,6 +22,7 @@ import Xmark from '../svg/Xmark';
 import { motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
+import { FAIR_MARKETPLACE, WHITEPAPER } from '../constants';
 
 const initialConfig = {
   scale: 0.5,
@@ -92,10 +93,16 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
       }`}
     >
       <SocialsHeader />
-      <button className=' px-5 font-medium pb-[3px] text-gray-500'>Docs</button>
-      <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500'>
-        Open App
-      </button>
+      <a href={WHITEPAPER} target='blank'>
+        <button className=' px-5 font-medium pb-[3px] text-gray-500 hover:scale-105 duration-500'>
+          Docs
+        </button>
+      </a>
+      <a href={FAIR_MARKETPLACE} target='blank'>
+        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500'>
+          Open App
+        </button>
+      </a>
     </div>
   );
 };
