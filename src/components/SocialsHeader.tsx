@@ -16,30 +16,23 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { FaGithub, FaDiscord, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { TWITTER_LINK, DISCORD_LINK, LINKEDIN_LINK, YOUTUBE_LINK, GIT_LINK } from '../constants';
+import { TWITTER_LINK, DISCORD_LINK } from '../constants';
 
-const iconDimension = 'h-8 w-8';
-const blackIcons = 'text-black hover:text-white';
-
-export default function Socials() {
+const iconDimension = 'h-6 w-6';
+export default function SocialsHeader() {
   return (
     <div className='flex space-x-4'>
-      <a href={TWITTER_LINK} target='_blank' className={blackIcons}>
+      <a href={TWITTER_LINK} target='_blank' className={'text-black hover:scale-125'}>
         <FaXTwitter className={iconDimension} />
       </a>
-      <a href={GIT_LINK} target='_blank' className={blackIcons}>
-        <FaGithub className={iconDimension} />
-      </a>
-      <a href={DISCORD_LINK} target='_blank' className='text-black hover:text-indigo-500'>
+      <a
+        href={DISCORD_LINK}
+        target='_blank'
+        className='text-black hover:text-indigo-500 hover:scale-125'
+      >
         <FaDiscord className={iconDimension} />
-      </a>
-      <a href={YOUTUBE_LINK} target='_blank' className='text-black hover:text-red-500'>
-        <FaYoutube className={iconDimension} />
-      </a>
-      <a href={LINKEDIN_LINK} target='_blank' className='text-black hover:text-blue-500'>
-        <FaLinkedin className={iconDimension} />
       </a>
     </div>
   );

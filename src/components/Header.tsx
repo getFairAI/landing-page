@@ -21,6 +21,7 @@ import ToggleOpen from '../svg/ToggleOpen';
 import Xmark from '../svg/Xmark';
 import { motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
+import SocialsHeader from './SocialsHeader';
 
 const initialConfig = {
   scale: 0.5,
@@ -90,8 +91,9 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
           : 'lg:z-0 z-20 lg:bg-opacity-0 bg-opacity-80 lg:relative absolute lg:top-0 top-16  h-full lg:w-fit w-full'
       }`}
     >
+      <SocialsHeader />
       <button className=' px-5 font-medium pb-[3px] text-gray-500'>Docs</button>
-      <button className='border border-black rounded-lg px-5   bg-gray-50  font-medium  w-full lg:py-0 py-3 text-gray-500 hover:scale-105  duration-500'>
+      <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500'>
         Open App
       </button>
     </div>
