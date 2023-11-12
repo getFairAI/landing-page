@@ -19,8 +19,6 @@
 import { motion, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-type RefType = React.RefObject<HTMLDivElement>;
-
 const tabs = [
   { id: 1, label: '2D Images' },
   { id: 2, label: 'AI Detector' },
@@ -29,13 +27,15 @@ const tabs = [
 ];
 
 const activeClass = 'bg-gray-50 text-black';
-const videoRefs: RefType[] = Array.from({ length: tabs.length }, () => useRef(null));
+
 export default function VideoCard() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const videoRefs = tabs.map(() => useRef<HTMLDivElement>(null));
+
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   const handleClick = (TargetTabId: number) => {
     const index = tabs.findIndex((tab) => tab.id === TargetTabId);
-    console.log(activeTab, TargetTabId);
 
     if (index !== -1) {
       const myref = videoRefs[index].current;
