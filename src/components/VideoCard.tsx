@@ -27,10 +27,16 @@ const tabs = [
 ];
 
 const activeClass = 'bg-gray-50 text-black';
+const safeYMargin = 250;
 
 export default function VideoCard() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const videoRefs = tabs.map(() => useRef<HTMLDivElement>(null));
+  // this way to avoid react hook error
+  const videoRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
@@ -80,7 +86,7 @@ export default function VideoCard() {
             const currentVideo = video.getBoundingClientRect();
             const nextVideoRect = nextVideo.getBoundingClientRect();
 
-            if (nextVideoRect.top - currentVideo.top <= video.clientHeight / 2) {
+            if (nextVideoRect.top - currentVideo.top <= safeYMargin) {
               // Do not update the active tab
               return;
             }
