@@ -19,6 +19,7 @@
 import HeaderLogo from '../svg/HeaderLogo';
 import Socials from './Socials';
 import ListItem from './ListItem';
+import { FAIR_MARKETPLACE, FAIR_STUDIO, WHITEPAPER, FAIR_SDK } from '../constants';
 
 // Aux Section
 
@@ -46,19 +47,19 @@ export default function Footer() {
   const productSection = {
     title: 'Product',
     content: [
-      { href: 'https://fair.ar-io.dev', title: 'Fair Marketplace' },
-      { href: 'https://fairstudio.ar-io.dev/', title: 'Fair Studio' },
+      { href: FAIR_MARKETPLACE, title: 'Fair Marketplace' },
+      { href: FAIR_STUDIO, title: 'Fair Studio' },
     ],
   };
 
   const integrationsSection = {
     title: 'Integrations',
-    content: [{ href: 'https://github.com/FAIR-Protocol/fair-protocol-sdk', title: 'Fair SDK' }],
+    content: [{ href: FAIR_SDK, title: 'Fair SDK' }],
   };
 
   const aboutSection = {
     title: 'About',
-    content: [{ href: 'https://fairwhitepaper.ar-io.dev/', title: 'Whitepaper' }],
+    content: [{ href: WHITEPAPER, title: 'Whitepaper' }],
   };
 
   return (

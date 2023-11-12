@@ -19,6 +19,7 @@
 import Star from '../svg/Star';
 import { motion } from 'framer-motion';
 import Image from '../../public/images/dekstopimg-removebg-preview.png';
+import { FAIR_MARKETPLACE } from '../constants';
 export default function JamboSection() {
   return (
     <div className='w-[80%] relative mx-auto flex justify-center mt-28'>
@@ -151,9 +152,11 @@ function Aiexper() {
         }}
         className='md:w-fit w-full'
       >
-        <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]'>
-          Try Now
-        </button>
+        <a href={FAIR_MARKETPLACE} target='blank'>
+          <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]'>
+            Try Now
+          </button>
+        </a>
       </motion.div>
     </div>
   );
