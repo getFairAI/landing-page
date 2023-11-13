@@ -21,6 +21,16 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
+import Plausible from 'plausible-tracker';
+
+const { enableAutoPageviews } = Plausible({
+  hashMode: true,
+  domain: 'fair-landing-page',
+});
+
+// Hash changes will also trigger page views
+enableAutoPageviews();
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />

@@ -27,7 +27,7 @@ export default function ScreenShotSec() {
           <div className='flex flex-col gap-7 lg:px-24 px-4 lg:w-[75%] w-full'>
             <div className='relative w-fit top-12 lg:my-7 my-5 -translate-x-6'>
               <div className='Animate'>
-                <img src='public\images\red.png' className='w-24 h-fit  ' alt='' />
+                <img src='.\images\red.png' className='w-24 h-fit  ' alt='' />
               </div>
             </div>
 
@@ -43,12 +43,12 @@ export default function ScreenShotSec() {
           <div className='lg:w-fit w-full '>
             <a href='https://x.com/rakis_me/status/1677415435958992896?s=20' target='_blank'>
               <div className='h-60 flex items-center justify-end lg:hover:scale-125 transform transition lg:-translate-x-72 lg:px-0 px-4 lg:mb-7 mb-0'>
-                <img src='public\images\screenshot.webp' alt='' />
+                <img src='.\images\screenshot.webp' alt='' />
               </div>
             </a>
             <a href='https://x.com/samecwilliams/status/1659033512102490114?s=20' target='_blank'>
               <div className='rounded-lg lg:h-64 justify-start flex items-center lg:hover:scale-125 transform transition'>
-                <img src='public\images\screen2.webp' alt='' className='w-[75%] lg:px-0 px-4 ' />
+                <img src='.\images\screen2.webp' alt='' className='w-[75%] lg:px-0 px-4 ' />
               </div>
             </a>
           </div>

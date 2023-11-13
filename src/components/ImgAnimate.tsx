@@ -18,7 +18,7 @@
 
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import Preview from '../../public/images/marketplace_preview.png';
+
 const yScrollConfig = -0.5;
 
 type RefType = React.RefObject<HTMLDivElement>;
@@ -56,7 +56,7 @@ export default function ImgAnimate() {
       className='flex justify-center '
     >
       <img
-        src={Preview}
+        src={'./images/marketplace_preview.png'}
         className='w-[85%] opacity-50 skew-x-12 '
         style={{ transform: 'rotateX(20deg)' }}
         alt=''

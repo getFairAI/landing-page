@@ -24,7 +24,7 @@ export default function Teams() {
     title: 'Co-Founder & COO',
     twitterLink: 'https://twitter.com/Marcio__Guia',
     linkedinLink: 'https://www.linkedin.com/in/marcio-guia/',
-    imgPath: 'public/images/marcio.jpg',
+    imgPath: './images/marcio.jpg',
   };
 
   const tiago = {
@@ -32,7 +32,7 @@ export default function Teams() {
     title: 'Co-Founder & CEO',
     twitterLink: 'https://twitter.com/FairTferreira',
     linkedinLink: 'https://www.linkedin.com/in/carlostiagoferreira/',
-    imgPath: 'public/images/tiago.jpg',
+    imgPath: './images/tiago.jpg',
   };
 
   const luis = {
@@ -40,7 +40,7 @@ export default function Teams() {
     title: 'Co-Founder & CTO',
     twitterLink: 'https://twitter.com/lsilvestre_fair',
     linkedinLink: 'https://www.linkedin.com/in/lu%C3%ADs-silvestre98/',
-    imgPath: 'public/images/luis.jpg',
+    imgPath: './images/luis.jpg',
   };
 
   return (
