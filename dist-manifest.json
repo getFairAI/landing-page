@@ -1,0 +1,33 @@
+{
+"manifest": "arweave/paths",
+"version": "0.1.0",
+"paths": {
+"images/screenshot.webp":{"id":"n8rDtZD7zc_Mnul9T_yWsKL5NAydtDyerIp_WbUkNTc"},
+"images/what.jpg":{"id":"2Uo1m6AKy5GjP2Hlf2R-ea53Qp4zVpWxvyoTf1_GSG8"},
+"assets/index-eb6603ac.css":{"id":"O4nvUmxDZtcuMLV68R0nnVsnZMmbecnKLqcmI2LQhi8"},
+"fair-protocol-logo.svg":{"id":"wqXJMNhhuk4uFwxODMjMVcyDZ4RImx3_Kq0VnzETKDc"},
+"index.html":{"id":"HuEwvaUENGCc3S7mIZp4QhrTX3AJ7mhpnXbVuGG0y2M"},
+"images/red.png":{"id":"g19ZY6iIfre_NaZvkT_PEQ-X4JSSSb3R1V6swljpAPk"},
+"images/permanews1.jpg":{"id":"TD_rm8Z1Z2umaRiKe0x22TXmb2jLwljYjrCmce-0oo8"},
+"images/cracul.png":{"id":"KwuS-k9f6R60KnUG06ZxUduV94gKWmuX7Xe2WPYRDcM"},
+"images/screen2.webp":{"id":"NtKW1C7Cxp_jSyA-X9dqLw4bqgp5blanmbZMZhe0XTc"},
+"fair-protocol-face.svg":{"id":"BenbFVRkI8u4phmn2jz2UYUyYScuDWzULlQW4bITmts"},
+"images/animate.webp":{"id":"CGnQn54maj1llL5RfwR3GmX6bqjQdwTkqjVLptGhDn0"},
+"images/dekstopimg-removebg-preview.png":{"id":"1iBWlV9hfhVuuanMAIaCHJ5qXE30LuOHDTbTAeKTIpE"},
+"images/teams.jpg":{"id":"ZlBIOX3E1n3-E78FlZdWHZXJM_U78pL_A0CInVimhmE"},
+"images/luis.jpg":{"id":"w3cqoZOnUN0HLFVeKkOaS_aKPgf4AGqMliJxDEoJkug"},
+"images/permanews2.jpg":{"id":"e4KSSH5zlab-4dUPDkKBtobKGEYo9vdmHXNuN8cvksU"},
+"images/permawebpioneers.png":{"id":"tLdWvc5mezIjrTS5DsDtGM1aFc2ALqH_j_0b4kXIYIk"},
+"assets/index-2d1f0aa0.js":{"id":"jySbDL0KP2s784izkuxWGqQBhsH2mOu0bFNH817gYlQ"},
+"images/marcio.jpg":{"id":"G4-oxFtpyI6pCWUelGQ0DDOBInEiBNllOKMUoO-n9-c"},
+"videos/video4.mp4":{"id":"Sj8inFfQTNdiF2c_HbE53eufXaq2PJGohH3o5UuDdPQ"},
+"videos/video1.mp4":{"id":"tGdiBO76g08SLLPKIydkJ4AeTkUbcdZD6irvZVc3kPM"},
+"images/tiago.jpg":{"id":"ThCrLTi3hvdEBujj1v4q8A99GHKAFOY6P9wg3KCkPpw"},
+"videos/video2.mp4":{"id":"zA5wKpkvfmd288TBwZPLRKDY0X1X31EncKP8gV1U8QU"},
+"videos/video3.mp4":{"id":"ctVCv0FI6uqQ2WtRf_CerCy3P5EYahAZ_N596y3hBI8"},
+"images/superhumans.png":{"id":"kBXL7AIMlYCId_AZakWB7TF89mK7PuZqoarXKeX7U40"},
+"images/stampShow.png":{"id":"En05sji2T4ojReBu9aPcS3syvVlcTijdug9TJ2YtmJQ"},
+"images/marketplace_preview.png":{"id":"_ZQrDaRQ95o07g47jyh94jvryQ_fVfC8nSI7tR92vZE"}
+},
+"index":{"path":"index.html"}
+}
