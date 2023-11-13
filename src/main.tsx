@@ -25,7 +25,7 @@ import Plausible from 'plausible-tracker';
 
 const { enableAutoPageviews } = Plausible({
   hashMode: true,
-  domain: 'fair-landing-page',
+  domain: 'fair.ar-io.dev',
 });
 
 // Hash changes will also trigger page views
