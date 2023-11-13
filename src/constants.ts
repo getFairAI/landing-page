@@ -27,6 +27,6 @@ export const GIT_LINK = 'https://github.com/FAIR-Protocol';
 export const WHITEPAPER = 'https://fairwhitepaper.ar-io.dev/';
 
 // Product
-export const FAIR_MARKETPLACE = 'https://fair.ar-io.dev';
+export const FAIR_MARKETPLACE = 'https://fairapp.ar-io.dev';
 export const FAIR_STUDIO = 'https://fairstudio.ar-io.dev/';
 export const FAIR_SDK = 'https://github.com/FAIR-Protocol/fair-protocol-sdk';
