@@ -37,8 +37,8 @@ const animateConfig = {
 };
 
 const transitionConfig = {
-  duration: 2.5,
-  delay: 2,
+  duration: 0.3,
+  delay: 1,
   ease: [0, 0.71, 0.2, 1.01],
 };
 
