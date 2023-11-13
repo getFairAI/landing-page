@@ -21,7 +21,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const tabs = [
   { id: 1, label: '2D Images' },
-  { id: 2, label: 'AI Detector' },
+  { id: 2, label: 'Anime' },
   { id: 3, label: '3D Images' },
   { id: 4, label: 'Audio (Text-To-Speech)' },
 ];
