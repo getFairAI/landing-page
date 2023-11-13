@@ -163,23 +163,23 @@ export default function VideoCard() {
           className='justify-center flex  gap-5  sticky  top-10  xl:w-[85%] w-full mx-auto '
         >
           <video id='video1' className='mx-auto   rounded-xl border border-black    '>
-            <source src='public/videos/video1.mp4' type='video/mp4' />
+            <source src='./videos/video1.mp4' type='video/mp4' />
           </video>
         </div>
 
         <div ref={videoRefs[1]} className='sticky top-20   xl:w-[85%] w-full mx-auto   z-10 '>
           <video id='video2' className='mx-auto rounded-xl border border-black'>
-            <source src='public/videos/video2.mp4' type='video/mp4' />
+            <source src='./videos/video2.mp4' type='video/mp4' />
           </video>
         </div>
         <div ref={videoRefs[2]} className='sticky top-28 z-20  xl:w-[85%] w-full mx-auto '>
           <video id='video3' className='mx-auto  rounded-xl border border-black'>
-            <source src='public/videos/video3.mp4' type='video/mp4' />
+            <source src='./videos/video3.mp4' type='video/mp4' />
           </video>
         </div>
         <div ref={videoRefs[3]} className='sticky top-28 z-30  xl:w-[85%] w-full mx-auto'>
           <video id='video4' className='mx-auto  rounded-xl border border-black'>
-            <source src='public\videos\video4.mp4' type='video/mp4' />
+            <source src='./videos/video4.mp4' type='video/mp4' />
           </video>
         </div>
       </motion.div>

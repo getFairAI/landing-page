@@ -22,31 +22,31 @@ function NewsSection() {
       title: 'Decentralized AI models on Arweave with Co-founder of Fair Protocol Tiago Ferreira',
       date: 'November 2, 2023',
       link: 'https://podcast.onlyarweave.com/episodes/decentralized-ai-models-on-arweave-with-co-founder-of-fair-protocol-tiago-ferreira',
-      image: 'public/images/permawebpioneers.png',
+      image: './images/permawebpioneers.png',
     },
     {
       title: 'Fair AI Protocol Unveils "Fair Anime Superhumans" Collection',
       date: 'November 2, 2023',
       link: 'https://permaweb.news/fair-ai-protocol-unveils-fair-anime-superhumans-collection',
-      image: 'public/images/superhumans.png',
+      image: './images/superhumans.png',
     },
     {
       title: 'Fair AI Protocol Introduces New Features - PLUS Exclusive Talk with the Team',
       date: 'July 8, 2023',
       link: 'https://permaweb.news/fair-ai-protocol-introduces-new-features-plus-exclusive-interview-with-the-team',
-      image: 'public/images/permanews2.jpg',
+      image: './images/permanews2.jpg',
     },
     {
       title: 'Fair Protocol - Decentralising AI using Arweave and Web3',
       date: 'May 18, 2023',
       link: 'https://permaweb.news/fair-protocol-decentralising-ai-using-arweave',
-      image: 'public/images/permanews1.jpg',
+      image: './images/permanews1.jpg',
     },
     {
       title: 'STAMP Show #4 - Meet Fair Protocol Team',
       date: 'June 15, 2023',
       link: 'https://www.youtube.com/watch?v=pK8yjuCReKQ',
-      image: 'public/images/stampShow.png',
+      image: './images/stampShow.png',
     },
   ];
 

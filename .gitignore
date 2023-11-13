@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+wallet.json
+wallet-*.json
+
+dist-id.txt
+dist-manifest.csv
+dist-manifest.json
