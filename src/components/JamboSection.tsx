@@ -22,8 +22,8 @@ import { FAIR_MARKETPLACE } from '../constants';
 export default function JamboSection() {
   return (
     <div className='w-[80%] relative mx-auto flex justify-center mt-28'>
-      <Animation style={'left-0'} />
-      <Animation2 style={'right-0'} />
+      {/* <Animation style={'left-0'} />
+      <Animation2 style={'right-0'} /> */}
       <motion.div>
         <Aiexper />
       </motion.div>

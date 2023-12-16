@@ -12,7 +12,11 @@
     "deploy": "ts-node --esm ./scripts/deploy.ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.0",
     "framer-motion": "^10.15.1",
+    "magic-snowflakes": "^6.3.0",
     "plausible-tracker": "^0.3.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
