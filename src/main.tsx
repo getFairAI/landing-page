@@ -22,6 +22,7 @@ import App from './App.tsx';
 import './index.css';
 
 import Plausible from 'plausible-tracker';
+import { SnowProvider } from './context/snow.tsx';
 
 const { enableAutoPageviews } = Plausible({
   hashMode: true,
@@ -33,6 +34,8 @@ enableAutoPageviews();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <SnowProvider>
+      <App />
+    </SnowProvider>
   </React.StrictMode>,
 );
