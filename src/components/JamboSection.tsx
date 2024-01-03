@@ -19,11 +19,36 @@
 import Star from '../svg/Star';
 import { motion } from 'framer-motion';
 import { FAIR_MARKETPLACE } from '../constants';
+import Snowflakes from 'magic-snowflakes';
+import { useEffect } from 'react';
+
 export default function JamboSection() {
+  useEffect(() => {
+    const layer1 = document.querySelector('#layer1');
+    const layer2 = document.querySelector('#layer2');
+    if (layer1) {
+      const snowApi1 = new Snowflakes({
+        container: layer1 as HTMLElement,
+        // color: '#EDEDED', // Default: "#5ECDEF"
+        count: 30, // 100 snowflakes. Default: 50
+        speed: 1,
+      });
+    }
+
+    if (layer2) {
+      const snowApi2 = new Snowflakes({
+        container: layer2 as HTMLElement,
+        // color: '#EDEDED', // Default: "#5ECDEF"
+        count: 30, // 100 snowflakes. Default: 50
+        speed: 0.6,
+      });
+    }
+  }, []);
+
   return (
     <div className='w-[80%] relative mx-auto flex justify-center mt-28'>
-      {/* <Animation style={'left-0'} />
-      <Animation2 style={'right-0'} /> */}
+      <div id='layer1' className='mx-auto flex'></div>
+      <div id='layer2' className='mx-auto flex'></div>
       <motion.div>
         <Aiexper />
       </motion.div>

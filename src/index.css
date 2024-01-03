@@ -21,6 +21,23 @@
 @tailwind utilities;
 
 
+#layer1, #layer2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#layer1 .snowflake__inner:before {
+  background-image: url('./images/dekstopimg-removebg-preview.png');
+}
+
+#layer2 .snowflake__inner:before {
+  content: '+';
+  opacity: 0.3;
+  background: none;
+}
+
 .snowflake {
   filter: drop-shadow(2px 2px 1px rgba(0,0,0, 0.5));
 }
