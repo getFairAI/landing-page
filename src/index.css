@@ -29,7 +29,7 @@
 }
 
 #layer1 .snowflake__inner:before {
-  background-image: url('./images/dekstopimg-removebg-preview.png');
+  background-image: url('../images/dekstopimg-removebg-preview.png');
 }
 
 #layer2 .snowflake__inner:before {

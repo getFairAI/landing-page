@@ -27,21 +27,25 @@ export default function JamboSection() {
     const layer1 = document.querySelector('#layer1');
     const layer2 = document.querySelector('#layer2');
     if (layer1) {
-      const snowApi1 = new Snowflakes({
+      const layer1anim = new Snowflakes({
         container: layer1 as HTMLElement,
         // color: '#EDEDED', // Default: "#5ECDEF"
         count: 30, // 100 snowflakes. Default: 50
-        speed: 1,
+        speed: 0.6,
+        zIndex: 1,
       });
+      layer1anim.start();
     }
 
     if (layer2) {
-      const snowApi2 = new Snowflakes({
+      const layer2anim = new Snowflakes({
         container: layer2 as HTMLElement,
         // color: '#EDEDED', // Default: "#5ECDEF"
         count: 30, // 100 snowflakes. Default: 50
         speed: 0.6,
+        zIndex: 1,
       });
+      layer2anim.start();
     }
   }, []);
 
@@ -49,7 +53,7 @@ export default function JamboSection() {
     <div className='w-[80%] relative mx-auto flex justify-center mt-28'>
       <div id='layer1' className='mx-auto flex'></div>
       <div id='layer2' className='mx-auto flex'></div>
-      <motion.div>
+      <motion.div className='z-10'>
         <Aiexper />
       </motion.div>
     </div>
@@ -93,7 +97,7 @@ function Aiexper() {
           duration: 0.3,
           delay: 1,
         }}
-        className='md:w-fit w-full'
+        className='md:w-fit w-full z-10'
       >
         <a href={FAIR_MARKETPLACE} target='blank'>
           <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]'>
