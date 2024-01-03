@@ -19,12 +19,41 @@
 import Star from '../svg/Star';
 import { motion } from 'framer-motion';
 import { FAIR_MARKETPLACE } from '../constants';
+import Snowflakes from 'magic-snowflakes';
+import { useEffect } from 'react';
+
 export default function JamboSection() {
+  useEffect(() => {
+    const layer1 = document.querySelector('#layer1');
+    const layer2 = document.querySelector('#layer2');
+    if (layer1) {
+      const layer1anim = new Snowflakes({
+        container: layer1 as HTMLElement,
+        // color: '#EDEDED', // Default: "#5ECDEF"
+        count: 30, // 100 snowflakes. Default: 50
+        speed: 0.6,
+        zIndex: 1,
+      });
+      layer1anim.start();
+    }
+
+    if (layer2) {
+      const layer2anim = new Snowflakes({
+        container: layer2 as HTMLElement,
+        // color: '#EDEDED', // Default: "#5ECDEF"
+        count: 30, // 100 snowflakes. Default: 50
+        speed: 0.6,
+        zIndex: 1,
+      });
+      layer2anim.start();
+    }
+  }, []);
+
   return (
     <div className='w-[80%] relative mx-auto flex justify-center mt-28'>
-      {/* <Animation style={'left-0'} />
-      <Animation2 style={'right-0'} /> */}
-      <motion.div>
+      <div id='layer1' className='mx-auto flex'></div>
+      <div id='layer2' className='mx-auto flex'></div>
+      <motion.div className='z-10'>
         <Aiexper />
       </motion.div>
     </div>
@@ -68,7 +97,7 @@ function Aiexper() {
           duration: 0.3,
           delay: 1,
         }}
-        className='md:w-fit w-full'
+        className='md:w-fit w-full z-10'
       >
         <a href={FAIR_MARKETPLACE} target='blank'>
           <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]'>
