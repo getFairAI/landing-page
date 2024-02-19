@@ -16,17 +16,23 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
+import React from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 interface ListItemProps {
   href: string;
   title: string;
+  extraClasses?: string;
 }
 
-export default function ListItem({ href, title }: ListItemProps) {
+export default function ListItem({ href, title, extraClasses }: ListItemProps) {
   return (
     <li className='mb-4 last:mb-0'>
-      <a href={href} target='_blank' className='text-[#646464] hover:text-black'>
+      <a
+        href={href}
+        target='_blank'
+        className={extraClasses ? `text-[#646464] ${extraClasses}` : 'text-[#646464]'}
+      >
         <FiArrowUpRight className='inline-block mr-1 mb-1' />
         {title}
       </a>

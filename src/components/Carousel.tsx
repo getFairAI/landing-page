@@ -86,7 +86,7 @@ export default function Carousel() {
       </section>
       <div className='flex justify-center pb-5'>
         <a href={FAIR_MARKETPLACE} target='blank'>
-          <button className=' text-gray-600 mt-16 border  hover:shadow-md  border-black  rounded-lg px-28 py-3 duration-500 hover:-translate-y-1 hover:bg-[#dcdbdb]'>
+          <button className=' text-gray-600 mt-16 border  hover:shadow-md  border-black  rounded-lg px-28 py-3 duration-500 hover:-translate-y-1 hover:bg-[#dcdbdb] plausible-event-name=Use+App+Click'>
             Start Using
           </button>
         </a>

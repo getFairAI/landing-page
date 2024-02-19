@@ -100,7 +100,7 @@ function Aiexper() {
         className='md:w-fit w-full z-10'
       >
         <a href={FAIR_MARKETPLACE} target='blank'>
-          <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8]'>
+          <button className=' text-gray-600 mt-16 border border-black w-full bg-white hover:shadow-md rounded-lg md:px-28  py-3 duration-500 hover:-translate-y-1 hover:bg-[#e8e8e8] plausible-event-name=Try+Now+Click'>
             Try Now
           </button>
         </a>

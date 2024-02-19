@@ -94,12 +94,12 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
     >
       <SocialsHeader />
       <a href={WHITEPAPER} target='blank'>
-        <button className=' px-5 font-medium pb-[3px] text-gray-500 hover:scale-105 duration-500'>
+        <button className=' px-5 font-medium pb-[3px] text-gray-500 hover:scale-105 duration-500 plausible-event-name=Docs+Click'>
           Docs
         </button>
       </a>
       <a href={FAIR_MARKETPLACE} target='blank'>
-        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500'>
+        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500 plausible-event-name=Open+App+Click'>
           Open App
         </button>
       </a>

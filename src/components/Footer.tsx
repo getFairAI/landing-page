@@ -35,7 +35,15 @@ function Section({ title, content }: SectionProps) {
         <h2 className='font-bold'>{title}</h2>
         <ul className='mt-4'>
           {content.map((item) => (
-            <ListItem key={item.title} href={item.href} title={item.title} />
+            <ListItem
+              key={item.title}
+              href={item.href}
+              title={item.title}
+              extraClasses={`plausible-event-name=Footer-Link+Click plausible-event-link=${item.title.replaceAll(
+                ' ',
+                '+',
+              )}`}
+            />
           ))}
         </ul>
       </div>
