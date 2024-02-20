@@ -54,7 +54,7 @@ const main = async () => {
 
 
   const tags = [
-    { name: 'Title', value: 'Fair Protocol landing Page' },
+    { name: 'Title', value: 'Fair Protocol Landing Page' },
     { name: 'Description', value: 'Building the leading global decentralised marketplace for open-source AI' },
     { name: 'Published', value: String(Date.now()) },
     { name: 'Page-Code', value: 'fair-protocol-landing-page' },
@@ -66,8 +66,8 @@ const main = async () => {
     {
       name: 'Init-State', value: JSON.stringify({
         balances: { [`${irys.address}`]: 1 },
-        name: 'Fair Protocol Marketplace',
-        ticker: 'FPM',
+        name: 'Fair Protocol Landing Page',
+        ticker: 'FPLP',
       })
     },
   ];
