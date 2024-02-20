@@ -16,13 +16,23 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { Icon } from '@mui/material';
+import { IconButton } from '@mui/material';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderLog = () => {
+  const navigate = useNavigate();
+
+  const handleClick = useCallback(() => navigate('/'), [navigate]);
+
   return (
-    <Icon sx={{ height: '100%', width: '100%', display: 'flex' }}>
+    <IconButton
+      sx={{ height: '100%', width: '100%', display: 'flex' }}
+      onClick={handleClick}
+      disableRipple
+    >
       <img src={'./fair-protocol-outline.svg'} style={{ color: '#1F1F26' }} alt='' />
-    </Icon>
+    </IconButton>
   );
 };
 

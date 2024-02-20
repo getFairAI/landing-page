@@ -17,7 +17,6 @@
  */
 
 import { motion, useAnimation } from 'framer-motion';
-import React from 'react';
 import { useEffect, useRef } from 'react';
 
 const yScrollConfig = -0.5;

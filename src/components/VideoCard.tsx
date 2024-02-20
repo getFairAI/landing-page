@@ -17,7 +17,6 @@
  */
 
 import { motion, useScroll } from 'framer-motion';
-import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 const tabs = [

@@ -27,7 +27,7 @@ interface TeamMemberProps {
   imgPath: string;
 }
 
-export default function TeamMember(memberProps: TeamMemberProps) {
+export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
   return (
     <div className='flex flex-col'>
       <img

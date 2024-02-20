@@ -17,19 +17,16 @@
  */
 
 import Carousel from './components/Carousel';
-import Header from './components/Header';
 import ImgAnimate from './components/ImgAnimate';
 import JamboSection from './components/JamboSection';
 import ScreenShotSec from './components/ScreenShotSec';
 import Teams from './components/Teams';
 import VideoCard from './components/VideoCard';
-import Footer from './components/Footer';
 import NewsSection from './components/NewsSection';
 
-function App() {
+function Home() {
   return (
-    <section className='w-full min-h-screen bg-[#f4f4f6]   relative'>
-      <Header />
+    <>
       <JamboSection />
       <ImgAnimate />
       <VideoCard />
@@ -37,9 +34,8 @@ function App() {
       <Carousel />
       <NewsSection />
       <Teams />
-      <Footer />
-    </section>
+    </>
   );
 }
 
-export default App;
+export default Home;

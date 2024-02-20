@@ -25,7 +25,7 @@ import { FAIR_MARKETPLACE, FAIR_STUDIO, WHITEPAPER, FAIR_SDK } from '../constant
 
 interface SectionProps {
   title: string;
-  content: { href: string; title: string }[];
+  content: { href: string; title: string; relative?: boolean }[];
 }
 
 function Section({ title, content }: SectionProps) {
@@ -39,6 +39,7 @@ function Section({ title, content }: SectionProps) {
               key={item.title}
               href={item.href}
               title={item.title}
+              relative={item.relative}
               extraClasses={`plausible-event-name=Footer-Link+Click plausible-event-link=${item.title.replaceAll(
                 ' ',
                 '+',
@@ -67,7 +68,10 @@ export default function Footer() {
 
   const aboutSection = {
     title: 'About',
-    content: [{ href: WHITEPAPER, title: 'Whitepaper' }],
+    content: [
+      { href: '.#/privacy-policy', title: 'Privacy Policy', relative: true },
+      { href: WHITEPAPER, title: 'Whitepaper' },
+    ],
   };
 
   return (
