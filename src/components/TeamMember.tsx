@@ -27,7 +27,7 @@ interface TeamMemberProps {
   imgPath: string;
 }
 
-export default function TeamMember(memberProps: TeamMemberProps) {
+export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
   return (
     <div className='flex flex-col'>
       <img
@@ -41,14 +41,20 @@ export default function TeamMember(memberProps: TeamMemberProps) {
           <a
             href={memberProps.linkedinLink}
             target='_blank'
-            className='flex rounded-full hover:bg-indigo-100 h-8 w-8'
+            className={`flex rounded-full hover:bg-indigo-100 h-8 w-8 plausible-event-name=Team-LinkedIn+Click plausible-event-member=${memberProps.name.replaceAll(
+              ' ',
+              '+',
+            )}`}
           >
             <FaLinkedin className='text-indigo-500 mx-auto mt-2' />
           </a>
           <a
             href={memberProps.twitterLink}
             target='_blank'
-            className='flex rounded-full hover:bg-white h-8 w-8'
+            className={`flex rounded-full hover:bg-white h-8 w-8 plausible-event-name=Team-Twitter+Click plausible-event-member=${memberProps.name.replaceAll(
+              ' ',
+              '+',
+            )}`}
           >
             <FaXTwitter className='mx-auto mt-2' />
           </a>

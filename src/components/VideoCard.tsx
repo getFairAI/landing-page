@@ -59,8 +59,13 @@ export default function VideoCard() {
   };
 
   useEffect(() => {
+    const videoEvent = () => {
+      tabs.forEach((tab) => {
+        setupVideoEvents(`video${tab.id}`, tab.id);
+      });
+    };
     videoEvent();
-  }, []);
+  }, [setupVideoEvents]);
 
   function setupVideoEvents(videoId: string, tabId: number) {
     const video: HTMLVideoElement | null = document.getElementById(
@@ -103,12 +108,6 @@ export default function VideoCard() {
     }
   }
 
-  const videoEvent = () => {
-    tabs.forEach((tab) => {
-      setupVideoEvents(`video${tab.id}`, tab.id);
-    });
-  };
-
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -141,7 +140,9 @@ export default function VideoCard() {
                 }}
                 className={`${
                   activeTab === tab.id ? activeClass : ''
-                } relative rounded-full text-sm font-medium text-black xl:px-16 lg:px-11 py-3 transition focus-visible:outline`}
+                } relative rounded-full text-sm font-medium text-black xl:px-16 lg:px-11 py-3 transition focus-visible:outline plausible-event-name=Video+Click plausible-event-label=${
+                  tab.label
+                }`}
                 style={{
                   WebkitTapHighlightColor: 'transparent',
                 }}

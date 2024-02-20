@@ -16,30 +16,18 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import Carousel from './components/Carousel';
-import Header from './components/Header';
-import ImgAnimate from './components/ImgAnimate';
-import JamboSection from './components/JamboSection';
-import ScreenShotSec from './components/ScreenShotSec';
-import Teams from './components/Teams';
-import VideoCard from './components/VideoCard';
-import Footer from './components/Footer';
-import NewsSection from './components/NewsSection';
+import { ReactElement } from 'react';
+import Footer from './Footer';
+import Header from './Header';
 
-function App() {
+const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <section className='w-full min-h-screen bg-[#f4f4f6]   relative'>
       <Header />
-      <JamboSection />
-      <ImgAnimate />
-      <VideoCard />
-      <ScreenShotSec />
-      <Carousel />
-      <NewsSection />
-      <Teams />
+      {children}
       <Footer />
     </section>
   );
-}
+};
 
-export default App;
+export default Layout;

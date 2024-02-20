@@ -60,7 +60,7 @@ function NewsSection() {
               key={news.title}
               href={news.link}
               target='_blank'
-              className='hover:scale-105 transition-transform flex-none w-64 sm:w-72 md:w-80 p-4'
+              className={`hover:scale-105 transition-transform flex-none w-64 sm:w-72 md:w-80 p-4 plausible-event-name=News+Click plausible-event-link=${news.link}`}
             >
               <div className='bg-white rounded-lg shadow-md h-full'>
                 <div className=' overflow-hidden w-full h-48 rounded-t-lg'>

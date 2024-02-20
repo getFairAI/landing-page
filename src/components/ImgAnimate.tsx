@@ -26,19 +26,21 @@ type RefType = React.RefObject<HTMLDivElement>;
 export default function ImgAnimate() {
   const scrollRef: RefType = useRef(null);
   const controls = useAnimation();
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    controls.start({ y: scrollY * yScrollConfig }).catch((error: Error) => {
-      console.log(error);
-    });
-  };
+
   useEffect(() => {
     controls.start({ y: 0 }).catch((error: Error) => {
       console.log(error);
     });
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      controls.start({ y: scrollY * yScrollConfig }).catch((error: Error) => {
+        console.log(error);
+      });
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [controls]);
 
   return (
     <motion.div

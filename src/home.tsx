@@ -16,24 +16,26 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { IconButton } from '@mui/material';
-import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Carousel from './components/Carousel';
+import ImgAnimate from './components/ImgAnimate';
+import JamboSection from './components/JamboSection';
+import ScreenShotSec from './components/ScreenShotSec';
+import Teams from './components/Teams';
+import VideoCard from './components/VideoCard';
+import NewsSection from './components/NewsSection';
 
-const HeaderLog = () => {
-  const navigate = useNavigate();
-
-  const handleClick = useCallback(() => navigate('/'), [navigate]);
-
+function Home() {
   return (
-    <IconButton
-      sx={{ height: '100%', width: '100%', display: 'flex' }}
-      onClick={handleClick}
-      disableRipple
-    >
-      <img src={'./fair-protocol-outline.svg'} style={{ color: '#1F1F26' }} alt='' />
-    </IconButton>
+    <>
+      <JamboSection />
+      <ImgAnimate />
+      <VideoCard />
+      <ScreenShotSec />
+      <Carousel />
+      <NewsSection />
+      <Teams />
+    </>
   );
-};
+}
 
-export default HeaderLog;
+export default Home;

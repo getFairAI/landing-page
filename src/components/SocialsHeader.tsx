@@ -24,13 +24,17 @@ const iconDimension = 'h-6 w-6';
 export default function SocialsHeader() {
   return (
     <div className='flex space-x-4'>
-      <a href={TWITTER_LINK} target='_blank' className={'text-black hover:scale-125'}>
+      <a
+        href={TWITTER_LINK}
+        target='_blank'
+        className={'text-black hover:scale-125 plausible-event-name=Twitter+Click'}
+      >
         <FaXTwitter className={iconDimension} />
       </a>
       <a
         href={DISCORD_LINK}
         target='_blank'
-        className='text-black hover:text-indigo-500 hover:scale-125'
+        className='text-black hover:text-indigo-500 hover:scale-125 plausible-event-name=Discord+Click'
       >
         <FaDiscord className={iconDimension} />
       </a>

@@ -26,19 +26,39 @@ const blackIcons = 'text-black hover:text-white';
 export default function Socials() {
   return (
     <div className='flex space-x-4'>
-      <a href={TWITTER_LINK} target='_blank' className={blackIcons}>
+      <a
+        href={TWITTER_LINK}
+        target='_blank'
+        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Twitter`}
+      >
         <FaXTwitter className={iconDimension} />
       </a>
-      <a href={GIT_LINK} target='_blank' className={blackIcons}>
+      <a
+        href={GIT_LINK}
+        target='_blank'
+        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
+      >
         <FaGithub className={iconDimension} />
       </a>
-      <a href={DISCORD_LINK} target='_blank' className='text-black hover:text-indigo-500'>
+      <a
+        href={DISCORD_LINK}
+        target='_blank'
+        className='text-black hover:text-indigo-500 plausible-event-name=Footer+Link+Click plausible-event-link=Discord'
+      >
         <FaDiscord className={iconDimension} />
       </a>
-      <a href={YOUTUBE_LINK} target='_blank' className='text-black hover:text-red-500'>
+      <a
+        href={YOUTUBE_LINK}
+        target='_blank'
+        className='text-black hover:text-red-500 plausible-event-name=Footer+Link+Click plausible-event-link=Youtube'
+      >
         <FaYoutube className={iconDimension} />
       </a>
-      <a href={LINKEDIN_LINK} target='_blank' className='text-black hover:text-blue-500'>
+      <a
+        href={LINKEDIN_LINK}
+        target='_blank'
+        className='text-black hover:text-blue-500 plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn'
+      >
         <FaLinkedin className={iconDimension} />
       </a>
     </div>

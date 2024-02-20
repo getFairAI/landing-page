@@ -18,21 +18,32 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import Home from './home.tsx';
 import './index.css';
+import { Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
+import Layout from './components/layout.tsx';
+import Privacy from './privacy.tsx';
 
-import Plausible from 'plausible-tracker';
-
-const { enableAutoPageviews } = Plausible({
-  hashMode: true,
-  domain: 'fair.ar-io.dev',
-});
-
-// Hash changes will also trigger page views
-enableAutoPageviews();
+const router = createHashRouter([
+  {
+    path: '/',
+    element: (
+      <Layout>
+        <Outlet />
+      </Layout>
+    ),
+    children: [
+      { path: '/', element: <Home /> },
+      {
+        path: 'privacy-policy',
+        element: <Privacy />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
