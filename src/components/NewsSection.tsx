@@ -19,6 +19,12 @@
 function NewsSection() {
   const newsItems = [
     {
+      title: '2023 Arweave Ecosystem Report',
+      date: 'February 28, 2024',
+      link: 'https://permaweb.news/2023-arweave-ecosystem-report',
+      image: './images/permanews3.jpg',
+    },
+    {
       title: 'Decentralized AI models on Arweave with Co-founder of Fair Protocol Tiago Ferreira',
       date: 'November 2, 2023',
       link: 'https://podcast.onlyarweave.com/episodes/decentralized-ai-models-on-arweave-with-co-founder-of-fair-protocol-tiago-ferreira',

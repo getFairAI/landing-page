@@ -41,7 +41,7 @@ export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
           <a
             href={memberProps.linkedinLink}
             target='_blank'
-            className={`flex rounded-full hover:bg-indigo-100 h-8 w-8 plausible-event-name=Team-LinkedIn+Click plausible-event-member=${memberProps.name.replaceAll(
+            className={`flex rounded-full hover:bg-indigo-100 h-8 w-8 plausible-event-name=Team+LinkedIn+Click plausible-event-member=${memberProps.name.replaceAll(
               ' ',
               '+',
             )}`}
@@ -51,7 +51,7 @@ export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
           <a
             href={memberProps.twitterLink}
             target='_blank'
-            className={`flex rounded-full hover:bg-white h-8 w-8 plausible-event-name=Team-Twitter+Click plausible-event-member=${memberProps.name.replaceAll(
+            className={`flex rounded-full hover:bg-white h-8 w-8 plausible-event-name=Team+Twitter+Click plausible-event-member=${memberProps.name.replaceAll(
               ' ',
               '+',
             )}`}
