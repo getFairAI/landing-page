@@ -40,7 +40,7 @@ function Section({ title, content }: SectionProps) {
               href={item.href}
               title={item.title}
               relative={item.relative}
-              extraClasses={`plausible-event-name=Footer-Link+Click plausible-event-link=${item.title.replaceAll(
+              extraClasses={`plausible-event-name=Footer+Link+Click plausible-event-link=${item.title.replaceAll(
                 ' ',
                 '+',
               )}`}
