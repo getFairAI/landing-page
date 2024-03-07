@@ -22,6 +22,7 @@ export const DISCORD_LINK = 'https://discord.gg/jh5aaEQxkx';
 export const LINKEDIN_LINK = 'https://www.linkedin.com/company/fair-protocol/about/';
 export const YOUTUBE_LINK = 'https://www.youtube.com/channel/UCEnc4qQ_3r40x4T8fOb8hdg';
 export const GIT_LINK = 'https://github.com/FAIR-Protocol';
+export const MEDIUM_LINK = 'https://medium.com/@fairprotocol_50356';
 
 // whitepaper
 export const WHITEPAPER = 'https://fairwhitepaper.ar-io.dev/';

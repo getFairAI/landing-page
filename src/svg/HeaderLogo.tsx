@@ -27,7 +27,7 @@ const HeaderLog = () => {
 
   return (
     <IconButton
-      sx={{ height: '100%', width: '100%', display: 'flex' }}
+      sx={{ height: '100%', display: 'flex', padding: 0 }}
       onClick={handleClick}
       disableRipple
     >

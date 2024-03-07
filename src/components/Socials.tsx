@@ -16,9 +16,16 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { FaGithub, FaDiscord, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaDiscord, FaYoutube, FaLinkedin, FaMedium } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { TWITTER_LINK, DISCORD_LINK, LINKEDIN_LINK, YOUTUBE_LINK, GIT_LINK } from '../constants';
+import {
+  TWITTER_LINK,
+  DISCORD_LINK,
+  LINKEDIN_LINK,
+  YOUTUBE_LINK,
+  GIT_LINK,
+  MEDIUM_LINK,
+} from '../constants';
 
 const iconDimension = 'h-8 w-8';
 const blackIcons = 'text-black hover:text-white';
@@ -60,6 +67,13 @@ export default function Socials() {
         className='text-black hover:text-blue-500 plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn'
       >
         <FaLinkedin className={iconDimension} />
+      </a>
+      <a
+        href={MEDIUM_LINK}
+        target='_blank'
+        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Medium`}
+      >
+        <FaMedium className={iconDimension} />
       </a>
     </div>
   );

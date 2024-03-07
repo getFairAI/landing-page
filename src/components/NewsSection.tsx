@@ -19,6 +19,12 @@
 function NewsSection() {
   const newsItems = [
     {
+      title: 'Introducing Fair Protocol',
+      date: 'March 6, 2024',
+      link: 'https://medium.com/@fairprotocol_50356/introducing-fair-protocol-5e7a41c45f9d',
+      image: './images/first_medium.png',
+    },
+    {
       title: '2023 Arweave Ecosystem Report',
       date: 'February 28, 2024',
       link: 'https://permaweb.news/2023-arweave-ecosystem-report',
