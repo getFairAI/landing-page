@@ -54,7 +54,7 @@ export default function ScreenShotSec() {
           </div>
         </div>
         <button className='border lg:mt-0 mt-6 rounded-md border-black px-10 py-4 lg:ml-24 ml-4 bg-transparent text-gray-800 text-xl block'>
-          Why Fair Protocol
+          Why FairAI
         </button>
       </section>
     </>

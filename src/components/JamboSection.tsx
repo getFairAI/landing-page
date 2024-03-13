@@ -85,8 +85,8 @@ function Aiexper() {
           duration: 0.3,
         }}
       >
-        <h1 className='lg:text-5xl text-3xl  lg:px-96 text-center font-light'>
-          Start to Decentralise Your AI Experience
+        <h1 className='lg:text-5xl text-3xl  lg:px-80 text-center font-light'>
+          Unlock the full potential of democratized and open-source AI
         </h1>
       </motion.div>
 

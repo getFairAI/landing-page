@@ -65,7 +65,7 @@ function NewsSection() {
   return (
     <section className='bg-gradient-to-b from-[#e5e6eb] to-[#f4f4f6] pt-16'>
       <div className='container mx-8 xl:mx-auto'>
-        <h2 className='text-3xl font-bold text-gray-900 mb-8'>Fair News</h2>
+        <h2 className='text-3xl font-bold text-gray-900 mb-8'>FairAI News</h2>
         <div className='flex overflow-x-auto overflow-y-hidden'>
           {newsItems.map((news) => (
             <a

@@ -50,10 +50,10 @@ export default function Teams() {
         <p className='text-gray-500 2xl:px-96 lg:px-48 px-4 text-center'>
           We are a team of three software engineers with a passion for AI and technology. After
           working as consultants for three years, we pursued a master's degree in AI, which
-          solidified our expertise in the field. We then decided to create Fair Protocol, an
-          open-source AI project, and quit our jobs to make it a reality. Our diverse skills and
-          characteristics make us the perfect team for this project and contribute to the progress
-          of open-source AI.
+          solidified our expertise in the field. We then decided to create FairAI, an open-source AI
+          project, and quit our jobs to make it a reality. Our diverse skills and characteristics
+          make us the perfect team for this project and contribute to the progress of open-source
+          AI.
         </p>
         <div className='flex lg:flex-row flex-col items-center xl:gap-8 gap-6 mt-6 pb-20 lg:px-0 px-4 '>
           <TeamMember {...tiago} />
