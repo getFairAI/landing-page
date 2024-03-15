@@ -19,6 +19,18 @@
 function NewsSection() {
   const newsItems = [
     {
+      title: 'Announcing the Techstars Web3 Class of 2024',
+      date: 'March 15, 2024',
+      link: 'https://www.techstars.com/newsroom/announcing-the-techstars-web3-class-of-2024',
+      image: './images/techstars-web3.jpeg',
+    },
+    {
+      title: 'EP.252: Meet the Techstars Web3 Class of 2024',
+      date: 'March 15, 2024',
+      link: 'https://www.moneyneversleeps.ie/252-meet-the-techstars-web3-class-of-2024/',
+      image: './images/moneyneversleeps.jpeg',
+    },
+    {
       title: 'Introducing Fair Protocol',
       date: 'March 6, 2024',
       link: 'https://medium.com/@fairprotocol_50356/introducing-fair-protocol-5e7a41c45f9d',
