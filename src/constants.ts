@@ -17,7 +17,7 @@
  */
 
 // Socials
-export const TWITTER_LINK = 'https://twitter.com/fairAIprotocol';
+export const TWITTER_LINK = 'https://twitter.com/getFairAI';
 export const DISCORD_LINK = 'https://discord.gg/jh5aaEQxkx';
 export const LINKEDIN_LINK = 'https://www.linkedin.com/company/fair-protocol/about/';
 export const YOUTUBE_LINK = 'https://www.youtube.com/channel/UCEnc4qQ_3r40x4T8fOb8hdg';
