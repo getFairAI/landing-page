@@ -2,10 +2,10 @@ name: "Deploy Workflow"
 
 on:
   push:
-    branches: [ "main", "feat#52/setup-github-pages" ]
+    branches: [ "main" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "main", "feat#52/setup-github-pages" ]
+    branches: [ "main" ]
   # schedule:
     # - cron: '41 4 * * 3'
   workflow_dispatch:
