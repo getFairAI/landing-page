@@ -16,8 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 // const yScrollConfig = -0.5;
 
