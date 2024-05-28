@@ -12,9 +12,10 @@
     "deploy": "ts-node --esm ./scripts/deploy.ts"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
     "framer-motion": "^10.15.1",
     "magic-snowflakes": "^6.3.0",
     "react": "^18.2.0",
@@ -44,6 +45,7 @@
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.27",
     "prettier": "2.8.4",
+    "sass": "^1.77.2",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.0"

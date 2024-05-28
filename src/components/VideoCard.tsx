@@ -111,11 +111,11 @@ export default function VideoCard() {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
-    offset: ['1 50', '1 1'],
+    offset: ['1 1', '1 1'],
   });
 
   return (
-    <div className='lg:w-[80%] w-[97%] min-h-[100vh] mx-auto'>
+    <div className='lg:w-[80%] w-[97%] min-h-[90vh] mx-auto' id='learn-more-video-section'>
       <motion.div
         ref={scrollRef}
         className='relative  '
@@ -129,7 +129,7 @@ export default function VideoCard() {
           transition: scrollYProgress,
         }}
       >
-        <div className=' sticky lg:-top-6 md:top-0 mb-12 '>
+        <div className='sticky top-20 mb-12 '>
           <div className=' justify-center lg:flex hidden'>
             {tabs.map((tab) => (
               <button

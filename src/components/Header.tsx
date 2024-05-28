@@ -19,27 +19,28 @@
 import { useState } from 'react';
 import ToggleOpen from '../svg/ToggleOpen';
 import Xmark from '../svg/Xmark';
-import { motion } from 'framer-motion';
+import { easeOut, motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
 import { FAIR_MARKETPLACE, WHITEPAPER } from '../constants';
 
+// import needed scss styles
+import '../scss/header-styles.scss';
+
 const initialConfig = {
-  scale: 0.5,
   opacity: 0,
-  x: 250,
+  y: -10,
 };
 
 const animateConfig = {
-  scale: 1,
   opacity: 1,
-  x: 0,
+  y: 0,
 };
 
 const transitionConfig = {
   duration: 0.3,
-  delay: 1,
-  ease: [0, 0.71, 0.2, 1.01],
+  delay: 0.3,
+  easeOut,
 };
 
 export default function Header() {
@@ -47,7 +48,7 @@ export default function Header() {
 
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
-      <div className='flex justify-between h-full  items-center lg:px-10 pr-3 '>
+      <div className='flex justify-between items-center lg:px-10 '>
         <LogoFun />
         <div>
           {isOpen ? (
@@ -78,8 +79,10 @@ export default function Header() {
 
 const LogoFun = () => {
   return (
-    <div className=' lg:px-14 px-4  lg:py-6 py-4'>
-      <HeaderLogo />
+    <div className='logo-wrapper'>
+      <div className='project-logo'>
+        <HeaderLogo />
+      </div>
     </div>
   );
 };
@@ -94,12 +97,12 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
     >
       <SocialsHeader />
       <a href={WHITEPAPER} target='blank'>
-        <button className=' px-5 font-medium pb-[3px] text-gray-500 hover:scale-105 duration-500 plausible-event-name=Docs+Click'>
+        <button className='px-5 font-medium text-gray-600 plausible-event-name=Docs+Click'>
           Docs
         </button>
       </a>
       <a href={FAIR_MARKETPLACE} target='blank'>
-        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 text-gray-500 hover:scale-105 duration-500 plausible-event-name=Open+App+Click'>
+        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 duration-200 plausible-event-name=Open+App+Click'>
           Open App
         </button>
       </a>

@@ -54,8 +54,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <meta property='og:url' content='getfair.ai' />
       <meta property='og:site_name' content='FairAI | Simple and Powerful AI Marketplace' />
       <meta property='og:locale' content='en_US' />
+      <meta property='og:image' content='./fairai_banner_whitebg.png' />
+      <meta name='twitter:title' content='FairAI | Simple and Powerful AI Marketplace' />
+      <meta
+        name='twitter:description'
+        content='Unlock the full potential of democratized and open-source AI with FairAI.'
+      />
+      <meta name='twitter:image' content='./fairai_banner_whitebg.png' />
+      <meta name='twitter:card' content='./fairai_banner_whitebg.png' />
     </Helmet>
-    ‍
     <RouterProvider router={router} />
   </React.StrictMode>,
 );

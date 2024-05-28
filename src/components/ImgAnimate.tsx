@@ -19,49 +19,38 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-const yScrollConfig = -0.5;
+// const yScrollConfig = -0.5;
 
-type RefType = React.RefObject<HTMLDivElement>;
+// type RefType = React.RefObject<HTMLDivElement>;
 
 export default function ImgAnimate() {
-  const scrollRef: RefType = useRef(null);
-  const controls = useAnimation();
+  // const scrollRef: RefType = useRef(null);
+  // const controls = useAnimation();
 
-  useEffect(() => {
-    controls.start({ y: 0 }).catch((error: Error) => {
-      console.log(error);
-    });
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      controls.start({ y: scrollY * yScrollConfig }).catch((error: Error) => {
-        console.log(error);
-      });
-    };
+  // useEffect(() => {
+  //   controls.start({ y: 0 }).catch((error: Error) => {
+  //     console.log(error);
+  //   });
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     controls.start({ y: scrollY * yScrollConfig }).catch((error: Error) => {
+  //       console.log(error);
+  //     });
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [controls]);
 
   return (
     <motion.div
-      animate={controls}
-      initial={{ y: 0, translateY: 0, opacity: 0 }}
-      transition={{ duration: 0.0 }}
-      style={{
-        // scale: scrollYProgress,
-        // transition: scrollYProgress,
-        // translateY: 50,
-        perspective: '1200px',
-      }}
-      whileInView={{ translateY: 10, scaleX: 1.0, opacity: 1 }}
-      viewport={{ root: scrollRef }}
-      className='flex justify-center '
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1, delay: 0.8 }}
+      animate={{ opacity: 1 }}
     >
       <img
-        src={'./images/marketplace_preview.png'}
-        className='w-[85%] opacity-50 skew-x-12 '
-        style={{ transform: 'rotateX(20deg)' }}
-        alt=''
+        src={'./blurred_asbtract_bg.jpg'}
+        className='opacity-50 object-fill w-[100vw] h-[100vh]'
       />
     </motion.div>
   );

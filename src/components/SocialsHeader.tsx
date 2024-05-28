@@ -27,14 +27,14 @@ export default function SocialsHeader() {
       <a
         href={TWITTER_LINK}
         target='_blank'
-        className={'text-black hover:scale-125 plausible-event-name=Twitter+Click'}
+        className={'text-black hover:scale-110 duration-200 plausible-event-name=Twitter+Click'}
       >
         <FaXTwitter className={iconDimension} />
       </a>
       <a
         href={DISCORD_LINK}
         target='_blank'
-        className='text-black hover:text-indigo-500 hover:scale-125 plausible-event-name=Discord+Click'
+        className='text-black hover:text-indigo-500 hover:scale-110 duration-200 plausible-event-name=Discord+Click'
       >
         <FaDiscord className={iconDimension} />
       </a>

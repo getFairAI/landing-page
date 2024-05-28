@@ -19,13 +19,24 @@
 import { ReactElement } from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import ImgAnimate from '../components/ImgAnimate';
+import '../scss/universal-styles.scss';
 
 const Layout = ({ children }: { children: ReactElement }) => {
   return (
-    <section className='w-full min-h-screen bg-[#f4f4f6]   relative'>
-      <Header />
-      {children}
-      <Footer />
+    <section className='w-full min-h-screen'>
+      <div className='sticky top-0 left-0 -z-10'>
+        <div className='absolute top-0 left-0 w-[100vw] h-[100vh]'>
+          <ImgAnimate />
+        </div>
+      </div>
+      <div className='sticky top-0 left-0 z-50 w-[100vw] blurred-backdrop'>
+        <Header />
+      </div>
+      <div className='z-10'>
+        {children}
+        <Footer />
+      </div>
     </section>
   );
 };
