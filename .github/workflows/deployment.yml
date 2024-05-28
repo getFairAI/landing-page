@@ -1,0 +1,90 @@
+name: "Deploy Workflow"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main" ]
+  # schedule:
+    # - cron: '41 4 * * 3'
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-install-deps:
+    name: Build Dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache Dependencies
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-deps
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Could not find cache, Creating
+        continue-on-error: true
+        run: npm install
+  build:
+    needs: [build-and-install-deps]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Load Cache
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-deps
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
+    - name: Build
+      env:
+        NODE_OPTIONS: "--max_old_space_size=4096"
+      run: npm run build
+    - name: Upload Build artifacts
+      uses: actions/upload-pages-artifact@v3
+      with:
+        name: "github-pages"
+        path: ./dist/
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+
+
