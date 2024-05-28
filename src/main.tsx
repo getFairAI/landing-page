@@ -23,6 +23,7 @@ import './index.css';
 import { Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
 import Layout from './components/layout.tsx';
 import Privacy from './privacy.tsx';
+import { Helmet } from 'react-helmet';
 
 const router = createHashRouter([
   {
@@ -44,6 +45,17 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Helmet>
+      ‍<title>FairAI | Simple and Powerful AI Marketplace</title>‍
+      <meta
+        name='description'
+        content='Unlock the full potential of democratized and open-source AI with FairAI.'
+      />
+      <meta property='og:url' content='getfair.ai' />
+      <meta property='og:site_name' content='FairAI | Simple and Powerful AI Marketplace' />
+      <meta property='og:locale' content='en_US' />
+    </Helmet>
+    ‍
     <RouterProvider router={router} />
   </React.StrictMode>,
 );

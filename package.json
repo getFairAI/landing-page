@@ -19,6 +19,7 @@
     "magic-snowflakes": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.22.1",
     "swiper": "^10.1.0"
@@ -29,6 +30,7 @@
     "@irys/sdk": "^0.0.4",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-helmet": "^6.1.11",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
