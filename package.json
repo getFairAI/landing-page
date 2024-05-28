@@ -12,13 +12,15 @@
     "deploy": "ts-node --esm ./scripts/deploy.ts"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
     "framer-motion": "^10.15.1",
     "magic-snowflakes": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.22.1",
     "swiper": "^10.1.0"
@@ -29,6 +31,7 @@
     "@irys/sdk": "^0.0.4",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-helmet": "^6.1.11",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
@@ -42,6 +45,7 @@
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.27",
     "prettier": "2.8.4",
+    "sass": "^1.77.2",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.0"

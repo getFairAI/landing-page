@@ -17,7 +17,6 @@
  */
 
 import Carousel from './components/Carousel';
-import ImgAnimate from './components/ImgAnimate';
 import JamboSection from './components/JamboSection';
 import ScreenShotSec from './components/ScreenShotSec';
 import Teams from './components/Teams';
@@ -27,13 +26,14 @@ import NewsSection from './components/NewsSection';
 function Home() {
   return (
     <>
-      <JamboSection />
-      <ImgAnimate />
-      <VideoCard />
-      <ScreenShotSec />
-      <Carousel />
-      <NewsSection />
-      <Teams />
+      <div className='z-10'>
+        <JamboSection />
+        <VideoCard />
+        <ScreenShotSec />
+        <Carousel />
+        <NewsSection />
+        <Teams />
+      </div>
     </>
   );
 }

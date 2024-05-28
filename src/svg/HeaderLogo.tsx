@@ -26,12 +26,8 @@ const HeaderLog = () => {
   const handleClick = useCallback(() => navigate('/'), [navigate]);
 
   return (
-    <IconButton
-      sx={{ height: '100%', display: 'flex', padding: 0 }}
-      onClick={handleClick}
-      disableRipple
-    >
-      <img src={'./fair-protocol-outline.svg'} style={{ color: '#1F1F26' }} alt='' />
+    <IconButton sx={{ display: 'flex', padding: 0 }} onClick={handleClick} disableRipple>
+      <img src={'./fairai_logo_png.png'} alt='FairAI Logo' />
     </IconButton>
   );
 };
