@@ -22,7 +22,7 @@ export default function ScreenShotSec() {
       <style>
         {`.Animate{ animation: rotate 0.80s infinite;transition: transform 0.6s; cubic-bezier(0.8, 0.14, 0.42, 0.72) } @keyframes rotate { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg);  transform-style: preserve-3d;    } } `}
       </style>
-      <section className='bg-gradient-to-b to-[#e5e6eb] from-[#f4f4f6] '>
+      <section>
         <div className='min-h-[100vh]  flex lg:flex-row flex-col gap-5  lg:pt-24 pt-0 items-center'>
           <div className='flex flex-col gap-7 lg:px-24 px-4 lg:w-[75%] w-full'>
             <div className='relative w-fit top-12 lg:my-7 my-5 -translate-x-6'>
@@ -53,9 +53,6 @@ export default function ScreenShotSec() {
             </a>
           </div>
         </div>
-        <button className='border lg:mt-0 mt-6 rounded-md border-black px-10 py-4 lg:ml-24 ml-4 bg-transparent text-gray-800 text-xl block'>
-          Why FairAI
-        </button>
       </section>
     </>
   );

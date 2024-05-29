@@ -1,0 +1,29 @@
+.card-title {
+  font-size: 220%;
+  font-weight: 700;
+  border-radius: 40px;
+  padding: 0px 30px;
+  line-height: 2;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  width: fit-content;
+}
+
+.card-description {
+  font-size: 180%;
+  font-weight: 600;
+  color: rgb(70, 70, 70);
+}
+
+.card-section {
+  flex: 1 1 800px;
+  max-width: 1000px;
+}
+
+.card-horizontal-container {
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(500px);
+  border-radius: 50px;
+}

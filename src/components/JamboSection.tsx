@@ -26,6 +26,8 @@ import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCir
 
 // import needed scss
 import '../scss/universal-styles.scss';
+import '../scss/animations.scss';
+import '../scss/jambo-section-styles.scss';
 
 export default function JamboSection() {
   // useEffect(() => {
@@ -69,7 +71,7 @@ export default function JamboSection() {
 
 function Aiexper() {
   return (
-    <div className='flex justify-center items-center flex-col h-[80vh]'>
+    <div className='flex justify-center items-center flex-col h-[90vh]'>
       {/* <motion.div
         initial={{ opacity: 0, scale: 0, translateY: -5 }}
         animate={animateConfig}
@@ -89,13 +91,21 @@ function Aiexper() {
           delay: 0.1,
         }}
       >
-        <h1 className='lg:text-5xl text-3xl text-center font-light'>
+        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text'>
           <div className='flex justify-center'>
-            <span className='ml-3'>Unlock the full potential of</span>
+            <span className='ml-3'>Discover the full potential of a</span>
           </div>
-          <span className='bold-underlined-text'>democratized</span>
+          <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
+            democratized
+          </span>
           <span className='ml-3 mr-3'>and</span>
-          <span className='text-with-dark-bg'>open-source AI</span>
+          <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
+            truly open
+          </span>
+          <br />
+          <div className='text-with-dark-bg-jambo w-fit mx-auto mt-4 animate-bg-block-slide-right'>
+            AI marketplace.
+          </div>
         </h1>
       </motion.div>
 
@@ -103,26 +113,78 @@ function Aiexper() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.3,
-          delay: 0.3,
+          duration: 0.4,
+          delay: 3,
         }}
-        className='md:w-fit w-full z-10'
+        className='md:w-fit w-full z-10 mt-20'
       >
         <div className='flex gap-5 justify-center items-center'>
           <a onClick={ScrollToLearnMore} className='cursor-pointer'>
-            <div className='mt-10 plausible-event-name=Try+Now+Click'>
+            <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text outlined-only'>
-                Learn More <ArrowDropDownCircleRoundedIcon />
+                Learn more <ArrowDropDownCircleRoundedIcon />
               </span>
             </div>
           </a>
           <a href={FAIR_MARKETPLACE} target='blank'>
-            <div className='mt-10 plausible-event-name=Try+Now+Click'>
+            <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text'>
-                Start Your Journey <ArrowCircleRightRoundedIcon />
+                Start your journey <ArrowCircleRightRoundedIcon />
               </span>
             </div>
           </a>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 1,
+        }}
+        className='absolute bottom-10 left-0 w-full flex justify-center'
+      >
+        <div className='w-full max-w-[1800px] flex justify-between'>
+          <div className='w-fit'>
+            <span className='jambo-grey-text font-medium'>Empowered by</span>
+            <div className='flex gap-10 mt-2'>
+              <a href='https://www.arweave.org/' target='_blank'>
+                <img
+                  src='./logos/arweave-logo.png'
+                  alt='Arweave Logo'
+                  className='w-[200px] object-contain'
+                />
+              </a>
+              <a href='https://arbitrum.io/' target='_blank'>
+                <img
+                  src='./logos/arbitrum-logo.png'
+                  alt='Arbitrum Logo'
+                  className='w-[200px] object-contain'
+                />
+              </a>
+            </div>
+          </div>
+
+          <div className='w-fit'>
+            <span className='jambo-grey-text font-medium'>Backed by</span>
+            <div className='flex gap-10 mt-2'>
+              <a href='https://fwd.ar-io.dev/' target='_blank'>
+                <img
+                  src='./logos/forward-research-logo.png'
+                  alt='Forward Research Logo'
+                  className='w-[200px] object-contain'
+                />
+              </a>
+              <a href='https://www.techstars.com/' target='_blank'>
+                <img
+                  src='./logos/techstars-logo.png'
+                  alt='Techstars Logo'
+                  className='w-[200px] object-contain'
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </motion.div>
     </div>

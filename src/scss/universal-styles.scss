@@ -1,10 +1,10 @@
 .text-with-dark-bg {
   background-color: rgb(70, 70, 70);
-  border-radius: 8px;
-  padding: 5px 10px;
+  border-radius: 20px;
+  padding: 3px 20px 6px 20px;
   color: white;
   font-weight: 600;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .bold-underlined-text {
@@ -25,13 +25,13 @@
 }
 
 .button-big-text {
-  font-size: 160%;
+  font-size: 140%;
   height: 60px;
   padding: 0px 20px;
   color: white;
   font-weight: 700;
   background-color: #3aaaaa;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,8 @@
 
   &:hover,
   &:focus-within {
-    background-color: #73d1d1;
+    transform: scale(1.04);
+    background-color: #65bebe;
     transition: 0.2s all;
   }
 
@@ -73,6 +74,11 @@
       color: white;
       transition: 0.2s all;
     }
+  }
+
+  &.smaller {
+    font-size: 110%;
+    height: 50px;
   }
 }
 

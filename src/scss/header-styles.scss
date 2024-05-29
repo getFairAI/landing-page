@@ -1,12 +1,11 @@
 @use './animations.scss';
 
 .logo-wrapper {
-  background-color: rgb(70, 70, 70) !important;
+  background-color: transparent;
   padding: 0px 30px;
   border-radius: 10px;
-  margin: 20px 0px;
 
   .project-logo img {
-    width: 130px;
+    width: 180px;
   }
 }
