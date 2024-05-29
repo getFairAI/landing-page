@@ -21,7 +21,6 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from './Card';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
-import { FAIR_MARKETPLACE } from '../constants';
 
 export default function Carousel() {
   const CardData = [
