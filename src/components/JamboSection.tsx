@@ -143,12 +143,12 @@ function Aiexper() {
               <BoltRoundedIcon style={{ height: '20px', verticalAlign: 'sub' }} />
               Empowered by
             </span>
-            <div className='flex gap-10 mt-2'>
+            <div className='flex items-center gap-10 mt-2'>
               <a href='https://www.arweave.org/' target='_blank'>
                 <img
-                  src='./logos/arweave-logo.png'
+                  src='./logos/arweave-logo-2.png'
                   alt='Arweave Logo'
-                  className='w-[200px] object-contain'
+                  className='w-[220px] object-contain'
                 />
               </a>
               <a href='https://arbitrum.io/' target='_blank'>
@@ -168,12 +168,12 @@ function Aiexper() {
               />
               Backed by
             </span>
-            <div className='flex gap-10 mt-2'>
-              <a href='https://fwd.ar-io.dev/' target='_blank'>
+            <div className='flex items-center gap-10 mt-2'>
+              <a href='https://fwd.g8way.io/' target='_blank'>
                 <img
-                  src='./logos/forward-research-logo.png'
+                  src='./logos/forward-research-logo-2.png'
                   alt='Forward Research Logo'
-                  className='w-[200px] object-contain'
+                  className='w-[190px] object-contain'
                 />
               </a>
               <a href='https://www.techstars.com/' target='_blank'>

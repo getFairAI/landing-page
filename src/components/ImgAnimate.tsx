@@ -49,7 +49,7 @@ export default function ImgAnimate() {
     >
       <img
         src={'./blurred_asbtract_bg.jpg'}
-        className='opacity-60 object-fill w-[100vw] h-[100vh] background-image-blur'
+        className='opacity-50 object-fill w-[100vw] h-[100vh] background-image-blur'
       />
     </motion.div>
   );
