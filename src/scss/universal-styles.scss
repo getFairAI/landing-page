@@ -1,3 +1,7 @@
+.dark-text {
+  color: rgb(70, 70, 70);
+}
+
 .text-with-dark-bg {
   background-color: rgb(70, 70, 70);
   border-radius: 20px;
@@ -84,4 +88,12 @@
 
 .blurred-backdrop {
   backdrop-filter: blur(20px) !important;
+}
+
+.card-glasspane-container {
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(40px);
+  border-radius: 50px;
 }

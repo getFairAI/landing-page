@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
-      <div className='flex justify-between items-center lg:px-10 py-4'>
+      <div className='flex justify-between items-center px-8 lg:px-10 py-4'>
         <LogoFun />
         <div>
           {isOpen ? (
@@ -91,10 +91,10 @@ const LogoFun = () => {
 const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <div
-      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:bg-transparent bg-white  lg:relative lg:px-0 px-3 ${
+      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:relative lg:px-0 px-3 ${
         isOpen
           ? 'lg:flex hidden '
-          : 'lg:z-0 z-20 lg:bg-opacity-0 bg-opacity-80 lg:relative absolute lg:top-0 top-16  h-full lg:w-fit w-full'
+          : 'lg:z-0 z-50 lg:backdrop-blur-none backdrop-blur-md lg:relative absolute lg:top-0 top-16 left-0 h-[100vh] lg:w-fit w-full menu-open-animation'
       }`}
     >
       <SocialsHeader />
