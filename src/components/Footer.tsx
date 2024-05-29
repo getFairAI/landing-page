@@ -75,7 +75,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className='bg-gray-200 text-black px-20'>
+    <footer className='text-black px-20'>
       <div className='sm:flex flex-row'>
         <div className='basis-1/2 pt-4'>
           <div className='flex flex-col w-2/3 md:p-0'>
@@ -98,7 +98,7 @@ export default function Footer() {
       </div>
       <div className='py-4'>
         <div className='border-b border-gray-300 my-4 mx-auto'></div>
-        <div className='text-center'>&copy; 2023 FairAI, Inc.</div>
+        <div className='text-center'>&copy; 2024 FairAI, Inc.</div>
       </div>
     </footer>
   );

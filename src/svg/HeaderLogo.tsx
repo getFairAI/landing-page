@@ -27,7 +27,7 @@ const HeaderLog = () => {
 
   return (
     <IconButton sx={{ display: 'flex', padding: 0 }} onClick={handleClick} disableRipple>
-      <img src={'./fairai_logo_png.png'} alt='FairAI Logo' />
+      <img src={'./fair-ai-outline.svg'} alt='FairAI Logo' />
     </IconButton>
   );
 };

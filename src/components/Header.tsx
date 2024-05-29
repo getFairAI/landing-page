@@ -23,9 +23,11 @@ import { easeOut, motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
 import { FAIR_MARKETPLACE, WHITEPAPER } from '../constants';
+import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
 // import needed scss styles
 import '../scss/header-styles.scss';
+import '../scss/universal-styles.scss';
 
 const initialConfig = {
   opacity: 0,
@@ -48,7 +50,7 @@ export default function Header() {
 
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
-      <div className='flex justify-between items-center lg:px-10 '>
+      <div className='flex justify-between items-center lg:px-10 py-4'>
         <LogoFun />
         <div>
           {isOpen ? (
@@ -101,10 +103,13 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
           Docs
         </button>
       </a>
+
       <a href={FAIR_MARKETPLACE} target='blank'>
-        <button className='border border-black rounded-lg px-5 bg-gray-50 font-medium w-full lg:py-0 py-3 duration-200 plausible-event-name=Open+App+Click'>
-          Open App
-        </button>
+        <div className='plausible-event-name=Open+App+Click'>
+          <span className='button-big-text smaller'>
+            Start now <ArrowCircleRightRoundedIcon />
+          </span>
+        </div>
       </a>
     </div>
   );
