@@ -16,13 +16,15 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-// import styles
 import { motion } from 'framer-motion';
+
+// import styles
 import '../scss/video-card-styles.scss';
+import '../scss/universal-styles.scss';
 
 export default function VideoCard() {
   return (
-    <div className='w-[90%] max-w-[2000px] mx-auto' id='learn-more-video-section'>
+    <div className='w-[90%] max-w-[1800px] mx-auto' id='learn-more-video-section'>
       <motion.div
         className='relative'
         initial={{
@@ -39,7 +41,7 @@ export default function VideoCard() {
         }}
       >
         <div className='flex flex-col w-full'>
-          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-20 card-horizontal-container'>
+          <div className='flex w-full gap-10 justify-between items-start flex-wrap mt-40 mb-10 card-glasspane-container'>
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
               <div className='card-title'>2D Images</div>
               <div className='card-description mt-10'>
@@ -55,7 +57,7 @@ export default function VideoCard() {
             </div>
           </div>
 
-          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-20 card-horizontal-container'>
+          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-10 card-glasspane-container'>
             <div className='p-4 card-section mx-auto'>
               <video id='video3' className='rounded-3xl border-4 border-neutral-700'>
                 <source src='./videos/video3.mp4' type='video/mp4' />
@@ -71,7 +73,7 @@ export default function VideoCard() {
             </div>
           </div>
 
-          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-20 card-horizontal-container'>
+          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-10 card-glasspane-container'>
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
               <div className='card-title'>Anime</div>
               <div className='card-description mt-10'>
@@ -87,7 +89,7 @@ export default function VideoCard() {
             </div>
           </div>
 
-          <div className='flex w-full gap-10 justify-between items-start flex-wrap my-20 card-horizontal-container'>
+          <div className='flex w-full gap-10 justify-between items-start flex-wrap mt-10 mb-20 card-glasspane-container'>
             <div className='p-4 card-section mx-auto'>
               <video id='video4' className='rounded-3xl border-4 border-neutral-700'>
                 <source src='./videos/video4.mp4' type='video/mp4' />

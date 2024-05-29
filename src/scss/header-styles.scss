@@ -1,4 +1,13 @@
-@use './animations.scss';
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
 .logo-wrapper {
   background-color: transparent;
@@ -8,4 +17,9 @@
   .project-logo img {
     width: 180px;
   }
+}
+
+.menu-open-animation {
+  opacity: 0;
+  animation: 0.4s fadeInSlideDown ease forwards;
 }

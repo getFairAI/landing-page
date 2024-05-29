@@ -18,8 +18,12 @@
 
 import { motion } from 'framer-motion';
 import { FAIR_MARKETPLACE } from '../constants';
+
+// icons
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 
 // import Snowflakes from 'magic-snowflakes';
 // import { useEffect } from 'react';
@@ -67,42 +71,30 @@ export default function JamboSection() {
   );
 }
 
-// const animateConfig = { y: [0, 120, 0], opacity: 0.8, scale: 1 };
-
 function Aiexper() {
   return (
     <div className='flex justify-center items-center flex-col h-[90vh]'>
-      {/* <motion.div
-        initial={{ opacity: 0, scale: 0, translateY: -5 }}
-        animate={animateConfig}
-        transition={{
-          duration: 1,
-          delay: 1,
-        }}
-      >
-        
-      </motion.div> */}
-
       <motion.div
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.6,
-          delay: 0.1,
+          delay: 0.2,
         }}
       >
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text'>
-          <div className='flex justify-center'>
+        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10'>
+          <div>
             <span className='ml-3'>Discover the full potential of a</span>
           </div>
-          <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
-            democratized
-          </span>
-          <span className='ml-3 mr-3'>and</span>
-          <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
-            truly open
-          </span>
-          <br />
+          <div className='flex flex-wrap w-full justify-center'>
+            <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
+              democratized
+            </span>
+            <span className='ml-5 mr-5'>and</span>
+            <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right'>
+              truly open
+            </span>
+          </div>
           <div className='text-with-dark-bg-jambo w-fit mx-auto mt-4 animate-bg-block-slide-right'>
             AI marketplace.
           </div>
@@ -118,7 +110,7 @@ function Aiexper() {
         }}
         className='md:w-fit w-full z-10 mt-20'
       >
-        <div className='flex gap-5 justify-center items-center'>
+        <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
           <a onClick={ScrollToLearnMore} className='cursor-pointer'>
             <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text outlined-only'>
@@ -140,14 +132,17 @@ function Aiexper() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.5,
+          duration: 0.6,
           delay: 1,
         }}
         className='absolute bottom-10 left-0 w-full flex justify-center'
       >
-        <div className='w-full max-w-[1800px] flex justify-between'>
+        <div className='max-w-[1750px] flex justify-center flex-wrap gap-10 lg:justify-between w-[90%]'>
           <div className='w-fit'>
-            <span className='jambo-grey-text font-medium'>Empowered by</span>
+            <span className='jambo-grey-text font-medium'>
+              <BoltRoundedIcon style={{ height: '20px', verticalAlign: 'sub' }} />
+              Empowered by
+            </span>
             <div className='flex gap-10 mt-2'>
               <a href='https://www.arweave.org/' target='_blank'>
                 <img
@@ -167,7 +162,12 @@ function Aiexper() {
           </div>
 
           <div className='w-fit'>
-            <span className='jambo-grey-text font-medium'>Backed by</span>
+            <span className='jambo-grey-text font-medium'>
+              <FavoriteRoundedIcon
+                style={{ height: '18px', verticalAlign: 'sub', marginRight: '3px' }}
+              />
+              Backed by
+            </span>
             <div className='flex gap-10 mt-2'>
               <a href='https://fwd.ar-io.dev/' target='_blank'>
                 <img
