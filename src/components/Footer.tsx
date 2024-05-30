@@ -26,7 +26,10 @@ import {
   FAIR_MARKETPLACE,
   FAIR_STUDIO,
   FAIR_ARWEAVE_STUDIO,
+  ARWEAVE_LANDING_PAGE,
 } from '../constants';
+import { useContext, useEffect, useState } from 'react';
+import { LinksContext } from '../context/links';
 
 // Aux Section
 
@@ -60,15 +63,41 @@ function Section({ title, content }: SectionProps) {
 }
 
 export default function Footer() {
-  const productSection = {
+  const { appLink } = useContext(LinksContext);
+  const [productSection, setProductSection] = useState({
     title: 'Product',
     content: [
+      { href: ARWEAVE_LANDING_PAGE, title: 'Visit Fair on Arweave' },
       { href: FAIR_MARKETPLACE, title: 'Fair Marketplace' },
       { href: FAIR_STUDIO, title: 'Fair Studio' },
       { href: FAIR_ARWEAVE_MARKETPLACE, title: 'Fair Marketplace (On Arweave)' },
       { href: FAIR_ARWEAVE_STUDIO, title: 'Fair Studio (On Arweave)' },
     ],
-  };
+  });
+  useEffect(() => {
+    if (appLink.includes('getfair.ai')) {
+      setProductSection({
+        title: 'Product',
+        content: [
+          { href: ARWEAVE_LANDING_PAGE, title: 'Visit Fair on Arweave' },
+          { href: FAIR_MARKETPLACE, title: 'Fair Marketplace' },
+          { href: FAIR_STUDIO, title: 'Fair Studio' },
+          { href: FAIR_ARWEAVE_MARKETPLACE, title: 'Fair Marketplace (On Arweave)' },
+          { href: FAIR_ARWEAVE_STUDIO, title: 'Fair Studio (On Arweave)' },
+        ],
+      });
+    } else {
+      setProductSection({
+        title: 'Product',
+        content: [
+          { href: FAIR_MARKETPLACE, title: 'Fair Marketplace' },
+          { href: FAIR_STUDIO, title: 'Fair Studio' },
+          { href: FAIR_ARWEAVE_MARKETPLACE, title: 'Fair Marketplace (On Arweave)' },
+          { href: FAIR_ARWEAVE_STUDIO, title: 'Fair Studio (On Arweave)' },
+        ],
+      });
+    }
+  }, [appLink]);
 
   const integrationsSection = {
     title: 'Integrations',
