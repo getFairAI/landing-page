@@ -19,7 +19,14 @@
 import HeaderLogo from '../svg/HeaderLogo';
 import Socials from './Socials';
 import ListItem from './ListItem';
-import { FAIR_MARKETPLACE, FAIR_STUDIO, WHITEPAPER, FAIR_SDK } from '../constants';
+import {
+  WHITEPAPER,
+  FAIR_SDK,
+  FAIR_ARWEAVE_MARKETPLACE,
+  FAIR_MARKETPLACE,
+  FAIR_STUDIO,
+  FAIR_ARWEAVE_STUDIO,
+} from '../constants';
 
 // Aux Section
 
@@ -58,6 +65,8 @@ export default function Footer() {
     content: [
       { href: FAIR_MARKETPLACE, title: 'Fair Marketplace' },
       { href: FAIR_STUDIO, title: 'Fair Studio' },
+      { href: FAIR_ARWEAVE_MARKETPLACE, title: 'Fair Marketplace (On Arweave)' },
+      { href: FAIR_ARWEAVE_STUDIO, title: 'Fair Studio (On Arweave)' },
     ],
   };
 

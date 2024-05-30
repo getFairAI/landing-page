@@ -16,18 +16,19 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ToggleOpen from '../svg/ToggleOpen';
 import Xmark from '../svg/Xmark';
 import { easeOut, motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
-import { FAIR_MARKETPLACE, WHITEPAPER } from '../constants';
+import { WHITEPAPER } from '../constants';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
 // import needed scss styles
 import '../scss/header-styles.scss';
 import '../scss/universal-styles.scss';
+import { LinksContext } from '../context/links';
 
 const initialConfig = {
   opacity: 0,
@@ -89,6 +90,8 @@ const LogoFun = () => {
   );
 };
 const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
+  const { appLink } = useContext(LinksContext);
+
   return (
     <div
       className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:relative lg:px-0 px-3 ${
@@ -104,7 +107,7 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
         </button>
       </a>
 
-      <a href={FAIR_MARKETPLACE} target='blank'>
+      <a href={appLink} target='blank'>
         <div className='plausible-event-name=Open+App+Click'>
           <span className='button-big-text smaller'>
             Start now <ArrowCircleRightRoundedIcon />

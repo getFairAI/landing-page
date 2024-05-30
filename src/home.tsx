@@ -16,25 +16,51 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import Carousel from './components/Carousel';
 import JamboSection from './components/JamboSection';
 import ScreenShotSec from './components/ScreenShotSec';
 import Teams from './components/Teams';
 import VideoCard from './components/VideoCard';
 import NewsSection from './components/NewsSection';
+import { useEffect } from 'react';
+import { Box } from '@mui/material';
 
 function Home() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js';
+    script.setAttribute('data-button-color', '#000000');
+    script.setAttribute('data-button-text-color', '#FFFFFF');
+    script.setAttribute('data-site', 'https://blog.getfair.ai/');
+    script.async = true;
+    const lastdiv = document.getElementById('lastdiv');
+    lastdiv?.appendChild(script /*  document.getElementById('lastdiv')?.parentNode! */);
+
+    return () => {
+      lastdiv?.removeChild(script);
+    };
+  }, []);
   return (
-    <>
-      <div className='z-10'>
-        <JamboSection />
-        <VideoCard />
-        <ScreenShotSec />
-        <Carousel />
-        <NewsSection />
-        <Teams />
-      </div>
-    </>
+    <div className='z-10'>
+      <JamboSection />
+      <VideoCard />
+      <ScreenShotSec />
+      {/*< Carousel /> */}
+      <NewsSection />
+      <Teams />
+      <Box
+        id={'lastdiv'}
+        sx={{
+          minHeight: '58px',
+          width: '100%',
+          maxWidth: '444px',
+          position: 'absolute',
+          left: '50%',
+          right: '50%',
+          transform: 'translate(-50%, -50%)',
+          pb: '36px',
+        }}
+      ></Box>
+    </div>
   );
 }
 
