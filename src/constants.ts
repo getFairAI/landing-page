@@ -28,6 +28,7 @@ export const MEDIUM_LINK = 'https://medium.com/@fairprotocol_50356';
 export const WHITEPAPER = 'https://fairwhitepaper.ar-io.dev/';
 
 // Product
+export const ARWEAVE_LANDING_PAGE = 'https://fair.ar-io.dev/';
 export const FAIR_MARKETPLACE = 'https://app.getfair.ai';
 export const FAIR_STUDIO = 'https://studio.getfair.ai';
 export const FAIR_ARWEAVE_MARKETPLACE = 'https://fairapp.ar-io.dev';
