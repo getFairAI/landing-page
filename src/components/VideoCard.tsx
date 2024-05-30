@@ -43,10 +43,13 @@ export default function VideoCard() {
         <div className='flex flex-col w-full'>
           <div className='flex w-full gap-10 justify-between items-start flex-wrap mt-40 mb-10 card-glasspane-container'>
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
-              <div className='card-title'>2D Images</div>
+              <div className='card-title'>{'A marketplace for everyone'}</div>
               <div className='card-description mt-10'>
-                Generate 2D images that best suit your needs. <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Find solutions for ANY need.
+                <br />
+                Earn passive income on your hardware.
+                <br />
+                Monetize your open source AI Solutions.
               </div>
             </div>
 
@@ -65,20 +68,24 @@ export default function VideoCard() {
             </div>
 
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
-              <div className='card-title'>3D Images</div>
+              <div className='card-title'>{'AI Tailored to your needs'}</div>
               <div className='card-description mt-10'>
-                Generate 3D images that best suit your needs. <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {
+                  'State problems that you believe AI can solve, and have the help of an open-source AI community to solve them.'
+                }
               </div>
             </div>
           </div>
 
           <div className='flex w-full gap-10 justify-between items-start flex-wrap my-10 card-glasspane-container'>
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
-              <div className='card-title'>Anime</div>
+              <div className='card-title'>{'Control & Ownership'}</div>
               <div className='card-description mt-10'>
-                Generate 2D images that best suit your needs. <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Choose the Solution.
+                <br />
+                Choose the provider.
+                <br />
+                Own your generated content.
               </div>
             </div>
 
@@ -97,10 +104,10 @@ export default function VideoCard() {
             </div>
 
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
-              <div className='card-title'>Audio (Text-To-Speech)</div>
+              <div className='card-title'>{'Transparent & Permissionless'}</div>
               <div className='card-description mt-10'>
-                Generate 2D images that best suit your needs. <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Due to our novel approach, AI is democratized and open-source, allowing for a
+                transparent and permissionless marketplace.
               </div>
             </div>
           </div>

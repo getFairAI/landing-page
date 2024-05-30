@@ -17,7 +17,6 @@
  */
 
 import { motion } from 'framer-motion';
-import { FAIR_MARKETPLACE } from '../constants';
 
 // icons
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
@@ -32,6 +31,8 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import '../scss/universal-styles.scss';
 import '../scss/animations.scss';
 import '../scss/jambo-section-styles.scss';
+import { useContext } from 'react';
+import { LinksContext } from '../context/links';
 
 export default function JamboSection() {
   // useEffect(() => {
@@ -72,6 +73,8 @@ export default function JamboSection() {
 }
 
 function Aiexper() {
+  const { appLink } = useContext(LinksContext);
+
   return (
     <div className='flex justify-center items-center flex-col h-[90vh]'>
       <motion.div
@@ -118,7 +121,7 @@ function Aiexper() {
               </span>
             </div>
           </a>
-          <a href={FAIR_MARKETPLACE} target='blank'>
+          <a href={appLink} target='blank'>
             <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text'>
                 Start your journey <ArrowCircleRightRoundedIcon />

@@ -19,9 +19,33 @@
 function NewsSection() {
   const newsItems = [
     {
-      title: 'Announcing the Techstars Web3 Class of 2024',
-      date: 'March 15, 2024',
+      title: 'Companies can now create AI requests on FairAI marketplace',
+      date: 'May 17, 2024',
       link: 'https://www.techstars.com/newsroom/announcing-the-techstars-web3-class-of-2024',
+      image: './images/companies-request-solutions.png',
+    },
+    {
+      title: 'FairAI on April: Techstars London Weeks and more!',
+      date: 'May 12, 2024',
+      link: 'https://blog.getfair.ai/fairai-on-april',
+      image: './images/fairai-on-april.jpg',
+    },
+    {
+      title: 'EP.256: Common Misconceptions About Web3',
+      date: 'April 12, 2024',
+      link: 'https://x.com/PeteTownsendNV/status/1778763468247581110',
+      image: './images/mns-episode256.jpeg',
+    },
+    {
+      title: 'FairAI: The importance of Curators and their role in our marketplace',
+      date: 'April 10, 2024',
+      link: 'https://blog.getfair.ai/fairai-the-importance-of-curators-and-their-role-in-our-marketplace/',
+      image: './images/fairai-importance-curators-card-image.png',
+    },
+    {
+      title: 'FairAI on March: Joining Techstars and more!',
+      date: 'April 2, 2024',
+      link: 'https://blog.getfair.ai/fairai-newsletter-march/',
       image: './images/techstars-web3.jpeg',
     },
     {
@@ -31,10 +55,16 @@ function NewsSection() {
       image: './images/moneyneversleeps.jpeg',
     },
     {
-      title: 'Introducing Fair Protocol',
+      title: 'Announcing the Techstars Web3 Class of 2024',
+      date: 'March 15, 2024',
+      link: 'https://www.techstars.com/newsroom/announcing-the-techstars-web3-class-of-2024',
+      image: './images/techstars-web3.jpeg',
+    },
+    {
+      title: 'Introducing FairAI',
       date: 'March 6, 2024',
-      link: 'https://medium.com/@fairprotocol_50356/introducing-fair-protocol-5e7a41c45f9d',
-      image: './images/first_medium.png',
+      link: 'https://blog.getfair.ai/introducing-fairai/',
+      image: './images/first-blog-card-image.png',
     },
     {
       title: '2023 Arweave Ecosystem Report',

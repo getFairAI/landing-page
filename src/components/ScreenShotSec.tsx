@@ -27,8 +27,8 @@ export default function ScreenShotSec() {
       <section>
         <div className='flex justify-center'>
           <h1 className=' text-4xl mt-20 mb-10 w-fit dark-text'>
-            A marketplace with the
-            <span className='text-with-dark-bg ml-4'>community in mind.</span>
+            <span className='text-with-dark-bg ml-4'>Everyone's</span>
+            {' AI Marketplace.'}
           </h1>
         </div>
         <div className='flex justify-center mb-40'>
@@ -50,14 +50,29 @@ export default function ScreenShotSec() {
               </p>
             </div>
             <div className='lg:w-fit w-full '>
-              <a href='https://x.com/rakis_me/status/1677415435958992896?s=20' target='_blank'>
-                <div className='h-60 flex items-center justify-end lg:hover:scale-125 transform transition lg:-translate-x-72 lg:px-0 px-4 lg:mb-7 mb-0'>
-                  <img src='.\images\screenshot.webp' alt='' />
+              <div className='w-full flex'>
+                <div className='h-60 flex items-center justify-end lg:hover:scale-125 transform transition lg:-translate-x-40 lg:px-0 px-4 lg:mb-7 mb-0'>
+                  <a href='https://x.com/rakis_me/status/1677415435958992896?s=20' target='_blank'>
+                    <img src='.\images\screenshot.webp' alt='' className='rounded-lg' />
+                  </a>
                 </div>
-              </a>
+                <div className='h-60 w-[50%] flex items-center justify-end lg:hover:scale-125 transform transition lg:-translate-x-1 lg:px-0 px-4 lg:mb-7 mb-0'>
+                  <a href='https://x.com/onlyarweave/status/1743286414861799782' target='_blank'>
+                    <img
+                      src='.\images\permaweb-podcast-post.png'
+                      alt=''
+                      className='lg:px-0 px-4 rounded-lg'
+                    />
+                  </a>
+                </div>
+              </div>
               <a href='https://x.com/samecwilliams/status/1659033512102490114?s=20' target='_blank'>
-                <div className='rounded-lg lg:h-64 justify-start flex items-center lg:hover:scale-125 transform transition'>
-                  <img src='.\images\screen2.webp' alt='' className='w-[75%] lg:px-0 px-4 ' />
+                <div className='rounded-lg lg:h-64 justify-center flex items-center lg:hover:scale-125 transform transition'>
+                  <img
+                    src='.\images\screen2.webp'
+                    alt=''
+                    className='w-[55%] lg:px-0 px-4 rounded-lg'
+                  />
                 </div>
               </a>
             </div>
