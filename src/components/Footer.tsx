@@ -42,7 +42,7 @@ function Section({ title, content }: SectionProps) {
   return (
     <div className='basis-1/4 pt-4'>
       <div className='lg:py-6 py-4'>
-        <h2 className='font-bold'>{title}</h2>
+        <h2 className='font-bold ml-1'>{title}</h2>
         <ul className='mt-4'>
           {content.map((item) => (
             <ListItem
@@ -50,7 +50,7 @@ function Section({ title, content }: SectionProps) {
               href={item.href}
               title={item.title}
               relative={item.relative}
-              extraClasses={`plausible-event-name=Footer+Link+Click plausible-event-link=${item.title.replaceAll(
+              extraClasses={`py-1 px-2 rounded-3xl hover:bg-gray-600 hover:text-white duration-200 plausible-event-name=Footer+Link+Click plausible-event-link=${item.title.replaceAll(
                 ' ',
                 '+',
               )}`}
@@ -134,7 +134,7 @@ export default function Footer() {
         <Section {...integrationsSection} />
         <Section {...aboutSection} />
       </div>
-      <div className='py-4'>
+      <div className='py-4 font-semibold text-neutral-600'>
         <div className='border-b border-gray-300 my-4 mx-auto'></div>
         <div className='text-center'>&copy; 2024 FairAI, Inc.</div>
       </div>
