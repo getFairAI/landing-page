@@ -27,7 +27,6 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 
 // import needed scss styles
 import '../scss/header-styles.scss';
-import '../scss/universal-styles.scss';
 import { LinksContext } from '../context/links';
 
 const initialConfig = {
@@ -102,7 +101,7 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
     >
       <SocialsHeader />
       <a href={WHITEPAPER} target='blank'>
-        <button className='px-5 font-medium text-gray-600 plausible-event-name=Docs+Click'>
+        <button className='font-semibold rounded-xl text-gray-600 plausible-event-name=Docs+Click hover:bg-gray-200 hover:text-black py-1 px-3 duration-200'>
           Docs
         </button>
       </a>

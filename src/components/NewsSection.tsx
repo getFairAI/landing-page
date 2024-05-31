@@ -16,6 +16,12 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
+// icons
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+
 function NewsSection() {
   const newsItems = [
     {
@@ -104,29 +110,92 @@ function NewsSection() {
     },
   ];
 
+  const scrollNews = (direction: string) => {
+    const newsSectionDiv = document.getElementById('news-horizontal-scroll');
+    if (newsSectionDiv) {
+      if (direction === 'right') {
+        newsSectionDiv.scroll({
+          left: newsSectionDiv.clientWidth + newsSectionDiv.scrollLeft,
+          behavior: 'smooth',
+        });
+      } else {
+        newsSectionDiv.scroll({
+          left: -newsSectionDiv.clientWidth,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
+
   return (
-    <section className='pt-16'>
-      <div className='container mx-8 xl:mx-auto'>
-        <h2 className='text-3xl font-bold text-gray-900 mb-8'>FairAI News</h2>
-        <div className='flex overflow-x-auto overflow-y-hidden'>
+    <section className='mt-20 flex justify-center'>
+      <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
+        <div className='flex justify-between flex-wrap mb-8 gap-5'>
+          <div className='text-with-dark-bg very-rounded font-bold w-fit'>
+            <h2 className='flex text-3xl py-1'>
+              <img
+                src='./fair-protocol-face-transparent.png'
+                className='w-[50px] object-contain mr-5'
+              />
+              <span>FairAI News</span>
+            </h2>
+          </div>
+          <a
+            href='https://blog.getfair.ai/'
+            target='_blank'
+            className='button-big-text cursor-pointer'
+          >
+            Read more <ArrowCircleRightRoundedIcon />
+          </a>
+        </div>
+        <div
+          className='flex overflow-x-auto overflow-y-hidden gap-5 px-5'
+          id='news-horizontal-scroll'
+        >
           {newsItems.map((news) => (
             <a
               key={news.title}
               href={news.link}
               target='_blank'
-              className={`hover:scale-105 transition-transform flex-none w-64 sm:w-72 md:w-80 p-4 plausible-event-name=News+Click plausible-event-link=${news.link}`}
+              className={`py-10 hover:scale-110 transition-transform duration-300 flex-none w-64 sm:w-72 md:w-80 plausible-event-name=News+Click plausible-event-link=${news.link}`}
             >
-              <div className='bg-white rounded-lg shadow-md h-full'>
-                <div className=' overflow-hidden w-full h-48 rounded-t-lg'>
+              <div className='bg-white rounded-2xl shadow-md h-full overflow-hidden'>
+                <div className='overflow-hidden w-full h-48 shadow-md shadow-neutral-300'>
                   <img src={news.image} className='object-cover w-full h-full' alt={news.title} />
                 </div>
-                <div className='p-4'>
-                  <h3 className='text-lg font-semibold text-gray-800 mb-2'>{news.title}</h3>
-                  <p className='text-gray-600 mb-2'>{news.date}</p>
+                <div className='p-4 flex flex-col justify-between h-[180px]'>
+                  <h3 className='text-lg font-semibold text-gray-700'>{news.title}</h3>
+                  <div className='text-gray-400 font-medium flex justify-between w-full'>
+                    <span>{news.date}</span>
+                    <span>
+                      <OpenInNewRoundedIcon />
+                    </span>
+                  </div>
                 </div>
               </div>
             </a>
           ))}
+        </div>
+
+        <div className='flex justify-end w-full gap-5 flex-wrap'>
+          <span
+            className='opacity-70 hover:scale-110 transition-all duration-200'
+            onClick={() => scrollNews('left')}
+          >
+            <ArrowCircleLeftOutlinedIcon
+              className='cursor-pointer'
+              style={{ height: '50px', width: '50px' }}
+            />
+          </span>
+          <span
+            className='opacity-70 hover:scale-110 transition-all duration-200'
+            onClick={() => scrollNews('right')}
+          >
+            <ArrowCircleRightOutlinedIcon
+              className='cursor-pointer'
+              style={{ height: '50px', width: '50px' }}
+            />
+          </span>
         </div>
       </div>
     </section>

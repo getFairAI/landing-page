@@ -20,7 +20,6 @@ import { ReactElement } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import ImgAnimate from '../components/ImgAnimate';
-import '../scss/universal-styles.scss';
 
 const Layout = ({ children }: { children: ReactElement }) => {
   return (

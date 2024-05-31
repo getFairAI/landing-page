@@ -28,7 +28,6 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 // import { useEffect } from 'react';
 
 // import needed scss
-import '../scss/universal-styles.scss';
 import '../scss/animations.scss';
 import '../scss/jambo-section-styles.scss';
 import { useContext } from 'react';

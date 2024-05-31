@@ -28,50 +28,51 @@ import {
 } from '../constants';
 
 const iconDimension = 'h-8 w-8';
-const blackIcons = 'text-black hover:text-white';
+const blackIcons = 'text-black';
+const hoverAnimation = 'hover:text-white hover:bg-gray-600 p-2 duration-200 rounded-full';
 
 export default function Socials() {
   return (
-    <div className='flex space-x-4'>
+    <div className='flex gap-4 flex-wrap text-black'>
       <a
         href={TWITTER_LINK}
         target='_blank'
-        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Twitter`}
+        className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Twitter`}
       >
         <FaXTwitter className={iconDimension} />
       </a>
       <a
         href={GIT_LINK}
         target='_blank'
-        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
+        className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
       >
         <FaGithub className={iconDimension} />
       </a>
       <a
         href={DISCORD_LINK}
         target='_blank'
-        className='text-black hover:text-indigo-500 plausible-event-name=Footer+Link+Click plausible-event-link=Discord'
+        className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Discord`}
       >
         <FaDiscord className={iconDimension} />
       </a>
       <a
         href={YOUTUBE_LINK}
         target='_blank'
-        className='text-black hover:text-red-500 plausible-event-name=Footer+Link+Click plausible-event-link=Youtube'
+        className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Youtube`}
       >
         <FaYoutube className={iconDimension} />
       </a>
       <a
         href={LINKEDIN_LINK}
         target='_blank'
-        className='text-black hover:text-blue-500 plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn'
+        className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn`}
       >
         <FaLinkedin className={iconDimension} />
       </a>
       <a
         href={MEDIUM_LINK}
         target='_blank'
-        className={`${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Medium`}
+        className={`${blackIcons} ${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Medium`}
       >
         <FaMedium className={iconDimension} />
       </a>

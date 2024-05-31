@@ -9,6 +9,11 @@
   color: white;
   font-weight: 600;
   line-height: 1.5;
+
+  &.very-rounded {
+    border-radius: 50px;
+    padding: 8px 25px;
+  }
 }
 
 .bold-underlined-text {
