@@ -48,43 +48,33 @@ function Home() {
     };
   }, []);
   return (
-    <>
-      <style>
-        {`
-          button.my-auto.grid {
-            margin-top: 20px;
-            margin-bottom: 0 !important;
-          }
-      `}
-      </style>
-      <div className='z-10'>
-        <JamboSection />
-        <VideoCard />
-        <ScreenShotSec />
-        {/*< Carousel /> */}
-        <NewsSection />
-        <Teams />
-        <div className='flex flex-col w-full items-center my-10'>
-          <div className='mb-3 text-with-dark-bg font-bold'>
-            <div className='py-1 text-xl'>
-              <FavoriteRoundedIcon style={{ verticalAlign: 'text-bottom' }} />
-              <span className='ml-3'>Subscribe and stay updated!</span>
-            </div>
+    <div className='z-10'>
+      <JamboSection />
+      <VideoCard />
+      <ScreenShotSec />
+      {/*< Carousel /> */}
+      <NewsSection />
+      <Teams />
+      <div className='flex flex-col w-full items-center my-10'>
+        <div className='mb-3 text-with-dark-bg font-bold'>
+          <div className='py-1 text-xl'>
+            <FavoriteRoundedIcon style={{ verticalAlign: 'text-bottom' }} />
+            <span className='ml-3'>Subscribe and stay updated!</span>
           </div>
-
-          <Box
-            id={'subscribe-email-div'}
-            sx={{
-              minHeight: '58px',
-              width: '100%',
-              maxWidth: '444px',
-              borderRadius: '10px',
-              overflow: 'hidden',
-            }}
-          ></Box>
         </div>
+
+        <Box
+          id={'subscribe-email-div'}
+          sx={{
+            minHeight: '58px',
+            width: '100%',
+            maxWidth: '444px',
+            borderRadius: '10px',
+            overflow: 'hidden',
+          }}
+        ></Box>
       </div>
-    </>
+    </div>
   );
 }
 
