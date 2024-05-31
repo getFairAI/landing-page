@@ -55,24 +55,26 @@ function Home() {
       {/*< Carousel /> */}
       <NewsSection />
       <Teams />
-      <div className='flex flex-col w-full items-center my-10'>
-        <div className='mb-3 text-with-dark-bg font-bold'>
-          <div className='py-1 text-xl'>
-            <FavoriteRoundedIcon style={{ verticalAlign: 'text-bottom' }} />
-            <span className='ml-3'>Subscribe and stay updated!</span>
+      <div className='w-full flex justify-center'>
+        <div className='flex flex-col justify-center w-full items-center my-10 max-w-[80%] '>
+          <div className='mb-3 text-with-dark-bg font-bold'>
+            <div className='py-1 text-md md:text-xl'>
+              <FavoriteRoundedIcon style={{ verticalAlign: 'text-bottom' }} />
+              <span className='ml-3'>Subscribe and stay updated!</span>
+            </div>
+          </div>
+
+          <div className='w-full max-w-full md:max-w-[450px] border-4 rounded-xl border-gray-700'>
+            <Box
+              id={'subscribe-email-div'}
+              sx={{
+                width: '100%',
+                borderRadius: '10px',
+                overflow: 'hidden',
+              }}
+            ></Box>
           </div>
         </div>
-
-        <Box
-          id={'subscribe-email-div'}
-          sx={{
-            minHeight: '58px',
-            width: '100%',
-            maxWidth: '444px',
-            borderRadius: '10px',
-            overflow: 'hidden',
-          }}
-        ></Box>
       </div>
     </div>
   );

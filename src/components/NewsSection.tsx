@@ -128,14 +128,14 @@ function NewsSection() {
   };
 
   return (
-    <section className='mt-20 flex justify-center'>
+    <section className='mt-10 md:mt-40 flex justify-center'>
       <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
-        <div className='flex justify-between flex-wrap mb-8 gap-5'>
+        <div className='flex justify-center md:justify-between flex-wrap mb-8 gap-5'>
           <div className='text-with-dark-bg very-rounded font-bold w-fit'>
-            <h2 className='flex text-3xl py-1'>
+            <h2 className='flex text-2xl md:text-3xl py-1'>
               <img
                 src='./fair-protocol-face-transparent.png'
-                className='w-[50px] object-contain mr-5'
+                className='w-[30px] md:w-[50px] object-contain mr-3 md:mr-5'
               />
               <span>FairAI News</span>
             </h2>
@@ -149,7 +149,7 @@ function NewsSection() {
           </a>
         </div>
         <div
-          className='flex overflow-x-auto overflow-y-hidden gap-5 px-5'
+          className='flex overflow-x-auto overflow-y-hidden gap-5 px-0 md:px-5'
           id='news-horizontal-scroll'
         >
           {newsItems.map((news) => (
@@ -177,7 +177,7 @@ function NewsSection() {
           ))}
         </div>
 
-        <div className='flex justify-end w-full gap-5 flex-wrap'>
+        <div className='flex justify-center md:justify-end w-full gap-5 flex-wrap'>
           <span
             className='opacity-70 hover:scale-110 transition-all duration-200'
             onClick={() => scrollNews('left')}

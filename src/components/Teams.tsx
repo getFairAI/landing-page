@@ -48,20 +48,22 @@ export default function Teams() {
   };
 
   return (
-    <section className='flex justify-center my-40'>
+    <section className='flex justify-center mt-10 md:mt-40'>
       <div className='card-glasspane-container w-[90%] max-w-[1800px]'>
-        <div className='flex flex-col justify-center gap-4'>
-          <h3 className='text-3xl font-bold text-with-dark-bg very-rounded w-fit'>
-            <AutoAwesomeRoundedIcon
-              style={{
-                width: '40px',
-                height: '40px',
-                verticalAlign: 'text-bottom',
-              }}
-            />
-            <span className='ml-3'>Meet The Team</span>
+        <div className='flex flex-col justify-center gap-4 items-center md:items-start'>
+          <h3 className='text-2xl md:text-3xl font-bold text-with-dark-bg very-rounded w-fit flex items-center'>
+            <div className='w-8 md:w-10'>
+              <AutoAwesomeRoundedIcon
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  verticalAlign: 'text-bottom',
+                }}
+              />
+            </div>
+            <span className='ml-0 md:ml-3'>Meet The Team</span>
           </h3>
-          <div className='text-gray-600 px-10 text-xl font-medium flex mt-3'>
+          <div className='text-gray-600 px-0 md:px-12 text-md md:text-xl font-medium flex mt-3'>
             <FavoriteRoundedIcon style={{ height: '20px', marginTop: '4px' }} />
             <span className='ml-2'>
               We are a team of three software engineers with a passion for AI and technology. After
@@ -72,7 +74,7 @@ export default function Teams() {
               progress of open-source AI.
             </span>
           </div>
-          <div className='flex flex-wrap justify-center items-center gap-10 my-10'>
+          <div className='flex flex-wrap justify-center items-center gap-20 my-10'>
             <TeamMember {...tiago} />
             <TeamMember {...marcio} />
             <TeamMember {...luis} />

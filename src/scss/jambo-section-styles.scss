@@ -29,14 +29,22 @@
 .jambo-grey-text {
   line-height: 1.5 !important;
   color: rgb(70, 70, 70);
+
+  @media only screen and (max-width: 600px) {
+    line-height: 1.2 !important;
+  }
 }
 
 .text-with-dark-bg-jambo {
-  padding: 3px 20px 6px 20px;
+  padding: 3px 30px 6px 30px;
   color: white;
   font-weight: 600;
   line-height: 1.5;
   position: relative;
+
+  @media only screen and (max-width: 600px) {
+    padding: 2px 20px;
+  }
 
   &::after {
     content: '';
@@ -45,7 +53,7 @@
     z-index: -1;
     bottom: 0;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 40px;
     background-color: rgb(70, 70, 70);
     opacity: 0;
     width: 4px;
@@ -69,9 +77,47 @@
     opacity: 0;
     width: 4px;
     animation: 1.2s underlineSlideRight 0.8s forwards;
+
+    @media only screen and (max-width: 600px) {
+      height: 4px;
+      left: -4px;
+    }
   }
 
   &.delay500ms::after {
     animation: 1.2s underlineSlideRight 1.5s forwards !important;
+  }
+}
+
+.min-height-change-size-button {
+  @media only screen and (max-height: 750px) {
+    font-size: 120% !important;
+    height: 40px !important;
+
+    &.outlined-only {
+      height: 32px !important;
+    }
+  }
+}
+
+.min-height-change-size-text {
+  @media only screen and (max-height: 750px) {
+    font-size: 160% !important;
+  }
+}
+
+.min-height-change-size-backers {
+  @media only screen and (max-width: 550px) {
+    transform: scale(0.8) !important;
+    bottom: 0px !important;
+  }
+
+  @media only screen and (max-height: 750px) {
+    transform: scale(0.7) !important;
+    bottom: 5px !important;
+  }
+
+  @media only screen and (max-height: 550px) {
+    transform: scale(0.4) !important;
   }
 }

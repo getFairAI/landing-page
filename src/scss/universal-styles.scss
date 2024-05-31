@@ -14,6 +14,10 @@
     border-radius: 50px;
     padding: 8px 25px;
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 4px 20px !important;
+  }
 }
 
 .bold-underlined-text {
@@ -30,6 +34,10 @@
     height: 7px;
     border-radius: 10px;
     background-color: rgb(70, 70, 70);
+
+    @media only screen and (max-width: 600px) {
+      height: 4px;
+    }
   }
 }
 
@@ -89,6 +97,32 @@
     font-size: 110%;
     height: 50px;
   }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 100%;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      margin-left: 5px;
+    }
+
+    &.smaller {
+      font-size: 100%;
+      height: 40px;
+    }
+
+    &.outlined-only {
+      height: 32px;
+
+      &:hover,
+      &:focus-within {
+        background-color: rgb(70, 70, 70);
+        color: white;
+        transition: 0.2s all;
+      }
+    }
+  }
 }
 
 .blurred-backdrop {
@@ -99,6 +133,14 @@
   padding: 40px;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(30px);
   border-radius: 50px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 30px !important;
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 20px !important;
+  }
 }
