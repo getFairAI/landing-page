@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { TwitterTweetEmbed } from 'react-twitter-embed';
+import { Tweet } from 'react-tweet';
 
 export default function ScreenShotSec() {
   return (
@@ -27,7 +27,7 @@ export default function ScreenShotSec() {
 
       <style>
         {`
-          .twitter-tweet, .twitter-tweet-rendered {
+          .react-tweet-theme {
             margin-top: 0 !important;
             margin-bottom: 0 !important;
           }
@@ -59,14 +59,23 @@ export default function ScreenShotSec() {
               </div>
             </div>
             <div className='w-full flex flex-wrap gap-5 justify-evenly px-10 pb-10'>
-              <div className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-110 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'>
-                <TwitterTweetEmbed tweetId={'1677415435958992896'} />
+              <div
+                data-theme='light'
+                className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
+              >
+                <Tweet id='1677415435958992896' />
               </div>
-              <div className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-110 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'>
-                <TwitterTweetEmbed tweetId={'1743286414861799782'} />
+              <div
+                data-theme='light'
+                className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
+              >
+                <Tweet id='1743286414861799782' />
               </div>
-              <div className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-110 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'>
-                <TwitterTweetEmbed tweetId={'1659033512102490114'} />
+              <div
+                data-theme='light'
+                className='h-fit flex-1 min-w-[400px] rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
+              >
+                <Tweet id='1659033512102490114' />
               </div>
             </div>
           </div>
