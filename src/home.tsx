@@ -24,43 +24,67 @@ import NewsSection from './components/NewsSection';
 import { useEffect } from 'react';
 import { Box } from '@mui/material';
 
+// icons
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
+// styles
+import './scss/universal-styles.scss';
+
 function Home() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js';
-    script.setAttribute('data-button-color', '#000000');
+    script.setAttribute('data-button-color', '#3aaaaa');
     script.setAttribute('data-button-text-color', '#FFFFFF');
     script.setAttribute('data-site', 'https://blog.getfair.ai/');
     script.async = true;
-    const lastdiv = document.getElementById('lastdiv');
-    lastdiv?.appendChild(script /*  document.getElementById('lastdiv')?.parentNode! */);
+    const subscribeDiv = document.getElementById('subscribe-email-div');
+    subscribeDiv?.appendChild(
+      script /*  document.getElementById('subscribe-email-div')?.parentNode! */,
+    );
 
     return () => {
-      lastdiv?.removeChild(script);
+      subscribeDiv?.removeChild(script);
     };
   }, []);
   return (
-    <div className='z-10'>
-      <JamboSection />
-      <VideoCard />
-      <ScreenShotSec />
-      {/*< Carousel /> */}
-      <NewsSection />
-      <Teams />
-      <Box
-        id={'lastdiv'}
-        sx={{
-          minHeight: '58px',
-          width: '100%',
-          maxWidth: '444px',
-          position: 'absolute',
-          left: '50%',
-          right: '50%',
-          transform: 'translate(-50%, -50%)',
-          pb: '36px',
-        }}
-      ></Box>
-    </div>
+    <>
+      <style>
+        {`
+          button.my-auto.grid {
+            margin-top: 20px;
+            margin-bottom: 0 !important;
+          }
+      `}
+      </style>
+      <div className='z-10'>
+        <JamboSection />
+        <VideoCard />
+        <ScreenShotSec />
+        {/*< Carousel /> */}
+        <NewsSection />
+        <Teams />
+        <div className='flex flex-col w-full items-center my-10'>
+          <div className='mb-3 text-with-dark-bg font-bold'>
+            <div className='py-1 text-xl'>
+              <FavoriteRoundedIcon style={{ verticalAlign: 'text-bottom' }} />
+              <span className='ml-3'>Subscribe and stay updated!</span>
+            </div>
+          </div>
+
+          <Box
+            id={'subscribe-email-div'}
+            sx={{
+              minHeight: '58px',
+              width: '100%',
+              maxWidth: '444px',
+              borderRadius: '10px',
+              overflow: 'hidden',
+            }}
+          ></Box>
+        </div>
+      </div>
+    </>
   );
 }
 

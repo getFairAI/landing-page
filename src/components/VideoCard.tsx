@@ -20,7 +20,6 @@ import { motion } from 'framer-motion';
 
 // import styles
 import '../scss/video-card-styles.scss';
-import '../scss/universal-styles.scss';
 
 export default function VideoCard() {
   return (
@@ -45,7 +44,7 @@ export default function VideoCard() {
             <div className='px-4 my-4 flex flex-col card-section mx-auto'>
               <div className='card-title'>{'A marketplace for everyone'}</div>
               <div className='card-description mt-10'>
-                Find solutions for ANY need.
+                Find solutions for any need.
                 <br />
                 Earn passive income on your hardware.
                 <br />

@@ -27,7 +27,6 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 
 // import needed scss styles
 import '../scss/header-styles.scss';
-import '../scss/universal-styles.scss';
 import { LinksContext } from '../context/links';
 
 const initialConfig = {

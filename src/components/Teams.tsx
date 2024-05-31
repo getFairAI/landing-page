@@ -18,13 +18,17 @@
 
 import TeamMember from './TeamMember';
 
+// icons
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
 export default function Teams() {
   const marcio = {
     name: 'Márcio Guia',
     title: 'Co-Founder & COO',
     twitterLink: 'https://twitter.com/Marcio__Guia',
     linkedinLink: 'https://www.linkedin.com/in/marcio-guia/',
-    imgPath: './images/marcio.jpg',
+    imgPath: './team/Marcio_Guia.jpg',
   };
 
   const tiago = {
@@ -32,7 +36,7 @@ export default function Teams() {
     title: 'Co-Founder & CEO',
     twitterLink: 'https://twitter.com/FairTferreira',
     linkedinLink: 'https://www.linkedin.com/in/carlostiagoferreira/',
-    imgPath: './images/tiago.jpg',
+    imgPath: './team/Tiago_Ferreira.png',
   };
 
   const luis = {
@@ -40,25 +44,39 @@ export default function Teams() {
     title: 'Co-Founder & CTO',
     twitterLink: 'https://twitter.com/lsilvestre_fair',
     linkedinLink: 'https://www.linkedin.com/in/lu%C3%ADs-silvestre98/',
-    imgPath: './images/luis.jpg',
+    imgPath: './team/luis.jpg',
   };
 
   return (
-    <section className='min-h-[100vh] overflow-hidden px-4 '>
-      <div className='pt-32 flex flex-col justify-center items-center gap-4'>
-        <h3 className='md:text-4xl text-3xl font-thin text-black'>Meet The Team</h3>
-        <p className='text-gray-500 2xl:px-96 lg:px-48 px-4 text-center'>
-          We are a team of three software engineers with a passion for AI and technology. After
-          working as consultants for three years, we pursued a master's degree in AI, which
-          solidified our expertise in the field. We then decided to create FairAI, an open-source AI
-          project, and quit our jobs to make it a reality. Our diverse skills and characteristics
-          make us the perfect team for this project and contribute to the progress of open-source
-          AI.
-        </p>
-        <div className='flex lg:flex-row flex-col items-center xl:gap-8 gap-6 mt-6 pb-20 lg:px-0 px-4 '>
-          <TeamMember {...tiago} />
-          <TeamMember {...marcio} />
-          <TeamMember {...luis} />
+    <section className='flex justify-center my-40'>
+      <div className='card-glasspane-container w-[90%] max-w-[1800px]'>
+        <div className='flex flex-col justify-center gap-4'>
+          <h3 className='text-3xl font-bold text-with-dark-bg very-rounded w-fit'>
+            <AutoAwesomeRoundedIcon
+              style={{
+                width: '40px',
+                height: '40px',
+                verticalAlign: 'text-bottom',
+              }}
+            />
+            <span className='ml-3'>Meet The Team</span>
+          </h3>
+          <div className='text-gray-600 px-10 text-xl font-medium flex mt-3'>
+            <FavoriteRoundedIcon style={{ height: '20px', marginTop: '4px' }} />
+            <span className='ml-2'>
+              We are a team of three software engineers with a passion for AI and technology. After
+              working as consultants for three years, we pursued a master's degree in AI, which
+              solidified our expertise in the field. We then decided to create FairAI, an
+              open-source AI project, and quit our jobs to make it a reality. Our diverse skills and
+              characteristics make us the perfect team for this project and contribute to the
+              progress of open-source AI.
+            </span>
+          </div>
+          <div className='flex flex-wrap justify-center items-center gap-10 my-10'>
+            <TeamMember {...tiago} />
+            <TeamMember {...marcio} />
+            <TeamMember {...luis} />
+          </div>
         </div>
       </div>
     </section>

@@ -31,27 +31,29 @@ export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
   return (
     <div className='flex flex-col'>
       <img
-        className='w-80 rounded-xl hover:scale-105 transition-all duration-500'
+        className='w-80 h-80 object-cover rounded-full hover:scale-110 active:scale-100 transition-all duration-200 border-4 border-neutral-700'
         src={memberProps.imgPath}
       />
-      <div className='text-center mt-4'>
-        <h1 className='text-gray-900 text-xl font-bold mb-1'>{memberProps.name}</h1>
-        <div className='text-gray-700 font-light mb-s'>{memberProps.title}</div>
-        <div className='flex items-center justify-center opacity-75 hover:opacity-100'>
+      <div className='flex flex-col justify-center items-center text-center mt-6'>
+        <h1 className='text-xl font-bold mb-1 text-with-dark-bg very-rounded w-fit'>
+          {memberProps.name}
+        </h1>
+        <div className='text-gray-600 font-medium mb-s w-fit'>{memberProps.title}</div>
+        <div className='flex justify-center w-fit'>
           <a
             href={memberProps.linkedinLink}
             target='_blank'
-            className={`flex rounded-full hover:bg-indigo-100 h-8 w-8 plausible-event-name=Team+LinkedIn+Click plausible-event-member=${memberProps.name.replaceAll(
+            className={`flex rounded-full opacity-75 hover:opacity-100 hover:bg-white transition-all duration-400 h-8 w-8 plausible-event-name=Team+LinkedIn+Click plausible-event-member=${memberProps.name.replaceAll(
               ' ',
               '+',
             )}`}
           >
-            <FaLinkedin className='text-indigo-500 mx-auto mt-2' />
+            <FaLinkedin className='text-blue-700 mx-auto mt-2' />
           </a>
           <a
             href={memberProps.twitterLink}
             target='_blank'
-            className={`flex rounded-full hover:bg-white h-8 w-8 plausible-event-name=Team+Twitter+Click plausible-event-member=${memberProps.name.replaceAll(
+            className={`flex rounded-full opacity-75 hover:opacity-100 hover:bg-white transition-all duration-400 h-8 w-8 plausible-event-name=Team+Twitter+Click plausible-event-member=${memberProps.name.replaceAll(
               ' ',
               '+',
             )}`}
