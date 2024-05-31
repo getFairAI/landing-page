@@ -30,10 +30,9 @@ interface TeamMemberProps {
 export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
   return (
     <div className='flex flex-col'>
-      <img
-        className='w-80 h-80 object-cover rounded-full hover:scale-110 active:scale-100 transition-all duration-200 border-4 border-neutral-700'
-        src={memberProps.imgPath}
-      />
+      <div className='rounded-full hover:scale-110 active:scale-100 transition-all duration-200 border-4 border-neutral-700 overflow-hidden'>
+        <img className='w-60 h-60 object-cover object-center' src={memberProps.imgPath} />
+      </div>
       <div className='flex flex-col justify-center items-center text-center mt-6'>
         <h1 className='text-xl font-bold mb-1 text-with-dark-bg very-rounded w-fit'>
           {memberProps.name}

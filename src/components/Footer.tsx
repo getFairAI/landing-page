@@ -113,26 +113,32 @@ export default function Footer() {
   };
 
   return (
-    <footer className='text-black px-20'>
-      <div className='sm:flex flex-row'>
-        <div className='basis-1/2 pt-4'>
-          <div className='flex flex-col w-2/3 md:p-0'>
+    <footer className='px-10 md:px-20'>
+      <div className='flex flex-wrap justify-center gap-5'>
+        <div className='flex basis-1 pt-4 flex-auto max-w-[1000px] min-w-[250px]'>
+          <div className='flex flex-col'>
             <div className='lg:py-6 py-4'>
               <HeaderLogo />
             </div>
-            <p className='text-[16px] font-medium text-[#646464]'>
+            <p className='text-[16px] font-medium text-[#646464] px-0 sm:px-12'>
               Fair is the first decentralised marketplace, powered by Arweave, where creators of
               open-source AI models can monetise their work while users retain ownership and
               intellectual property rights of AI-generated content.
             </p>
-            <div className='slg:px-14 pt-4 lg:pt-6'>
+            <div className='slg:px-14 pt-4 lg:pt-6 pl-0 sm:pl-9'>
               <Socials />
             </div>
           </div>
         </div>
-        <Section {...productSection} />
-        <Section {...integrationsSection} />
-        <Section {...aboutSection} />
+        <div className='min-w-[150px]'>
+          <Section {...productSection} />
+        </div>
+        <div className='min-w-[150px]'>
+          <Section {...integrationsSection} />
+        </div>
+        <div className='min-w-[150px]'>
+          <Section {...aboutSection} />
+        </div>
       </div>
       <div className='py-4 font-semibold text-neutral-600'>
         <div className='border-b border-gray-300 my-4 mx-auto'></div>

@@ -6,13 +6,34 @@
   line-height: 2;
   background-color: rgb(70, 70, 70);
   color: white;
-  width: fit-content;
+  width: max-content;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 150%;
+    width: fit-content;
+    line-height: 1.4;
+    padding: 5px 30px;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 110%;
+    padding: 5px 20px;
+  }
 }
 
 .card-description {
   font-size: 180%;
   font-weight: 600;
   color: rgb(70, 70, 70);
+
+  @media only screen and (max-width: 700px) {
+    font-size: 130%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 100%;
+  }
 }
 
 .card-section {

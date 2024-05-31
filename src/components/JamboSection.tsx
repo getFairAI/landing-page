@@ -84,7 +84,7 @@ function Aiexper() {
           delay: 0.2,
         }}
       >
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10'>
+        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
             <span className='ml-3'>Discover the full potential of a</span>
           </div>
@@ -97,7 +97,7 @@ function Aiexper() {
               truly open
             </span>
           </div>
-          <div className='text-with-dark-bg-jambo w-fit mx-auto mt-4 animate-bg-block-slide-right'>
+          <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
             AI marketplace.
           </div>
         </h1>
@@ -115,14 +115,14 @@ function Aiexper() {
         <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
           <a onClick={ScrollToLearnMore} className='cursor-pointer'>
             <div className='plausible-event-name=Try+Now+Click'>
-              <span className='button-big-text outlined-only'>
+              <span className='button-big-text outlined-only min-height-change-size-button'>
                 Learn more <ArrowDropDownCircleRoundedIcon />
               </span>
             </div>
           </a>
           <a href={appLink} target='blank'>
             <div className='plausible-event-name=Try+Now+Click'>
-              <span className='button-big-text'>
+              <span className='button-big-text min-height-change-size-button'>
                 Start your journey <ArrowCircleRightRoundedIcon />
               </span>
             </div>
@@ -137,52 +137,52 @@ function Aiexper() {
           duration: 0.6,
           delay: 1,
         }}
-        className='absolute bottom-10 left-0 w-full flex justify-center'
+        className='absolute bottom-10 left-0 w-full flex justify-center min-height-change-size-backers'
       >
-        <div className='max-w-[1750px] flex justify-center flex-wrap gap-10 lg:justify-between w-[90%]'>
-          <div className='w-fit'>
+        <div className='max-w-[1750px] flex flex-wrap gap-5 md:gap-10 justify-center xl:justify-between w-[90%]'>
+          <div className='w-fit flex flex-col items-center md:items-start'>
             <span className='jambo-grey-text font-medium'>
               <BoltRoundedIcon style={{ height: '20px', verticalAlign: 'sub' }} />
               Empowered by
             </span>
-            <div className='flex items-center gap-10 mt-2'>
+            <div className='flex flex-wrap justify-center md:justify-start items-center gap-5 md:gap-10 mt-2'>
               <a href='https://www.arweave.org/' target='_blank'>
                 <img
                   src='./logos/arweave-logo-2.png'
                   alt='Arweave Logo'
-                  className='w-[220px] object-contain'
+                  className='w-full max-w-[200px] object-contain'
                 />
               </a>
               <a href='https://arbitrum.io/' target='_blank'>
                 <img
                   src='./logos/arbitrum-logo.png'
                   alt='Arbitrum Logo'
-                  className='w-[200px] object-contain'
+                  className='w-full max-w-[200px] object-contain'
                 />
               </a>
             </div>
           </div>
 
-          <div className='w-fit'>
+          <div className='w-fit flex flex-col items-center md:items-start'>
             <span className='jambo-grey-text font-medium'>
               <FavoriteRoundedIcon
                 style={{ height: '18px', verticalAlign: 'sub', marginRight: '3px' }}
               />
               Backed by
             </span>
-            <div className='flex items-center gap-10 mt-2'>
+            <div className='flex flex-wrap justify-center md:justify-start items-center gap-5 md:gap-10 mt-2'>
               <a href='https://fwd.g8way.io/' target='_blank'>
                 <img
                   src='./logos/forward-research-logo-2.png'
                   alt='Forward Research Logo'
-                  className='w-[190px] object-contain'
+                  className='w-full max-w-[190px] object-contain'
                 />
               </a>
               <a href='https://www.techstars.com/' target='_blank'>
                 <img
                   src='./logos/techstars-logo.png'
                   alt='Techstars Logo'
-                  className='w-[200px] object-contain'
+                  className='w-full max-w-[200px] object-contain'
                 />
               </a>
             </div>

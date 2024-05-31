@@ -93,10 +93,10 @@ const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
 
   return (
     <div
-      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:relative lg:px-0 px-3 ${
+      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 ${
         isOpen
           ? 'lg:flex hidden '
-          : 'lg:z-0 z-50 lg:backdrop-blur-none backdrop-blur-md lg:relative absolute lg:top-0 top-16 left-0 h-[100vh] lg:w-fit w-full menu-open-animation'
+          : 'absolute lg:top-0 top-16 left-0 h-[100vh] lg:w-fit w-full menu-open-animation'
       }`}
     >
       <SocialsHeader />

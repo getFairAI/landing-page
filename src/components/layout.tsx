@@ -25,11 +25,11 @@ const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <section className='w-full min-h-screen'>
       <div className='sticky top-0 left-0 -z-10'>
-        <div className='absolute top-0 left-0 w-[100vw] h-[100vh]'>
+        <div className='absolute top-0 left-0 w-full h-[100vh]'>
           <ImgAnimate />
         </div>
       </div>
-      <div className='sticky top-0 left-0 z-50 w-[100vw] blurred-backdrop'>
+      <div className='sticky top-0 left-0 z-50 w-full blurred-backdrop'>
         <Header />
       </div>
       <div className='z-10'>
