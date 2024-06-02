@@ -32,20 +32,25 @@ import './scss/universal-styles.scss';
 
 function Home() {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js';
-    script.setAttribute('data-button-color', '#3aaaaa');
-    script.setAttribute('data-button-text-color', '#FFFFFF');
-    script.setAttribute('data-site', 'https://blog.getfair.ai/');
-    script.async = true;
     const subscribeDiv = document.getElementById('subscribe-email-div');
-    subscribeDiv?.appendChild(
-      script /*  document.getElementById('subscribe-email-div')?.parentNode! */,
-    );
+    if (subscribeDiv) {
+      const script = document.createElement('script');
+      subscribeDiv.appendChild(
+        script /*  document.getElementById('subscribe-email-div')?.parentNode! */,
+      );
 
-    return () => {
-      subscribeDiv?.removeChild(script);
-    };
+      script.src = 'https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js';
+      script.setAttribute('data-button-color', '#3aaaaa');
+      script.setAttribute('data-button-text-color', '#FFFFFF');
+      script.setAttribute('data-site', 'https://blog.getfair.ai/');
+      script.async = true;
+
+      return () => {
+        subscribeDiv?.removeChild(script);
+      };
+    } else {
+      // ignore
+    }
   }, []);
   return (
     <div className='z-10'>

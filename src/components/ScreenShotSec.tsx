@@ -35,31 +35,12 @@ export default function ScreenShotSec() {
       </style>
       <section>
         <div className='flex justify-center'>
-          <h1 className='text-2xl md:text-4xl mt-10 md:mt-20 mb-10 w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
-            <span className='text-with-dark-bg very-rounded'>Everyone's</span>
-            <span>AI Marketplace.</span>
-          </h1>
-        </div>
-        <div className='flex justify-center'>
           <div className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px]'>
-            <div className='flex gap-8 items-start p-5 flex-wrap'>
-              <img
-                src='./fair-protocol-face-transparent.png'
-                className='w-[60px] object-contain invert opacity-70 ml-0 lg:ml-6'
-              />
-
-              <div className='flex-auto min-w-[200px] px-6 xl:px-0'>
-                <h5 className='dark-text text-2xl md:text-3xl font-semibold'>
-                  Providing a platform for a passionate open-source AI community.
-                </h5>
-              </div>
-              <div className='flex-auto min-w-[200px] px-6'>
-                <p className='text-gray-500 text-lg md:text-xl font-medium'>
-                  Fair is the first decentralised marketplace, powered by Arweave, where creators of
-                  open-source AI models can monetise their work while users retain ownership and
-                  intellectual property rights of AI-generated content.
-                </p>
-              </div>
+            <div className='flex justify-center'>
+              <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
+                <span className='text-with-dark-bg very-rounded'>Everyone's</span>
+                <span>AI Marketplace.</span>
+              </h1>
             </div>
             <div className='w-full flex flex-wrap gap-5 md:gap-10 justify-center px-0 md:px-10 pb-0 md:pb-10'>
               <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>

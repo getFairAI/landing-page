@@ -40,25 +40,6 @@ export default function VideoCard() {
         }}
       >
         <div className='flex flex-col w-full'>
-          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse md:flex-wrap mt-20 md:mt-40 mb-5 md:mb-10 card-glasspane-container'>
-            <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
-              <div className='card-title'>A marketplace for everyone.</div>
-              <div className='card-description mt-5 md:mt-10 px-8'>
-                Find solutions for any need.
-                <br />
-                Earn passive income on your hardware.
-                <br />
-                Monetize your open source AI Solutions.
-              </div>
-            </div>
-
-            <div className='p-4 card-section mx-auto'>
-              <video id='video1' className='rounded-3xl border-4 border-neutral-700'>
-                <source src='./videos/video1.mp4' type='video/mp4' />
-              </video>
-            </div>
-          </div>
-
           <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 md:my-10 card-glasspane-container'>
             <div className='p-4 card-section mx-auto'>
               <video id='video3' className='rounded-3xl border-4 border-neutral-700'>
@@ -67,7 +48,7 @@ export default function VideoCard() {
             </div>
 
             <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
-              <div className='card-title'>AI Tailored to your needs.</div>
+              <div className='card-title'>AI Tailored to your Needs.</div>
               <div className='card-description mt-5 md:mt-10 px-8'>
                 State problems that you believe AI can solve, and have the help of an open-source AI
                 community to solve them.
@@ -77,13 +58,11 @@ export default function VideoCard() {
 
           <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse md:flex-wrap my-5 md:my-10 card-glasspane-container'>
             <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
-              <div className='card-title'>Control & Ownership.</div>
+              <div className='card-title'>Risk Diversification</div>
               <div className='card-description mt-5 md:mt-10 px-8'>
-                Choose the Solution.
+                Pick and choose your AI hardware provider.
                 <br />
-                Choose the provider.
-                <br />
-                Own your generated content.
+                Change it anytime.
               </div>
             </div>
 
@@ -94,7 +73,7 @@ export default function VideoCard() {
             </div>
           </div>
 
-          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 md:mt-10 mb-20 card-glasspane-container'>
+          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 md:my-10 card-glasspane-container'>
             <div className='p-4 card-section mx-auto'>
               <video id='video4' className='rounded-3xl border-4 border-neutral-700'>
                 <source src='./videos/video4.mp4' type='video/mp4' />
@@ -102,11 +81,25 @@ export default function VideoCard() {
             </div>
 
             <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
-              <div className='card-title'>Transparent & Permissionless.</div>
+              <div className='card-title'>Transparent and Open AI</div>
               <div className='card-description mt-5 md:mt-10 px-8'>
-                Due to our novel approach, AI is democratized and open-source, allowing for a
-                transparent and permissionless marketplace.
+                Support the open-source AI community and get traceable and verifiable AI-generated
+                content in return.
               </div>
+            </div>
+          </div>
+
+          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse md:flex-wrap my-5 md:my-10 card-glasspane-container'>
+            <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
+              <div className='card-title'>Privacy Preserving</div>
+              <div className='card-description mt-5 md:mt-10 px-8'>
+                Encrypt your prompts and your ai generated content.
+              </div>
+            </div>
+            <div className='p-4 card-section mx-auto'>
+              <video id='video4' className='rounded-3xl border-4 border-neutral-700'>
+                <source src='./videos/video4.mp4' type='video/mp4' />
+              </video>
             </div>
           </div>
         </div>
