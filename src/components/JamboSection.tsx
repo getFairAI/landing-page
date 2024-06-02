@@ -23,6 +23,7 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 
 // import Snowflakes from 'magic-snowflakes';
 // import { useEffect } from 'react';
@@ -83,7 +84,17 @@ function Aiexper() {
           duration: 0.6,
           delay: 0.2,
         }}
+        className='flex gap-20'
       >
+        <div className='w-8 md:w-10 flex flex-col justify-end'>
+          <AutoAwesomeRoundedIcon
+            style={{
+              width: '100%',
+              height: 'auto',
+              verticalAlign: 'text-bottom',
+            }}
+          />
+        </div>
         <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
             <span className='ml-3'>Discover the full potential of a</span>
@@ -98,9 +109,18 @@ function Aiexper() {
             </span>
           </div>
           <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
-            AI marketplace.
+            AI marketplace
           </div>
         </h1>
+        <div className='w-8 md:w-10 flex flex-col justify-start'>
+          <AutoAwesomeRoundedIcon
+            style={{
+              width: '100%',
+              height: 'auto',
+              verticalAlign: 'text-bottom',
+            }}
+          />
+        </div>
       </motion.div>
 
       <motion.div

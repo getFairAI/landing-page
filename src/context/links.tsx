@@ -23,7 +23,6 @@ import {
   FAIR_MARKETPLACE,
   FAIR_STUDIO,
 } from '../constants';
-import { useLocation } from 'react-router-dom';
 
 export const LinksContext = createContext<{
   appLink: string;
@@ -34,14 +33,14 @@ export const LinksContext = createContext<{
 });
 
 export const LinksProvider = ({ children }: { children: ReactNode }) => {
-  const { pathname } = useLocation();
   const [links, setLinks] = useState({
     appLink: FAIR_MARKETPLACE,
     studioLink: FAIR_STUDIO,
   });
 
   useEffect(() => {
-    if (pathname.includes('getfair.ai')) {
+    const hostname = window.location.hostname;
+    if (hostname.includes('getfair.ai')) {
       setLinks({
         appLink: FAIR_MARKETPLACE,
         studioLink: FAIR_STUDIO,
@@ -52,7 +51,7 @@ export const LinksProvider = ({ children }: { children: ReactNode }) => {
         studioLink: FAIR_ARWEAVE_STUDIO,
       });
     }
-  }, [pathname]);
+  }, []);
 
   return <LinksContext.Provider value={links}>{children}</LinksContext.Provider>;
 };
