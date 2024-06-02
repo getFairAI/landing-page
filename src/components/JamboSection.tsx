@@ -62,94 +62,10 @@ export default function JamboSection() {
   // }, []);
 
   return (
-    <div className='w-[100%] flex justify-center place-items-center'>
-      <div id='layer1' className='flex'></div>
-      <div id='layer2' className='flex'></div>
+    <div className='w-[100%] flex flex-col justify-center place-items-center'>
       <motion.div>
         <Aiexper />
       </motion.div>
-    </div>
-  );
-}
-
-function Aiexper() {
-  const { appLink } = useContext(LinksContext);
-
-  return (
-    <div className='flex justify-center items-center flex-col h-[90vh]'>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.2,
-        }}
-        className='flex gap-20'
-      >
-        <div className='w-8 md:w-10 flex flex-col justify-end'>
-          <AutoAwesomeRoundedIcon
-            style={{
-              width: '100%',
-              height: 'auto',
-              verticalAlign: 'text-bottom',
-            }}
-          />
-        </div>
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
-          <div>
-            <span className='ml-3'>Discover the full potential of a</span>
-          </div>
-          <div className='flex flex-wrap w-full justify-center'>
-            <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
-              democratized
-            </span>
-            <span className='ml-5 mr-5'>and</span>
-            <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right'>
-              truly open
-            </span>
-          </div>
-          <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
-            AI marketplace
-          </div>
-        </h1>
-        <div className='w-8 md:w-10 flex flex-col justify-start'>
-          <AutoAwesomeRoundedIcon
-            style={{
-              width: '100%',
-              height: 'auto',
-              verticalAlign: 'text-bottom',
-            }}
-          />
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.4,
-          delay: 3,
-        }}
-        className='md:w-fit w-full z-10 mt-20'
-      >
-        <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
-          <a onClick={ScrollToLearnMore} className='cursor-pointer'>
-            <div className='plausible-event-name=Try+Now+Click'>
-              <span className='button-big-text outlined-only min-height-change-size-button'>
-                Learn more <ArrowDropDownCircleRoundedIcon />
-              </span>
-            </div>
-          </a>
-          <a href={appLink} target='blank'>
-            <div className='plausible-event-name=Try+Now+Click'>
-              <span className='button-big-text min-height-change-size-button'>
-                Start your journey <ArrowCircleRightRoundedIcon />
-              </span>
-            </div>
-          </a>
-        </div>
-      </motion.div>
-
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -157,7 +73,7 @@ function Aiexper() {
           duration: 0.6,
           delay: 1,
         }}
-        className='absolute bottom-10 left-0 w-full flex justify-center min-height-change-size-backers'
+        className='w-full min-height-change-size-backers flex justify-center'
       >
         <div className='max-w-[1750px] flex flex-wrap gap-5 md:gap-10 justify-center xl:justify-between w-[90%]'>
           <div className='w-fit flex flex-col items-center md:items-start'>
@@ -207,6 +123,87 @@ function Aiexper() {
               </a>
             </div>
           </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function Aiexper() {
+  const { appLink } = useContext(LinksContext);
+
+  return (
+    <div className='flex justify-center items-center flex-col md:h-[75vh] sm:h-[50vh]'>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.2,
+        }}
+        className='flex gap-20'
+      >
+        <div className='w-8 md:w-10 flex-col justify-end hidden sm:flex'>
+          <AutoAwesomeRoundedIcon
+            style={{
+              width: '100%',
+              height: 'auto',
+              verticalAlign: 'text-bottom',
+            }}
+          />
+        </div>
+        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
+          <div>
+            <span className='ml-3'>Discover the full potential of a</span>
+          </div>
+          <div className='flex flex-wrap w-full justify-center'>
+            <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
+              democratized
+            </span>
+            <span className='ml-5 mr-5'>and</span>
+            <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right'>
+              truly open
+            </span>
+          </div>
+          <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
+            AI marketplace
+          </div>
+        </h1>
+        <div className='w-8 md:w-10 flex-col justify-start hidden sm:flex'>
+          <AutoAwesomeRoundedIcon
+            style={{
+              width: '100%',
+              height: 'auto',
+              verticalAlign: 'text-bottom',
+            }}
+          />
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.4,
+          delay: 3,
+        }}
+        className='md:w-fit w-full z-10 mt-20'
+      >
+        <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
+          <a onClick={ScrollToLearnMore} className='cursor-pointer'>
+            <div className='plausible-event-name=Try+Now+Click'>
+              <span className='button-big-text outlined-only min-height-change-size-button'>
+                Learn more <ArrowDropDownCircleRoundedIcon />
+              </span>
+            </div>
+          </a>
+          <a href={appLink} target='blank'>
+            <div className='plausible-event-name=Try+Now+Click'>
+              <span className='button-big-text min-height-change-size-button'>
+                Start your journey <ArrowCircleRightRoundedIcon />
+              </span>
+            </div>
+          </a>
         </div>
       </motion.div>
     </div>
