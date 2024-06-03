@@ -98,7 +98,7 @@ export default function VideoCard() {
             <div className='p-4 card-section mx-auto'>
               <img
                 id='choose-operator'
-                className='rounded-3xl border-4 border-neutral-700'
+                className='rounded-3xl border-4 border-neutral-700 w-fit mx-auto'
                 src='./images/choose-operator.png'
               />
             </div>
@@ -112,7 +112,7 @@ export default function VideoCard() {
             </div>
           </div>
 
-          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 my-10 card-glasspane-container'>
+          <div className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-10 card-glasspane-container'>
             <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center md:items-start'>
               <div className='card-title'>Transparent and Open</div>
               <div className='card-description mt-5 md:mt-10 px-8'>
@@ -125,7 +125,7 @@ export default function VideoCard() {
             <div className='p-4 card-section mx-auto'>
               <img
                 id='solutions'
-                className='rounded-3xl border-4 border-neutral-700'
+                className='rounded-3xl border-4 border-neutral-700 w-fit mx-auto'
                 src='./images/view-transaction.png'
               />
             </div>

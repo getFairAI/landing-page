@@ -19,12 +19,14 @@
     "@mui/material": "^5.15.18",
     "framer-motion": "^10.15.1",
     "magic-snowflakes": "^6.3.0",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.22.1",
     "react-tweet": "^3.2.1",
+    "sdd": "^0.0.5",
     "swiper": "^10.1.0"
   },
   "devDependencies": {

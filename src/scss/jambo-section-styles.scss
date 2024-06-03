@@ -26,6 +26,22 @@
   }
 }
 
+@keyframes scaleInFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0px);
+  }
+}
+
+.animate-small-stars {
+  opacity: 0;
+  animation: 1s scaleInFadeIn ease 3s forwards;
+}
+
 .jambo-grey-text {
   line-height: 1.5 !important;
   color: rgb(70, 70, 70);

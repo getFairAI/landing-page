@@ -50,7 +50,7 @@ function Section({ title, content }: SectionProps) {
               href={item.href}
               title={item.title}
               relative={item.relative}
-              extraClasses={`py-1 px-2 rounded-3xl hover:bg-gray-600 hover:text-white duration-200 plausible-event-name=Footer+Link+Click plausible-event-link=${item.title.replaceAll(
+              extraClasses={` py-1 px-2 rounded-3xl hover:bg-gray-600 hover:text-white duration-200 plausible-event-name=Footer+Link+Click plausible-event-link=${item.title.replaceAll(
                 ' ',
                 '+',
               )}`}
@@ -113,9 +113,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className='px-10 md:px-20'>
+    <footer className='px-10 md:px-20 mt-10'>
       <div className='flex flex-wrap justify-center gap-5'>
-        <div className='flex basis-1 pt-4 flex-auto max-w-[1000px] min-w-[250px]'>
+        <div className='flex basis-1 pt-4 flex-auto max-w-[1100px] min-w-[250px]'>
           <div className='flex flex-col'>
             <div className='lg:py-6 py-4'>
               <HeaderLogo />
@@ -130,16 +130,14 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className='flex basis-1 pt-4 flex-auto max-w-[1000px] min-w-[250px] flex-wrap'>
-          <div className='min-w-[150px]'>
-            <Section {...productSection} />
-          </div>
-          <div className='min-w-[150px]'>
-            <Section {...integrationsSection} />
-          </div>
-          <div className='min-w-[150px]'>
-            <Section {...aboutSection} />
-          </div>
+        <div className='min-w-[150px]'>
+          <Section {...productSection} />
+        </div>
+        <div className='min-w-[150px]'>
+          <Section {...integrationsSection} />
+        </div>
+        <div className='min-w-[150px]'>
+          <Section {...aboutSection} />
         </div>
       </div>
       <div className='py-4 font-semibold text-neutral-600'>
