@@ -167,8 +167,8 @@ export default function ScreenShotSec() {
           }
         `}
       </style>
-      <section>
-        <div className='mt-10 md:mt-40 flex justify-center'>
+      <section className='mt-40'>
+        <div className='flex justify-center'>
           <div className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px]'>
             <div className='flex justify-center'>
               <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
