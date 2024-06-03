@@ -145,6 +145,7 @@ function Aiexper() {
       >
         <div className='w-8 md:w-10 flex-col justify-end hidden sm:flex'>
           <AutoAwesomeRoundedIcon
+            className='animate-small-stars'
             style={{
               width: '100%',
               height: 'auto',
@@ -171,6 +172,7 @@ function Aiexper() {
         </h1>
         <div className='w-8 md:w-10 flex-col justify-start hidden sm:flex'>
           <AutoAwesomeRoundedIcon
+            className='animate-small-stars'
             style={{
               width: '100%',
               height: 'auto',

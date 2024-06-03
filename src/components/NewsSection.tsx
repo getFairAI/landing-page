@@ -128,7 +128,7 @@ function NewsSection() {
   };
 
   return (
-    <section className='mt-10 flex justify-center'>
+    <section className='mt-10 md:mt-40 flex justify-center'>
       <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
         <div className='flex justify-center md:justify-between flex-wrap mb-8 gap-5'>
           <div className='text-with-dark-bg very-rounded font-bold w-fit'>

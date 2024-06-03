@@ -48,7 +48,10 @@ export default function Socials() {
         className={`${blackIcons} ${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Ghost`}
       >
         <Icon style={{ overflow: 'auto', width: '2rem', height: '2rem', display: 'flex' }}>
-          <img src='./images/ghost-logo-orb.png' className={iconDimension} />
+          <img
+            src='./images/ghost-logo-orb.png'
+            className={`${iconDimension} hover:invert hover:brightness-200`}
+          />
         </Icon>
       </a>
       <a

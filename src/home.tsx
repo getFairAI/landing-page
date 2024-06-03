@@ -60,7 +60,7 @@ function Home() {
       <ScreenShotSec />
       <NewsSection />
       <Faq />
-      <div className='w-full flex justify-center'>
+      <div className='w-full flex justify-center mt-10'>
         <div className='flex flex-col justify-center w-full items-center my-10 max-w-[80%] '>
           <div className='mb-3 text-with-dark-bg font-bold'>
             <div className='py-1 text-md md:text-xl'>

@@ -39,4 +39,11 @@
 .card-section {
   flex: 1 1 400px;
   max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: auto;
+    max-height: 500px;
+  }
 }
