@@ -5,15 +5,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const texts = [
   'With FairAI, you have access to a range of open-source AI solutions created by the open-source community. These solutions can generic or tailored to your specific needs and you have control over who handles the computation, ensuring efficiency and resilience.',
   'Anyone can register to provide computation for AI solutions in our marketplace. When registering, the operator chooses the price he charges for each transaction. Of this amount, 70% goes to the operator, 20% to the creator of the AI solution and 10% to our marketplace.',
-  'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,comes from a line in section 1.10.32.',
-  "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+  "Open-source AI allows you to have a say in and trust the AI you're using. You can choose from a wide range of models, from generic to specific ones tailored to your needs. While this sounds great, accessing open-source AI is not as straightforward as it seems. FairAI solves and simplifies this complex problem by allowing companies to browse existing AI solutions or request a solution for their specific problems. The open-source AI community will collaborate to solve these problems, and then a robust and reliable decentralized network of operators will ensure the computation for the AI solutions.",
 ];
 
 const questions = [
   'What is the difference between FairAI and centralized alternatives?',
   'How are Fees distributed in our marketplace?',
-  'wher can i get some',
-  'how did it originate',
+  'Why is FairAI needed',
 ];
 const ContentPlaceholder = ({ i }: { i: number }) => (
   <motion.div
@@ -78,7 +76,7 @@ export const Faq = () => {
   const [expanded, setExpanded] = useState<false | number>(0);
 
   return (
-    <section className='mt-10 md:mt-40 flex justify-center'>
+    <section className='mt-40 flex justify-center'>
       <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
         <div className='w-[100%] flex flex-col'>
           <h2 className='flex text-2xl md:text-4xl py-1 font-bold text-with-dark-bg very-rounded w-fit'>
@@ -88,7 +86,6 @@ export const Faq = () => {
             <Accordion i={0} expanded={expanded} setExpanded={setExpanded} />
             <Accordion i={1} expanded={expanded} setExpanded={setExpanded} />
             <Accordion i={2} expanded={expanded} setExpanded={setExpanded} />
-            <Accordion i={3} expanded={expanded} setExpanded={setExpanded} />
           </div>
         </div>
       </div>

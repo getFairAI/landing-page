@@ -30,6 +30,7 @@
     "swiper": "^10.1.0"
   },
   "devDependencies": {
+    "@ar.io/sdk": "^1.0.8",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@irys/sdk": "^0.0.4",
