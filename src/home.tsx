@@ -18,7 +18,6 @@
 
 import JamboSection from './components/JamboSection';
 import ScreenShotSec from './components/ScreenShotSec';
-import Teams from './components/Teams';
 import VideoCard from './components/VideoCard';
 import NewsSection from './components/NewsSection';
 import { useEffect } from 'react';
@@ -29,6 +28,7 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 
 // styles
 import './scss/universal-styles.scss';
+import { Faq } from './components/faq';
 
 function Home() {
   useEffect(() => {
@@ -52,14 +52,14 @@ function Home() {
       // ignore
     }
   }, []);
+
   return (
     <div className='z-10'>
       <JamboSection />
       <VideoCard />
       <ScreenShotSec />
-      {/*< Carousel /> */}
       <NewsSection />
-      <Teams />
+      <Faq />
       <div className='w-full flex justify-center'>
         <div className='flex flex-col justify-center w-full items-center my-10 max-w-[80%] '>
           <div className='mb-3 text-with-dark-bg font-bold'>
