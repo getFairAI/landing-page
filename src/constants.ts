@@ -23,14 +23,15 @@ export const LINKEDIN_LINK = 'https://www.linkedin.com/company/fair-protocol/abo
 export const YOUTUBE_LINK = 'https://www.youtube.com/channel/UCEnc4qQ_3r40x4T8fOb8hdg';
 export const GIT_LINK = 'https://github.com/FAIR-Protocol';
 export const MEDIUM_LINK = 'https://medium.com/@fairprotocol_50356';
+export const GHOST_LINK = 'https://blog.getfair.ai/';
 
 // whitepaper
-export const WHITEPAPER = 'https://fairwhitepaper.ar-io.dev/';
+export const WHITEPAPER = 'https://fairwhitepaper.arweave.dev/';
 
 // Product
-export const ARWEAVE_LANDING_PAGE = 'https://fair.ar-io.dev/';
+export const ARWEAVE_LANDING_PAGE = 'https://fair.arweave.dev/';
 export const FAIR_MARKETPLACE = 'https://app.getfair.ai';
 export const FAIR_STUDIO = 'https://studio.getfair.ai';
-export const FAIR_ARWEAVE_MARKETPLACE = 'https://fairapp.ar-io.dev';
-export const FAIR_ARWEAVE_STUDIO = 'https://studio.ar-io.dev';
+export const FAIR_ARWEAVE_MARKETPLACE = 'https://fairapp.arweave.dev';
+export const FAIR_ARWEAVE_STUDIO = 'https://studio.arweave.dev';
 export const FAIR_SDK = 'https://github.com/FAIR-Protocol/fair-protocol-sdk';

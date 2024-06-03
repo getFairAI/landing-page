@@ -18,6 +18,7 @@
 
 import Irys from '@irys/sdk';
 import fs from 'fs';
+import { ANT, ArweaveSigner } from '@ar.io/sdk';
 
 const main = async () => {
   const wallet = './wallet.json';
@@ -84,6 +85,34 @@ const main = async () => {
   }); // returns the manifest ID
 
   console.log(`SPA Uploaded https://arweave.net/${response?.id}`);
+  if (!response) {
+    console.error('Upload failed');
+    return;
+  }
+
+  const controllerWallet = './wallet-old-marketplace.json';
+
+  const controllerJWK = JSON.parse(fs.readFileSync(controllerWallet).toString());
+  // in a node environment
+  const nodeSigner = new ArweaveSigner(controllerJWK);
+
+  const ant = ANT.init({
+    contractTxId: 'oI-6VPflmSVqlITr90St-9q4PjJLSsl5T-JK9D_TEXg', // fair.ar-io.dev contract
+    signer: nodeSigner,
+  });
+  const state = await ant.getState();
+  console.log(state);
+  console.log('previous Txid:', await ant.getRecords());
+  
+  const subDomain = '@';
+  const ttlSeconds = 900;
+  const { id: txId } = await ant.setRecord({
+    subDomain,
+    transactionId: response?.id,
+    ttlSeconds,
+  });
+
+  console.log(`Set record https://arweave.net/${txId}`);
 };
 
 (async () => await main())();
