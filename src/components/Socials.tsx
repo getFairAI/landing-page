@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { FaGithub, FaDiscord, FaYoutube, FaLinkedin, FaMedium } from 'react-icons/fa';
+import { FaGithub, FaDiscord, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import {
   TWITTER_LINK,
@@ -24,8 +24,9 @@ import {
   LINKEDIN_LINK,
   YOUTUBE_LINK,
   GIT_LINK,
-  MEDIUM_LINK,
+  GHOST_LINK,
 } from '../constants';
+import { Icon } from '@mui/material';
 
 const iconDimension = 'h-8 w-8';
 const blackIcons = 'text-black';
@@ -42,11 +43,13 @@ export default function Socials() {
         <FaXTwitter className={iconDimension} />
       </a>
       <a
-        href={GIT_LINK}
+        href={GHOST_LINK}
         target='_blank'
-        className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
+        className={`${blackIcons} ${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Ghost`}
       >
-        <FaGithub className={iconDimension} />
+        <Icon style={{ overflow: 'auto', width: '2rem', height: '2rem', display: 'flex' }}>
+          <img src='./images/ghost-logo-orb.png' className={iconDimension} />
+        </Icon>
       </a>
       <a
         href={DISCORD_LINK}
@@ -56,13 +59,6 @@ export default function Socials() {
         <FaDiscord className={iconDimension} />
       </a>
       <a
-        href={YOUTUBE_LINK}
-        target='_blank'
-        className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Youtube`}
-      >
-        <FaYoutube className={iconDimension} />
-      </a>
-      <a
         href={LINKEDIN_LINK}
         target='_blank'
         className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn`}
@@ -70,11 +66,18 @@ export default function Socials() {
         <FaLinkedin className={iconDimension} />
       </a>
       <a
-        href={MEDIUM_LINK}
+        href={YOUTUBE_LINK}
         target='_blank'
-        className={`${blackIcons} ${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Medium`}
+        className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Youtube`}
       >
-        <FaMedium className={iconDimension} />
+        <FaYoutube className={iconDimension} />
+      </a>
+      <a
+        href={GIT_LINK}
+        target='_blank'
+        className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
+      >
+        <FaGithub className={iconDimension} />
       </a>
     </div>
   );

@@ -130,14 +130,16 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className='min-w-[150px]'>
-          <Section {...productSection} />
-        </div>
-        <div className='min-w-[150px]'>
-          <Section {...integrationsSection} />
-        </div>
-        <div className='min-w-[150px]'>
-          <Section {...aboutSection} />
+        <div className='flex basis-1 pt-4 flex-auto max-w-[1000px] min-w-[250px] flex-wrap'>
+          <div className='min-w-[150px]'>
+            <Section {...productSection} />
+          </div>
+          <div className='min-w-[150px]'>
+            <Section {...integrationsSection} />
+          </div>
+          <div className='min-w-[150px]'>
+            <Section {...aboutSection} />
+          </div>
         </div>
       </div>
       <div className='py-4 font-semibold text-neutral-600'>

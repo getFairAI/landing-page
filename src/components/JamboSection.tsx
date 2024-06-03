@@ -133,7 +133,7 @@ function Aiexper() {
   const { appLink } = useContext(LinksContext);
 
   return (
-    <div className='flex justify-center items-center flex-col md:h-[75vh] sm:h-[50vh]'>
+    <div className='flex justify-center items-center flex-col md:h-[75vh] sm:h-[60vh]'>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -187,7 +187,7 @@ function Aiexper() {
           duration: 0.4,
           delay: 3,
         }}
-        className='md:w-fit w-full z-10 mt-20'
+        className='md:w-fit w-full z-10 mt-10 sm:mt-20'
       >
         <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
           <a onClick={ScrollToLearnMore} className='cursor-pointer'>
