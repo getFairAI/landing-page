@@ -18,9 +18,7 @@
 
 import { wrap } from 'popmotion';
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
-import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 
 import { Suspense } from 'react';
 import { Tweet } from 'react-tweet/api';
@@ -40,6 +38,10 @@ import {
   TweetInfo,
   enrichTweet,
 } from 'react-tweet';
+
+// icons
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 type Props = {
   tweet: Tweet;
@@ -111,26 +113,30 @@ export default function ScreenShotSec() {
     '1711387046688755916',
   ];
 
-  const variants = {
+  const variants: Variants = {
     enter: (direction: number) => {
       return {
-        x: direction > 0 ? 1000 : -1000,
-        /* opacity: 0 */
-        display: 'none',
+        x: direction > 0 ? 100 : -100,
+        opacity: 0,
+        height: 0,
+        position: 'absolute',
+        top: 120,
       };
     },
     center: {
-      zIndex: 1,
       x: 0,
-      /*  opacity: 1, */
-      display: 'flex',
+      opacity: 1,
+      minHeight: '400px',
+      height: 'fit-content',
+      position: 'static',
     },
     exit: (direction: number) => {
       return {
-        zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
-        /* opacity: 0 */
-        display: 'none',
+        x: direction < 0 ? 100 : -100,
+        opacity: 0,
+        height: 0,
+        position: 'absolute',
+        top: 120,
       };
     },
   };
@@ -155,10 +161,6 @@ export default function ScreenShotSec() {
 
   return (
     <>
-      {/* <style>
-        {`.Animate{ animation: rotate 1.5s infinite;transition: transform 0.6s; cubic-bezier(0.8, 0.14, 0.42, 0.72) } @keyframes rotate { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg);  transform-style: preserve-3d;    } } `}
-      </style> */}
-
       <style>
         {`
           .react-tweet-theme {
@@ -170,7 +172,7 @@ export default function ScreenShotSec() {
       <section className='mt-40'>
         <div className='flex justify-center'>
           <div className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px]'>
-            <div className='flex justify-center'>
+            <div className='flex justify-center flex-col items-center'>
               <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
                 <span className='text-with-dark-bg very-rounded'>Everyone's</span>
                 <span>AI Marketplace.</span>
@@ -185,7 +187,7 @@ export default function ScreenShotSec() {
                 animate='center'
                 exit='exit'
                 transition={{
-                  x: { type: 'spring', stiffness: 50, damping: 10 },
+                  x: { type: 'spring', stiffness: 100, damping: 15 },
                   opacity: { duration: 0.2 },
                 }}
                 drag='x'
@@ -200,22 +202,63 @@ export default function ScreenShotSec() {
                     paginate(-1);
                   }
                 }}
-                style={{ minHeight: '200px' }}
+                style={{ minHeight: '300px' }}
               >
                 <div
-                  className='flex flex-wrap gap-5 md:gap-10 justify-center px-0 md:px-10 pb-0 md:pb-10 w-full rounded-2xl md:h-fit sm:h-full'
+                  className='flex flex-wrap gap-5 justify-center px-0 md:px-2 pb-2 w-full md:h-fit sm:h-full'
                   data-theme='light'
                 >
-                  <CustomTweet id={tweetIds[imageIndex]} />
+                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px] hidden xl:block opacity-70 hover:opacity-100 transition-all'>
+                    <CustomTweet id={tweetIds[imageIndex - 1]} />
+                  </div>
+                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px]'>
+                    <CustomTweet id={tweetIds[imageIndex]} />
+                  </div>
+                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px] hidden xl:block opacity-70 hover:opacity-100 transition-all'>
+                    <CustomTweet id={tweetIds[imageIndex + 1]} />
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-            <div className='absolute right-4 top-2/4 hidden sm:flex' onClick={() => paginate(1)}>
-              <ChevronRightOutlinedIcon className='cursor-pointer' />
+            <div className='flex justify-center gap-5'>
+              <div
+                className='static md:absolute left-4 top-2/4 hover:scale-110 transition-all'
+                onClick={() => paginate(-1)}
+              >
+                <ArrowCircleLeftOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
+              <div
+                className='static md:absolute right-4 top-2/4 hover:scale-110 transition-all'
+                onClick={() => paginate(1)}
+              >
+                <ArrowCircleRightOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
             </div>
-            <div className='absolute left-4 top-2/4 hidden sm:flex' onClick={() => paginate(-1)}>
-              <ChevronLeftOutlinedIcon className='cursor-pointer' />
+
+            <div className='w-full flex justify-center dark-text'>
+              <h2 className='text-md md:text-xl flex items-center'>
+                <img
+                  src='./fair-protocol-face-transparent.png'
+                  alt=''
+                  className='invert opacity-70 w-[40px] mr-3'
+                />
+                Share your experience
+                <a
+                  href='https://twitter.com/getFairAI'
+                  target='_blank'
+                  className='text-bold ml-4 button-big-text outlined-only normal-text-size'
+                >
+                  @getFairAI
+                </a>
+              </h2>
             </div>
+
             {/* <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>
                 <div
                   data-theme='light'

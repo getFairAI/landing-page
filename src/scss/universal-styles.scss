@@ -98,6 +98,11 @@
     height: 50px;
   }
 
+  &.normal-text-size {
+    font-size: 100%;
+    height: 40px;
+  }
+
   @media only screen and (max-width: 600px) {
     font-size: 100%;
     height: 40px;
