@@ -60,32 +60,35 @@ const Newsletter = () => {
   }, []);
 
   return (
-    <section className='flex justify-center mt-40'>
-      <div className='flex flex-wrap-reverse sm:flex-nowrap gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-start'>
-        <div className='w-full flex flex-col justify-end h-fit sm:h-[80%]'>
+    <section className='flex justify-center mt-40 mb-20'>
+      <div className='flex flex-wrap-reverse sm:flex-nowrap gap-10 w-[90%] max-w-[1800px] items-start justify-center'>
+        {/* <div className='w-full flex flex-col justify-end h-fit sm:h-[80%]'>
           {/* <div className='mb-3 font-bold'>
           <div className='py-1 text-2xl md:text-4xl'>
             <h1 className='ml-3 dark-text font-[600] leading-normal'>Follow our <span className='text-[#3aaaaa] dark-text font-[600] leading-normal'>Journey</span></h1>
           </div>
-        </div> */}
-          <a href={appLink} target='blank'>
-            <div className='plausible-event-name=Open+App+Bottom+Click'>
-              <span className='button-big-text smaller'>
-                Start now <ArrowCircleRightRoundedIcon />
-              </span>
-            </div>
-          </a>
+        </div>
 
-          {/* <div className='w-full max-w-full md:max-w-[450px]'>
+          <div className='w-full max-w-full md:max-w-[450px]'>
           <Box
             id={'subscribe-email-div'}
             sx={{
               width: '100%',
             }}
           ></Box>
-        </div> */}
         </div>
-        <NewsletterPreview />
+        </div> */}
+
+        <div className='w-full flex flex-col gap-5 max-w-[800px] items-center'>
+          <a href={appLink} target='blank'>
+            <div className='plausible-event-name=Open+App+Bottom+Click'>
+              <span className='button-big-text smaller w-fit'>
+                Start now <ArrowCircleRightRoundedIcon />
+              </span>
+            </div>
+          </a>
+          <NewsletterPreview />
+        </div>
       </div>
     </section>
   );
