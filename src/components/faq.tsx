@@ -81,7 +81,13 @@ export const Faq = () => {
 
   return (
     <section className='mt-40 flex justify-center'>
-      <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.4, type: 'smooth' }}
+        viewport={{ amount: 0.3 }}
+        className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'
+      >
         <div className='w-full flex flex-col'>
           <h2 className='flex text-2xl lg:text-4xl py-1 font-bold text-with-dark-bg very-rounded w-fit'>
             Frequently Asked Questions
@@ -92,7 +98,7 @@ export const Faq = () => {
             <Accordion i={3} expanded={expanded} setExpanded={setExpanded} />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

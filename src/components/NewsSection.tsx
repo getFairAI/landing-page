@@ -21,6 +21,7 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import { motion } from 'framer-motion';
 
 function NewsSection() {
   const newsItems = [
@@ -129,7 +130,13 @@ function NewsSection() {
 
   return (
     <section className='mt-40 flex justify-center'>
-      <div className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.4, type: 'smooth' }}
+        viewport={{ amount: 0.3 }}
+        className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'
+      >
         <div className='flex justify-center md:justify-between flex-wrap mb-8 gap-5'>
           <div className='text-with-dark-bg very-rounded font-bold w-fit'>
             <h2 className='flex text-2xl md:text-3xl py-1'>
@@ -197,7 +204,7 @@ function NewsSection() {
             />
           </span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
