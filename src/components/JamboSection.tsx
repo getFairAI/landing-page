@@ -192,14 +192,14 @@ function Aiexper() {
         className='md:w-fit w-full z-10 mt-10 sm:mt-20'
       >
         <div className='flex gap-5 justify-center items-center flex-wrap-reverse mx-10'>
-          <a onClick={ScrollToLearnMore} className='cursor-pointer'>
-            <div className='plausible-event-name=Try+Now+Click'>
+          <button onClick={ScrollToLearnMore} className='cursor-pointer'>
+            <div className='plausible-event-name=Learn+More+Click'>
               <span className='button-big-text outlined-only min-height-change-size-button'>
                 Learn more <ArrowDropDownCircleRoundedIcon />
               </span>
             </div>
-          </a>
-          <a href={appLink} target='blank'>
+          </button>
+          <a href={appLink} target='_blank'>
             <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text min-height-change-size-button'>
                 Start your journey <ArrowCircleRightRoundedIcon />

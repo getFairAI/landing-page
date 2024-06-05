@@ -16,9 +16,8 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { wrap } from 'popmotion';
-import { useEffect, useState } from 'react';
-import { AnimatePresence, Variants, motion } from 'framer-motion';
+import { PointerEvent, useEffect, useRef, useState } from 'react';
+import { Variants, motion, useDragControls, useSpring } from 'framer-motion';
 
 import { Suspense } from 'react';
 import { Tweet } from 'react-tweet/api';
@@ -40,8 +39,8 @@ import {
 } from 'react-tweet';
 
 // icons
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded';
+import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 type Props = {
   tweet: Tweet;
@@ -126,7 +125,9 @@ export default function ScreenShotSec() {
     center: {
       x: 0,
       opacity: 1,
+      maxWidth: '90vw',
       minHeight: '400px',
+      width: 'fit-content',
       height: 'fit-content',
       position: 'static',
     },
@@ -147,17 +148,25 @@ export default function ScreenShotSec() {
    * Should accomodate longer swipes and short flicks without having binary checks on
    * just distance thresholds and velocity > 0.
    */
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-  const [[page, direction], setPage] = useState([0, 0]);
 
-  const imageIndex = wrap(0, tweetIds.length, page);
+  const renderAllTweets = tweetIds.map((tweetId, index) => {
+    return (
+      <motion.div
+        initial={{ opacity: 0.4, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.4 }}
+        transition={{ duration: 0.4, type: 'smooth' }}
+        key={`tweetIndex-${index}`}
+        className='border-4 border-neutral-600 rounded-2xl h-fit w-full max-w-[80vw]'
+      >
+        <CustomTweet id={tweetId} />
+      </motion.div>
+    );
+  });
 
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
+  const refereceScroll = useRef(null);
+
+  const [jokeDragButtonBeingDragged, setJoke] = useState(false);
 
   return (
     <>
@@ -171,77 +180,65 @@ export default function ScreenShotSec() {
       </style>
       <section className='mt-40'>
         <div className='flex justify-center'>
-          <div className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px]'>
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, type: 'smooth' }}
+            viewport={{ amount: 0.3 }}
+            className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-center'
+          >
             <div className='flex justify-center flex-col items-center'>
               <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
                 <span className='text-with-dark-bg very-rounded'>Everyone's</span>
                 <span>AI Marketplace.</span>
               </h1>
             </div>
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.div
-                key={page}
-                custom={direction}
-                variants={variants}
-                initial='enter'
-                animate='center'
-                exit='exit'
-                transition={{
-                  x: { type: 'spring', stiffness: 100, damping: 15 },
-                  opacity: { duration: 0.2 },
-                }}
-                drag='x'
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={(_, { offset, velocity }) => {
-                  const swipe = swipePower(offset.x, velocity.x);
 
-                  if (swipe < -swipeConfidenceThreshold) {
-                    paginate(1);
-                  } else if (swipe > swipeConfidenceThreshold) {
-                    paginate(-1);
-                  }
-                }}
-                style={{ minHeight: '300px' }}
-              >
+            <div ref={refereceScroll} className='flex w-full max-w-[1300px] overflow-hidden'>
+              <motion.div drag='x' dragConstraints={refereceScroll} dragElastic={1}>
                 <div
-                  className='flex flex-wrap gap-5 justify-center px-0 md:px-2 pb-2 w-full md:h-fit sm:h-full'
+                  className='flex flex-nowrap gap-2 xl:gap-10 justify-center px-0 md:px-7 pb-2 w-full md:h-fit sm:h-full'
                   data-theme='light'
                 >
-                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px] hidden xl:block opacity-70 hover:opacity-100 transition-all'>
-                    <CustomTweet id={tweetIds[imageIndex - 1]} />
-                  </div>
-                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px]'>
-                    <CustomTweet id={tweetIds[imageIndex]} />
-                  </div>
-                  <div className='border-4 border-neutral-600 rounded-2xl h-fit w-fit max-w-[450px] hidden xl:block opacity-70 hover:opacity-100 transition-all'>
-                    <CustomTweet id={tweetIds[imageIndex + 1]} />
-                  </div>
+                  {renderAllTweets}
                 </div>
               </motion.div>
-            </AnimatePresence>
-            <div className='flex justify-center gap-5'>
-              <div
-                className='static md:absolute left-4 top-2/4 hover:scale-110 transition-all'
-                onClick={() => paginate(-1)}
-              >
-                <ArrowCircleLeftOutlinedIcon
-                  className='cursor-pointer'
-                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
-                />
-              </div>
-              <div
-                className='static md:absolute right-4 top-2/4 hover:scale-110 transition-all'
-                onClick={() => paginate(1)}
-              >
-                <ArrowCircleRightOutlinedIcon
-                  className='cursor-pointer'
-                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
-                />
-              </div>
             </div>
 
-            <div className='w-full flex justify-center dark-text'>
+            <motion.div
+              whileTap={{ scale: 1 }}
+              whileHover={{
+                scale: 1.05,
+              }}
+              drag
+              dragSnapToOrigin={true}
+              onDragStart={() => {
+                setJoke(true);
+              }}
+              onDragEnd={() => {
+                setJoke(false);
+              }}
+              className='flex items-center flex-nowrap dark-text text-sm md:text-lg bg-neutral-700 text-white rounded-3xl p-2 font-semibold'
+            >
+              <ArrowLeftRoundedIcon />
+              <span
+                className={`${
+                  jokeDragButtonBeingDragged ? 'opacity-0' : 'opacity-100'
+                } transition-all absolute left-[50%] translate-x-[-50%]`}
+              >
+                Drag 'em Around!
+              </span>
+              <span
+                className={`${
+                  jokeDragButtonBeingDragged ? 'opacity-100' : 'opacity-0'
+                } transition-all`}
+              >
+                Hey! Not me! The X's! (Tweets?)
+              </span>
+              <ArrowRightRoundedIcon />
+            </motion.div>
+
+            <div className='w-full flex flex-wrap gap-5 justify-center dark-text'>
               <h2 className='text-md md:text-xl flex items-center'>
                 <img
                   src='./fair-protocol-face-transparent.png'
@@ -249,14 +246,14 @@ export default function ScreenShotSec() {
                   className='invert opacity-70 w-[40px] mr-3'
                 />
                 Share your experience
-                <a
-                  href='https://twitter.com/getFairAI'
-                  target='_blank'
-                  className='text-bold ml-4 button-big-text outlined-only normal-text-size'
-                >
-                  @getFairAI
-                </a>
               </h2>
+              <a
+                href='https://twitter.com/getFairAI'
+                target='_blank'
+                className='text-bold button-big-text outlined-only smaller'
+              >
+                @getFairAI
+              </a>
             </div>
 
             {/* <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>
@@ -283,7 +280,7 @@ export default function ScreenShotSec() {
                   <Tweet id='1659033512102490114' />
                 </div>
               </div> */}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
