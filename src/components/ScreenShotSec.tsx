@@ -152,8 +152,8 @@ export default function ScreenShotSec() {
   const renderAllTweets = tweetIds.map((tweetId, index) => {
     return (
       <motion.div
-        initial={{ opacity: 0.4, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0.4, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 0.4 }}
         transition={{ duration: 0.4, type: 'smooth' }}
         key={`tweetIndex-${index}`}
@@ -178,7 +178,7 @@ export default function ScreenShotSec() {
           }
         `}
       </style>
-      <section className='mt-40'>
+      <section className='mt-16 xl:mt-40'>
         <div className='flex justify-center'>
           <motion.div
             initial={{ x: -100, opacity: 0 }}

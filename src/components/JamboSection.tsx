@@ -73,15 +73,15 @@ export default function JamboSection() {
           duration: 0.6,
           delay: 1,
         }}
-        className='w-full min-height-change-size-backers flex justify-center'
+        className='w-full flex justify-center'
       >
-        <div className='max-w-[1750px] flex flex-wrap gap-5 md:gap-10 justify-center xl:justify-between w-[90%]'>
-          <div className='w-fit flex flex-col items-center md:items-start'>
+        <div className='max-w-[1750px] flex flex-nowrap gap-0 md:gap-10 justify-center lg:justify-between w-full lg:w-[90%] px-4'>
+          <div className='w-fit flex flex-col items-center lg:items-start min-height-change-size-backers'>
             <span className='jambo-grey-text font-medium'>
               <BoltRoundedIcon style={{ height: '20px', verticalAlign: 'sub' }} />
               Empowered by
             </span>
-            <div className='flex flex-wrap justify-center md:justify-start items-center gap-5 md:gap-10 mt-2'>
+            <div className='flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-2'>
               <a href='https://www.arweave.org/' target='_blank'>
                 <img
                   src='./logos/arweave-logo-2.png'
@@ -99,14 +99,14 @@ export default function JamboSection() {
             </div>
           </div>
 
-          <div className='w-fit flex flex-col items-center md:items-start'>
+          <div className='w-fit flex flex-col items-center lg:items-start min-height-change-size-backers'>
             <span className='jambo-grey-text font-medium'>
               <FavoriteRoundedIcon
                 style={{ height: '18px', verticalAlign: 'sub', marginRight: '3px' }}
               />
               Backed by
             </span>
-            <div className='flex flex-wrap justify-center md:justify-start items-center gap-5 md:gap-10 mt-2'>
+            <div className='flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-2'>
               <a href='https://fwd.g8way.io/' target='_blank'>
                 <img
                   src='./logos/forward-research-logo-2.png'
@@ -133,7 +133,7 @@ function Aiexper() {
   const { appLink } = useContext(LinksContext);
 
   return (
-    <div className='flex justify-center items-center flex-col md:h-[75vh] sm:h-[60vh]'>
+    <div className='flex justify-center items-center flex-col h-[70vh] xl:h-[80vh]'>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

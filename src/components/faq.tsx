@@ -80,7 +80,7 @@ export const Faq = () => {
   const [expanded, setExpanded] = useState<false | number>(0);
 
   return (
-    <section className='mt-40 flex justify-center'>
+    <section className='mt-16 xl:mt-40 flex justify-center'>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}

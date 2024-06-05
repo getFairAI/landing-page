@@ -60,7 +60,7 @@ const Newsletter = () => {
   }, []);
 
   return (
-    <section className='flex justify-center mt-40 mb-20'>
+    <section className='flex justify-center mt-16 xl:mt-40 mb-20'>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}

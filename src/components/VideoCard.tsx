@@ -179,7 +179,7 @@ function GetCard5() {
 
 export default function VideoCard() {
   return (
-    <div className='w-[90%] max-w-[1800px] mx-auto' id='learn-more-video-section'>
+    <div className='mt-20 w-[90%] max-w-[1800px] mx-auto' id='learn-more-video-section'>
       <motion.div
         className='relative'
         initial={{
@@ -201,7 +201,7 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 md:my-10 card-glasspane-container'
+            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
             <GetCard1 />
           </motion.div>
@@ -210,7 +210,7 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 md:my-10 card-glasspane-container'
+            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
             <GetCard2 />
           </motion.div>
@@ -220,7 +220,7 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap md:flex-wrap my-5 md:my-10 card-glasspane-container'
+            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap md:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
             <GetCard3 />
           </motion.div>
@@ -230,7 +230,7 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 md:my-10 card-glasspane-container'
+            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
             <GetCard4 />
           </motion.div>
@@ -240,7 +240,7 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-10 card-glasspane-container'
+            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 xl:mt-10 card-glasspane-container'
           >
             <GetCard5 />
           </motion.div>
