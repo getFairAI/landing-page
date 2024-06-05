@@ -16,8 +16,8 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { PointerEvent, useEffect, useRef, useState } from 'react';
-import { Variants, motion, useDragControls, useSpring } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import { Suspense } from 'react';
 import { Tweet } from 'react-tweet/api';
@@ -111,36 +111,6 @@ export default function ScreenShotSec() {
     '1720484268109959171',
     '1711387046688755916',
   ];
-
-  const variants: Variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 100 : -100,
-        opacity: 0,
-        height: 0,
-        position: 'absolute',
-        top: 120,
-      };
-    },
-    center: {
-      x: 0,
-      opacity: 1,
-      maxWidth: '90vw',
-      minHeight: '400px',
-      width: 'fit-content',
-      height: 'fit-content',
-      position: 'static',
-    },
-    exit: (direction: number) => {
-      return {
-        x: direction < 0 ? 100 : -100,
-        opacity: 0,
-        height: 0,
-        position: 'absolute',
-        top: 120,
-      };
-    },
-  };
 
   /**
    * Experimenting with distilling swipe offset and velocity into a single variable, so the
