@@ -95,7 +95,7 @@
 
   &.smaller {
     font-size: 110%;
-    height: 50px;
+    height: 45px;
   }
 
   &.normal-text-size {
@@ -138,7 +138,7 @@
   padding: 40px;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(30px);
+  // backdrop-filter: blur(30px);
   border-radius: 50px;
 
   @media only screen and (max-width: 600px) {

@@ -49,7 +49,7 @@ const router = createHashRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Helmet>
-      <title>FairAI</title>
+      <title>FairAI | Simple and Powerful AI Marketplace</title>
       <meta
         name='description'
         content='Unlock the full potential of democratized and open-source AI with FairAI.'

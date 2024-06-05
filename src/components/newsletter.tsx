@@ -60,8 +60,14 @@ const Newsletter = () => {
   }, []);
 
   return (
-    <section className='flex justify-center mt-40 mb-20'>
-      <div className='flex flex-wrap-reverse sm:flex-nowrap gap-10 w-[90%] max-w-[1800px] items-start justify-center'>
+    <section className='flex justify-center mt-16 xl:mt-40 mb-20'>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.4, type: 'smooth' }}
+        viewport={{ amount: 0.3 }}
+        className='flex flex-wrap-reverse sm:flex-nowrap gap-10 w-[90%] max-w-[1800px] items-start justify-center'
+      >
         {/* <div className='w-full flex flex-col justify-end h-fit sm:h-[80%]'>
           {/* <div className='mb-3 font-bold'>
           <div className='py-1 text-2xl md:text-4xl'>
@@ -89,7 +95,7 @@ const Newsletter = () => {
           </a>
           <NewsletterPreview />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
