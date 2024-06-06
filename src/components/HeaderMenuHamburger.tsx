@@ -50,23 +50,23 @@ function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    animate(
+    void animate(
       'img',
       isOpen ? { y: 0, opacity: 1, scale: 1, x: 0 } : { y: -40, opacity: 0, scale: 0.7, x: 80 },
       {
         duration: 0.2,
         delay: isOpen ? 0.2 : 0,
       },
-    ).then;
+    );
 
-    animate(
+    void animate(
       '.button-big-text',
       isOpen ? { y: 0, scale: 1, x: 0 } : { y: -150, scale: 0.3, x: 100 },
       {
         duration: 0.1,
         delay: staggerMenuItems,
       },
-    ).then;
+    );
   }, [animate, isOpen]);
 
   return scope;
