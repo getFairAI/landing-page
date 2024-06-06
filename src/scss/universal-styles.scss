@@ -68,6 +68,10 @@
     transition: 0.2s all;
   }
 
+  &:active {
+    transform: scale(0.97);
+  }
+
   &.accent-color {
     background-color: #e78e3a;
     color: #ffffff;
@@ -79,11 +83,20 @@
     }
   }
 
+  &.white-bg {
+    background-color: white;
+    color: #3aaaaa;
+  }
+
   &.outlined-only {
     height: 54px;
     background-color: transparent;
     outline: 4px solid rgb(70, 70, 70);
     color: rgb(70, 70, 70);
+
+    &.white-bg {
+      background-color: white;
+    }
 
     &:hover,
     &:focus-within {

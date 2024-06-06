@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Suspense } from 'react';
@@ -39,8 +39,8 @@ import {
 } from 'react-tweet';
 
 // icons
-import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded';
-import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 type Props = {
   tweet: Tweet;
@@ -122,21 +122,34 @@ export default function ScreenShotSec() {
   const renderAllTweets = tweetIds.map((tweetId, index) => {
     return (
       <motion.div
-        initial={{ opacity: 0.4, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ amount: 0.4 }}
+        initial={{ opacity: 0.2, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.6 }}
         transition={{ duration: 0.4, type: 'smooth' }}
         key={`tweetIndex-${index}`}
-        className='border-4 border-neutral-600 rounded-2xl h-fit w-full max-w-[80vw]'
+        className='rounded-2xl shadow-md h-fit w-full max-w-[80vw]'
       >
         <CustomTweet id={tweetId} />
       </motion.div>
     );
   });
 
-  const refereceScroll = useRef(null);
-
-  const [jokeDragButtonBeingDragged, setJoke] = useState(false);
+  const scrollNews = (direction: string) => {
+    const newsSectionDiv = document.getElementById('tweets-screenshots-scrollable-section');
+    if (newsSectionDiv) {
+      if (direction === 'right') {
+        newsSectionDiv.scroll({
+          left: newsSectionDiv.clientWidth + newsSectionDiv.scrollLeft,
+          behavior: 'smooth',
+        });
+      } else {
+        newsSectionDiv.scroll({
+          left: -(newsSectionDiv.clientWidth - newsSectionDiv.scrollLeft),
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
 
   return (
     <>
@@ -154,59 +167,66 @@ export default function ScreenShotSec() {
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-center'
           >
-            <div className='flex justify-center flex-col items-center'>
-              <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center justify-center px-10 gap-3'>
-                <span className='text-with-dark-bg very-rounded'>Everyone's</span>
-                <span>AI Marketplace.</span>
+            <div className='flex justify-center flex-col w-full'>
+              <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center gap-4 justify-center lg:justify-start'>
+                <span className='text-with-dark-bg very-rounded shadow-lg'>
+                  <span className='p-2'>Everyone's</span>
+                </span>
+                <span className='font-medium'>AI Marketplace</span>
               </h1>
             </div>
 
-            <div ref={refereceScroll} className='flex w-full max-w-[1300px] overflow-hidden'>
-              <motion.div drag='x' dragConstraints={refereceScroll} dragElastic={1}>
+            <div className='w-full flex justify-center items-center flex-nowrap gap-5'>
+              <div
+                className='hover:scale-110 transition-all hidden md:flex justify-center flex-auto'
+                onClick={() => scrollNews('left')}
+              >
+                <ArrowCircleLeftOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
+
+              <div
+                id='tweets-screenshots-scrollable-section'
+                className='flex flex-auto w-full max-w-[1300px] overflow-x-auto overflow-y-hidden py-0 md:py-5'
+              >
                 <div
-                  className='flex flex-nowrap gap-2 xl:gap-10 justify-center px-0 md:px-7 pb-2 w-full md:h-fit sm:h-full'
+                  className='flex flex-nowrap gap-2 xl:gap-6 px-0 md:px-2 pb-10 w-full'
                   data-theme='light'
                 >
                   {renderAllTweets}
                 </div>
-              </motion.div>
+              </div>
+
+              <div
+                className='hover:scale-110 transition-all hidden md:flex justify-center flex-auto'
+                onClick={() => scrollNews('right')}
+              >
+                <ArrowCircleRightOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
             </div>
 
-            <motion.div
-              whileTap={{ scale: 1 }}
-              whileHover={{
-                scale: 1.05,
-              }}
-              drag
-              dragSnapToOrigin={true}
-              onDragStart={() => {
-                setJoke(true);
-              }}
-              onDragEnd={() => {
-                setJoke(false);
-              }}
-              className='flex items-center flex-nowrap dark-text text-sm md:text-lg bg-neutral-700 text-white rounded-3xl p-2 font-semibold'
-            >
-              <ArrowLeftRoundedIcon />
-              <span
-                className={`${
-                  jokeDragButtonBeingDragged ? 'opacity-0' : 'opacity-100'
-                } transition-all absolute left-[50%] translate-x-[-50%]`}
-              >
-                Drag 'em Around!
-              </span>
-              <span
-                className={`${
-                  jokeDragButtonBeingDragged ? 'opacity-100' : 'opacity-0'
-                } transition-all`}
-              >
-                Hey! Not me! The X's! (Tweets?)
-              </span>
-              <ArrowRightRoundedIcon />
-            </motion.div>
+            <div className='w-full flex justify-center gap-5 md:hidden'>
+              <div className='hover:scale-110 transition-all' onClick={() => scrollNews('left')}>
+                <ArrowCircleLeftOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
+              <div className='hover:scale-110 transition-all' onClick={() => scrollNews('right')}>
+                <ArrowCircleRightOutlinedIcon
+                  className='cursor-pointer'
+                  style={{ height: '50px', width: '50px', opacity: 0.7 }}
+                />
+              </div>
+            </div>
 
             <div className='w-full flex flex-wrap gap-5 justify-center dark-text'>
               <h2 className='text-md md:text-xl flex items-center'>
@@ -225,31 +245,6 @@ export default function ScreenShotSec() {
                 @getFairAI
               </a>
             </div>
-
-            {/* <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>
-                <div
-                  data-theme='light'
-                  className='h-fit w-fit rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
-                >
-                  <Tweet id='1677415435958992896' />
-                </div>
-              </div>
-              <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>
-                <div
-                  data-theme='light'
-                  className='h-fit w-fit rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
-                >
-                  <Tweet id='1743286414861799782' />
-                </div>
-              </div>
-              <div className='flex-1 min-w-[300px] max-w-full flex justify-center'>
-                <div
-                  data-theme='light'
-                  className='h-fit w-fit rounded-2xl border-4 border-neutral-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all duration-500'
-                >
-                  <Tweet id='1659033512102490114' />
-                </div>
-              </div> */}
           </motion.div>
         </div>
       </section>

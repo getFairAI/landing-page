@@ -16,28 +16,16 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // import styles
 import '../scss/video-card-styles.scss';
-import { useRef } from 'react';
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
 
 function GetCard1() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 100);
-
   return (
     <>
-      <div
-        ref={ref}
-        className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'
-      >
-        <div className='card-title'>Reusable and Customizable</div>
+      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
+        <div className='card-title shadow-lg'>Reusable and Customizable</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           Use existing AI solutions.
           <br />
@@ -45,8 +33,7 @@ function GetCard1() {
         </div>
       </div>
       <div className='px-4 card-section mx-auto'>
-        <motion.img
-          style={{ y }}
+        <img
           id='solutions'
           className='rounded-3xl border-4 border-neutral-700 shadow-xl'
           src='./images/solutions.png'
@@ -57,25 +44,17 @@ function GetCard1() {
 }
 
 function GetCard2() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 100);
-
   return (
     <>
       <div className='p-4 card-section mx-auto'>
-        <motion.img
-          style={{ y }}
+        <img
           id='requests'
           className='rounded-3xl border-4 border-neutral-700 shadow-xl'
           src='./images/browse-requests.png'
         />
       </div>
-      <div
-        ref={ref}
-        className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'
-      >
-        <div className='card-title'>Tailored to Your Needs</div>
+      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
+        <div className='card-title shadow-lg'>Tailored to Your Needs</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           State problems that AI can solve.
           <br />
@@ -87,17 +66,10 @@ function GetCard2() {
 }
 
 function GetCard3() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 100);
-
   return (
     <>
-      <div
-        ref={ref}
-        className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'
-      >
-        <div className='card-title'>Private and Ownable</div>
+      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
+        <div className='card-title shadow-lg'>Private and Ownable</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           Encrypt your AI prompts and responses.
           <br />
@@ -105,8 +77,7 @@ function GetCard3() {
         </div>
       </div>
       <div className='p-4 card-section mx-auto'>
-        <motion.img
-          style={{ y }}
+        <img
           id='encrypted'
           className='rounded-3xl border-4 border-neutral-700 shadow-xl'
           src='./images/encrypted.png'
@@ -117,25 +88,17 @@ function GetCard3() {
 }
 
 function GetCard4() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 100);
-
   return (
     <>
       <div className='p-4 card-section mx-auto'>
-        <motion.img
-          style={{ y }}
+        <img
           id='choose-operator'
           className='rounded-3xl border-4 border-neutral-700 w-fit mx-auto shadow-xl'
           src='./images/choose-operator.png'
         />
       </div>
-      <div
-        ref={ref}
-        className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'
-      >
-        <div className='card-title'>Risk Diversification</div>
+      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
+        <div className='card-title shadow-lg'>Risk Diversification</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           Pick and choose your AI hardware provider.
           <br />
@@ -147,17 +110,10 @@ function GetCard4() {
 }
 
 function GetCard5() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 100);
-
   return (
     <>
-      <div
-        ref={ref}
-        className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'
-      >
-        <div className='card-title'>Transparent and Open</div>
+      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
+        <div className='card-title shadow-lg'>Transparent and Open</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           Support the open-source AI community.
           <br />
@@ -166,8 +122,7 @@ function GetCard5() {
       </div>
 
       <div className='p-4 card-section mx-auto'>
-        <motion.img
-          style={{ y }}
+        <img
           id='solutions'
           className='rounded-3xl border-4 border-neutral-700 w-fit mx-auto shadow-xl'
           src='./images/view-transaction.png'
@@ -199,7 +154,7 @@ export default function VideoCard() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
             className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
@@ -208,7 +163,7 @@ export default function VideoCard() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
             className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
@@ -218,7 +173,7 @@ export default function VideoCard() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
             className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap md:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
@@ -228,7 +183,7 @@ export default function VideoCard() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
             className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
           >
@@ -238,7 +193,7 @@ export default function VideoCard() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
             className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 xl:mt-10 card-glasspane-container'
           >

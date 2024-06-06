@@ -26,7 +26,7 @@ const NewsletterPreview = () => {
     <motion.div className='flex justify-center'>
       <img
         src={'./images/solutions.png'}
-        className='w-[85%] opacity-50 skew-x-12 rounded-lg shadow-lg'
+        className='w-[85%] opacity-50 rounded-2xl border-4 border-neutral-700 shadow-lg hover:skew-y-12'
         style={{ transform: 'rotateX(20deg)' }}
         alt=''
       />
@@ -65,7 +65,7 @@ const Newsletter = () => {
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, type: 'smooth' }}
-        viewport={{ amount: 0.3 }}
+        viewport={{ amount: 0.3, once: true }}
         className='flex flex-wrap-reverse sm:flex-nowrap gap-10 w-[90%] max-w-[1800px] items-start justify-center'
       >
         {/* <div className='w-full flex flex-col justify-end h-fit sm:h-[80%]'>
@@ -88,8 +88,8 @@ const Newsletter = () => {
         <div className='w-full flex flex-col gap-5 max-w-[800px] items-center'>
           <a href={appLink} target='blank'>
             <div className='plausible-event-name=Open+App+Bottom+Click'>
-              <span className='button-big-text smaller w-fit'>
-                Start now <ArrowCircleRightRoundedIcon />
+              <span className='button-big-text w-fit'>
+                Start your journey <ArrowCircleRightRoundedIcon />
               </span>
             </div>
           </a>

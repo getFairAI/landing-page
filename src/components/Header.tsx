@@ -16,14 +16,13 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useContext, useState } from 'react';
-import ToggleOpen from '../svg/ToggleOpen';
-import Xmark from '../svg/Xmark';
+import { useContext } from 'react';
 import { easeOut, motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
 import { WHITEPAPER } from '../constants';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import HeaderMenuButton from './HeaderMenuHamburger';
 
 // import needed scss styles
 import '../scss/header-styles.scss';
@@ -46,34 +45,15 @@ const transitionConfig = {
 };
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
-
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
       <div className='flex justify-between items-center px-8 lg:px-10 py-4'>
         <LogoFun />
-        <div>
-          {isOpen ? (
-            <button
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className='w-7 h-fit lg:hidden block'
-            >
-              <ToggleOpen />
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                setIsOpen(true);
-              }}
-              className='w-7 h-fit lg:hidden block'
-            >
-              <Xmark />
-            </button>
-          )}
+        <HeaderLeftBtn />
+
+        <div className='block lg:hidden'>
+          <HeaderMenuButton />
         </div>
-        <HeaderLeftBtn isOpen={isOpen} />
       </div>
     </motion.div>
   );
@@ -88,16 +68,13 @@ const LogoFun = () => {
     </div>
   );
 };
-const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
+
+const HeaderLeftBtn = () => {
   const { appLink } = useContext(LinksContext);
 
   return (
     <div
-      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 ${
-        isOpen
-          ? 'lg:flex hidden '
-          : 'absolute lg:top-0 top-16 left-0 h-[100vh] lg:w-fit w-full menu-open-animation'
-      }`}
+      className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
     >
       <SocialsHeader />
       <a href={WHITEPAPER} target='blank'>

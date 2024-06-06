@@ -19,7 +19,7 @@ const ContentPlaceholder = ({ i }: { i: number }) => (
   <motion.div
     variants={{ collapsed: { scale: 0.95, opacity: 0 }, open: { scale: 1, opacity: 1 } }}
     transition={{ duration: 0.2 }}
-    className='px-14 text-md lg:text-xl py-4 dark-text'
+    className='px-3 md:px-14 text-md lg:text-xl py-4 dark-text'
   >
     <span className=''>{texts[i]}</span>
   </motion.div>
@@ -85,12 +85,12 @@ export const Faq = () => {
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, type: 'smooth' }}
-        viewport={{ amount: 0.3 }}
-        className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'
+        viewport={{ amount: 0.3, once: true }}
+        className='container card-glasspane-container w-[90%] max-w-[1800px]'
       >
         <div className='w-full flex flex-col'>
-          <h2 className='flex text-2xl lg:text-4xl py-1 font-bold text-with-dark-bg very-rounded w-fit'>
-            Frequently Asked Questions
+          <h2 className='flex text-2xl lg:text-3xl font-bold text-with-dark-bg very-rounded w-fit shadow-lg'>
+            <span className='p-2'>Frequently Asked Questions</span>
           </h2>
           <div className='flex flex-col w-full mt-10'>
             <Accordion i={1} expanded={expanded} setExpanded={setExpanded} />
