@@ -16,9 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useContext, useState } from 'react';
-import ToggleOpen from '../svg/ToggleOpen';
-import Xmark from '../svg/Xmark';
+import { useContext } from 'react';
 import { easeOut, motion } from 'framer-motion';
 import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
@@ -47,13 +45,11 @@ const transitionConfig = {
 };
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
-
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
       <div className='flex justify-between items-center px-8 lg:px-10 py-4'>
         <LogoFun />
-        <HeaderLeftBtn isOpen={isOpen} />
+        <HeaderLeftBtn />
 
         <div className='block lg:hidden'>
           <HeaderMenuButton />
@@ -73,16 +69,12 @@ const LogoFun = () => {
   );
 };
 
-const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
+const HeaderLeftBtn = () => {
   const { appLink } = useContext(LinksContext);
 
   return (
     <div
-      className={`flex lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 ${
-        isOpen
-          ? 'lg:flex hidden '
-          : 'absolute lg:top-0 top-16 left-0 h-[100vh] lg:w-fit w-full menu-open-animation'
-      }`}
+      className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
     >
       <SocialsHeader />
       <a href={WHITEPAPER} target='blank'>

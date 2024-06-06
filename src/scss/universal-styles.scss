@@ -68,6 +68,10 @@
     transition: 0.2s all;
   }
 
+  &:active {
+    transform: scale(0.97);
+  }
+
   &.accent-color {
     background-color: #e78e3a;
     color: #ffffff;

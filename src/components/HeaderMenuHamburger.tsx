@@ -17,17 +17,16 @@
  */
 
 import { WHITEPAPER, TWITTER_LINK, DISCORD_LINK } from '../constants';
-import { motion } from 'framer-motion';
+import { MotionProps, motion, stagger, useAnimate } from 'framer-motion';
 import { LinksContext } from '../context/links';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 // icons
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 const sidebar = {
   open: {
-    clipPath: `circle(2000px at calc(100vw - 40px) 36px)`,
+    clipPath: `circle(2000px at calc(100vw - 54px) 36px)`,
     transition: {
       type: 'spring',
       stiffness: 20,
@@ -35,9 +34,9 @@ const sidebar = {
     },
   },
   closed: {
-    clipPath: 'circle(25px at calc(100vw - 40px) 36px)',
+    clipPath: 'circle(25px at calc(100vw - 54px) 36px)',
     transition: {
-      delay: 0,
+      delay: 0.1,
       type: 'spring',
       stiffness: 400,
       damping: 40,
@@ -45,9 +44,78 @@ const sidebar = {
   },
 };
 
+const staggerMenuItems = stagger(0.05);
+
+function useMenuAnimation(isOpen: boolean) {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    animate(
+      'img',
+      isOpen ? { y: 0, opacity: 1, scale: 1, x: 0 } : { y: -40, opacity: 0, scale: 0.7, x: 80 },
+      {
+        duration: 0.2,
+        delay: isOpen ? 0.2 : 0,
+      },
+    ).then;
+
+    animate(
+      '.button-big-text',
+      isOpen ? { y: 0, scale: 1, x: 0 } : { y: -150, scale: 0.3, x: 100 },
+      {
+        duration: 0.1,
+        delay: staggerMenuItems,
+      },
+    ).then;
+  }, [animate, isOpen]);
+
+  return scope;
+}
+
 export default function HeaderMenuButton() {
   const { appLink } = useContext(LinksContext);
-  const [isOpen, toggleOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const scope = useMenuAnimation(isOpen);
+
+  const Path = (props: MotionProps & { d?: string }) => (
+    <motion.path
+      fill='transparent'
+      strokeWidth='3'
+      stroke='hsl(0, 0%, 18%)'
+      strokeLinecap='round'
+      {...props}
+    />
+  );
+
+  const MenuToggle = () => (
+    <button
+      onClick={() => setIsOpen(!isOpen)}
+      className='w-[65px] h-[75px] text-white invert brightness-0'
+    >
+      <svg width='23' height='23' viewBox='0 0 23 23'>
+        <Path
+          variants={{
+            closed: { d: 'M 2 2.5 L 20 2.5' },
+            open: { d: 'M 3 16.5 L 17 2.5' },
+          }}
+        />
+        <Path
+          d='M 2 9.423 L 20 9.423'
+          variants={{
+            closed: { opacity: 1 },
+            open: { opacity: 0 },
+          }}
+          transition={{ duration: 0.1 }}
+        />
+        <Path
+          variants={{
+            closed: { d: 'M 2 16.346 L 20 16.346' },
+            open: { d: 'M 3 2.5 L 17 16.346' },
+          }}
+        />
+      </svg>
+    </button>
+  );
 
   return (
     <>
@@ -57,26 +125,21 @@ export default function HeaderMenuButton() {
         animate={isOpen ? 'open' : 'closed'}
         className='absolute top-0 right-0 w-[100vw] h-[100vh] bg-[#3aaaaa]'
       >
-        <motion.div>
+        <div>
           <div className='flex justify-end w-full'>
-            <button
-              onClick={() => toggleOpen(!isOpen)}
-              className='w-[80px] h-[72px] text-white'
-              style={{
-                zIndex: '1000',
-              }}
-            >
-              <MenuRoundedIcon style={{ width: '30px', height: '30px' }} />
-            </button>
+            <MenuToggle />
           </div>
-          <div className='flex flex-col justify-center gap-5 items-center px-5'>
+          <div className='flex flex-col justify-center gap-5 items-center px-5' ref={scope}>
             <img
               src='./fair-ai-outline.svg'
               alt='FairAI Logo'
               className='w-[250px] h-auto object-contain py-5 px-5 invert brightness-0 mb-4'
             />
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.01 }}
               href={appLink}
               target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
@@ -84,9 +147,12 @@ export default function HeaderMenuButton() {
               <div className='plausible-event-name=Open+App+Click w-full flex justify-between items-center'>
                 Start using FairAI <ArrowCircleRightRoundedIcon style={{ width: '30px' }} />
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.01 }}
               href={WHITEPAPER}
               target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
@@ -94,9 +160,12 @@ export default function HeaderMenuButton() {
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
                 Docs <ArrowCircleRightRoundedIcon style={{ width: '30px' }} />
               </button>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.01 }}
               href={DISCORD_LINK}
               target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
@@ -104,9 +173,12 @@ export default function HeaderMenuButton() {
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
                 Discord <ArrowCircleRightRoundedIcon style={{ width: '30px' }} />
               </button>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.01 }}
               href={TWITTER_LINK}
               target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
@@ -114,9 +186,9 @@ export default function HeaderMenuButton() {
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
                 X / twitter <ArrowCircleRightRoundedIcon style={{ width: '30px' }} />
               </button>
-            </a>
+            </motion.a>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </>
   );
