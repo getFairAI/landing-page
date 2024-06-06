@@ -121,7 +121,7 @@ function NewsSection() {
         });
       } else {
         newsSectionDiv.scroll({
-          left: -newsSectionDiv.clientWidth,
+          left: -(newsSectionDiv.clientWidth - newsSectionDiv.scrollLeft),
           behavior: 'smooth',
         });
       }
@@ -134,75 +134,105 @@ function NewsSection() {
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, type: 'smooth' }}
-        viewport={{ amount: 0.3 }}
-        className='container card-glasspane-container w-[90%] max-w-[1800px] p-14'
+        viewport={{ amount: 0.3, once: true }}
+        className='container card-glasspane-container w-[90%] max-w-[1800px]'
       >
-        <div className='flex justify-center md:justify-between flex-wrap mb-8 gap-5'>
-          <div className='text-with-dark-bg very-rounded font-bold w-fit'>
-            <h2 className='flex text-2xl md:text-3xl py-1'>
-              <img
-                src='./fair-protocol-face-transparent.png'
-                className='w-[30px] md:w-[50px] object-contain mr-3 md:mr-5'
-              />
-              <span>FairAI News</span>
-            </h2>
-          </div>
-          <a
-            href='https://blog.getfair.ai/'
-            target='_blank'
-            className='button-big-text cursor-pointer'
-          >
-            Read more <ArrowCircleRightRoundedIcon />
-          </a>
-        </div>
-        <div
-          className='flex overflow-x-auto overflow-y-hidden gap-5 px-0 md:px-5'
-          id='news-horizontal-scroll'
-        >
-          {newsItems.map((news) => (
-            <a
-              key={news.title}
-              href={news.link}
-              target='_blank'
-              className={`py-10 hover:scale-110 transition-transform duration-300 flex-none w-64 sm:w-72 md:w-80 plausible-event-name=News+Click plausible-event-link=${news.link}`}
-            >
-              <div className='bg-white rounded-2xl shadow-md h-full overflow-hidden'>
-                <div className='overflow-hidden w-full h-48 shadow-md shadow-neutral-300'>
-                  <img src={news.image} className='object-cover w-full h-full' alt={news.title} />
-                </div>
-                <div className='p-4 flex flex-col justify-between h-[180px]'>
-                  <h3 className='text-lg font-semibold text-gray-700'>{news.title}</h3>
-                  <div className='text-gray-400 font-medium flex justify-between w-full'>
-                    <span>{news.date}</span>
-                    <span>
-                      <OpenInNewRoundedIcon />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          ))}
+        <div className='w-fit mb-8 flex gap-4 items-center flex-wrap justify-center lg:justify-start'>
+          <h2 className='shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold'>
+            <img
+              src='./fair-protocol-face-transparent.png'
+              className='w-[30px] md:w-[50px] object-contain mr-3 md:mr-4'
+            />
+            <span className='py-2'>FairAI</span>
+          </h2>
+          <div className='dark-text font-medium text-2xl md:text-4xl '>Magazine</div>
         </div>
 
-        <div className='flex justify-center md:justify-end w-full gap-5 flex-wrap'>
-          <span
-            className='opacity-70 hover:scale-110 transition-all duration-200'
+        <div className='w-full flex justify-center items-center gap-10'>
+          <div
+            className='hover:scale-110 transition-all hidden md:flex flex-auto'
             onClick={() => scrollNews('left')}
           >
             <ArrowCircleLeftOutlinedIcon
               className='cursor-pointer'
-              style={{ height: '50px', width: '50px' }}
+              style={{ height: '50px', width: '50px', opacity: 0.7 }}
             />
-          </span>
-          <span
-            className='opacity-70 hover:scale-110 transition-all duration-200'
+          </div>
+          <div
+            className='flex overflow-x-auto overflow-y-hidden gap-6 px-0 md:px-5 flex-auto'
+            id='news-horizontal-scroll'
+          >
+            {newsItems.map((news) => (
+              <motion.a
+                initial={{ opacity: 0.2, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.6 }}
+                transition={{ duration: 0.4, type: 'smooth' }}
+                key={news.title}
+                href={news.link}
+                target='_blank'
+                className={`py-10 flex-none w-64 sm:w-72 md:w-80 plausible-event-name=News+Click plausible-event-link=${news.link}`}
+              >
+                <div className='bg-white rounded-2xl shadow-md h-full overflow-hidden hover:brightness-95 transition-all'>
+                  <div className='overflow-hidden w-full h-48 shadow-md shadow-neutral-300'>
+                    <img src={news.image} className='object-cover w-full h-full' alt={news.title} />
+                  </div>
+                  <div className='p-4 flex flex-col justify-between h-[180px]'>
+                    <h3 className='text-lg font-semibold text-gray-600'>{news.title}</h3>
+                    <div className='text-slate-400 font-medium flex justify-between w-full'>
+                      <span>{news.date}</span>
+                      <span>
+                        <OpenInNewRoundedIcon />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          <div
+            className='hover:scale-110 transition-all hidden md:flex flex-auto'
             onClick={() => scrollNews('right')}
           >
             <ArrowCircleRightOutlinedIcon
               className='cursor-pointer'
-              style={{ height: '50px', width: '50px' }}
+              style={{ height: '50px', width: '50px', opacity: 0.7 }}
             />
-          </span>
+          </div>
+        </div>
+
+        <div className='w-full flex justify-center gap-5 md:hidden'>
+          <div className='hover:scale-110 transition-all' onClick={() => scrollNews('left')}>
+            <ArrowCircleLeftOutlinedIcon
+              className='cursor-pointer'
+              style={{ height: '50px', width: '50px', opacity: 0.7 }}
+            />
+          </div>
+          <div className='hover:scale-110 transition-all' onClick={() => scrollNews('right')}>
+            <ArrowCircleRightOutlinedIcon
+              className='cursor-pointer'
+              style={{ height: '50px', width: '50px', opacity: 0.7 }}
+            />
+          </div>
+        </div>
+
+        <div className='flex justify-center w-full mt-8 items-center gap-5 flex-wrap'>
+          <h2 className='text-md md:text-xl flex items-center dark-text'>
+            <img
+              src='./fair-protocol-face-transparent.png'
+              alt=''
+              className='invert opacity-70 w-[40px] mr-3'
+            />
+            Stay updated
+          </h2>
+          <a
+            href='https://blog.getfair.ai/'
+            target='_blank'
+            className='button-big-text outlined-only smaller cursor-pointer'
+          >
+            Check our blog <ArrowCircleRightRoundedIcon />
+          </a>
         </div>
       </motion.div>
     </section>

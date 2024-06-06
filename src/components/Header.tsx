@@ -24,6 +24,7 @@ import HeaderLogo from '../svg/HeaderLogo';
 import SocialsHeader from './SocialsHeader';
 import { WHITEPAPER } from '../constants';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import HeaderMenuButton from './HeaderMenuHamburger';
 
 // import needed scss styles
 import '../scss/header-styles.scss';
@@ -52,28 +53,11 @@ export default function Header() {
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
       <div className='flex justify-between items-center px-8 lg:px-10 py-4'>
         <LogoFun />
-        <div>
-          {isOpen ? (
-            <button
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className='w-7 h-fit lg:hidden block'
-            >
-              <ToggleOpen />
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                setIsOpen(true);
-              }}
-              className='w-7 h-fit lg:hidden block'
-            >
-              <Xmark />
-            </button>
-          )}
-        </div>
         <HeaderLeftBtn isOpen={isOpen} />
+
+        <div className='block lg:hidden'>
+          <HeaderMenuButton />
+        </div>
       </div>
     </motion.div>
   );
@@ -88,6 +72,7 @@ const LogoFun = () => {
     </div>
   );
 };
+
 const HeaderLeftBtn = ({ isOpen }: { isOpen: boolean }) => {
   const { appLink } = useContext(LinksContext);
 

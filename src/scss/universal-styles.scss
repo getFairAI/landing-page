@@ -79,11 +79,20 @@
     }
   }
 
+  &.white-bg {
+    background-color: white;
+    color: #3aaaaa;
+  }
+
   &.outlined-only {
     height: 54px;
     background-color: transparent;
     outline: 4px solid rgb(70, 70, 70);
     color: rgb(70, 70, 70);
+
+    &.white-bg {
+      background-color: white;
+    }
 
     &:hover,
     &:focus-within {
