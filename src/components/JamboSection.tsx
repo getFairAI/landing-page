@@ -199,7 +199,8 @@ function Aiexper() {
               </span>
             </div>
           </button>
-          <a href={appLink} target='_blank'>
+
+          <a href={appLink}>
             <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text min-height-change-size-button'>
                 Start your journey <ArrowCircleRightRoundedIcon />
