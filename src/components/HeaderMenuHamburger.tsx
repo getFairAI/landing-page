@@ -52,21 +52,17 @@ function useMenuAnimation(isOpen: boolean) {
   useEffect(() => {
     void animate(
       'img',
-      isOpen ? { y: 0, opacity: 1, scale: 1, x: 0 } : { y: -40, opacity: 0, scale: 0.7, x: 80 },
+      isOpen ? { y: 0, opacity: 1, scale: 1 } : { y: -40, opacity: 0, scale: 0.7 },
       {
         duration: 0.2,
         delay: isOpen ? 0.2 : 0,
       },
     );
 
-    void animate(
-      '.button-big-text',
-      isOpen ? { y: 0, scale: 1, x: 0 } : { y: -150, scale: 0.3, x: 100 },
-      {
-        duration: 0.1,
-        delay: staggerMenuItems,
-      },
-    );
+    void animate('.button-big-text', isOpen ? { y: 0, scale: 1 } : { y: -150, scale: 0.3 }, {
+      duration: 0.1,
+      delay: staggerMenuItems,
+    });
   }, [animate, isOpen]);
 
   return scope;
@@ -141,7 +137,6 @@ export default function HeaderMenuButton() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.01 }}
               href={appLink}
-              target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
             >
               <div className='plausible-event-name=Open+App+Click w-full flex justify-between items-center'>
@@ -154,7 +149,6 @@ export default function HeaderMenuButton() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.01 }}
               href={WHITEPAPER}
-              target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
             >
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
@@ -167,7 +161,6 @@ export default function HeaderMenuButton() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.01 }}
               href={DISCORD_LINK}
-              target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
             >
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
@@ -180,7 +173,6 @@ export default function HeaderMenuButton() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.01 }}
               href={TWITTER_LINK}
-              target='blank'
               className='button-big-text w-full max-w-[300px] white-bg h-[60px]'
             >
               <button className='plausible-event-name=Docs+Click w-full flex justify-between items-center'>
