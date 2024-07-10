@@ -77,13 +77,13 @@ const HeaderLeftBtn = () => {
       className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
     >
       <SocialsHeader />
-      <a href={WHITEPAPER} target='blank'>
+      <a href={WHITEPAPER}>
         <button className='font-semibold rounded-xl text-gray-600 plausible-event-name=Docs+Click hover:bg-gray-200 hover:text-black py-1 px-3 duration-200'>
           Docs
         </button>
       </a>
 
-      <a href={appLink} target='blank'>
+      <a href={appLink}>
         <div className='plausible-event-name=Open+App+Click'>
           <span className='button-big-text smaller'>
             Start now <ArrowCircleRightRoundedIcon />
