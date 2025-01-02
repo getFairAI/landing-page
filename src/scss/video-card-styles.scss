@@ -46,4 +46,15 @@
     width: auto;
     max-height: 500px;
   }
+
+  &.dark-mode {
+    .card-title {
+      background-color: white;
+      color: rgb(70, 70, 70);
+    }
+
+    .card-description {
+      color: white;
+    }
+  }
 }

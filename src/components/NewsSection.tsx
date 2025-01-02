@@ -22,13 +22,23 @@ import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutl
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 
 function NewsSection() {
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   const newsItems = [
+    {
+      title: "We're Back – It's Time for FairAI's Wrapped 2024! 🎉",
+      date: 'Dec 10, 2024',
+      link: 'https://blog.getfair.ai/fairai-wrapped-2024/',
+      image: './images/wrapped2024.jpg',
+    },
     {
       title: 'Companies can now create AI requests on FairAI marketplace',
       date: 'May 17, 2024',
-      link: 'https://www.techstars.com/newsroom/announcing-the-techstars-web3-class-of-2024',
+      link: 'https://blog.getfair.ai/companies-can-now-create-ai-requests-on-fairai-marketplace/',
       image: './images/companies-request-solutions.png',
     },
     {
@@ -135,20 +145,43 @@ function NewsSection() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, type: 'smooth' }}
         viewport={{ amount: 0.3, once: true }}
-        className='container card-glasspane-container w-[90%] max-w-[1800px]'
+        className={
+          'container card-glasspane-container w-[90%] max-w-[1800px] ' +
+          (currentUserType === 'business' ? ' dark-mode' : '')
+        }
       >
         <div className='w-fit mb-8 flex gap-4 items-center flex-wrap justify-center lg:justify-start'>
-          <h2 className='shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold'>
+          <h2
+            className={
+              'shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold' +
+              (currentUserType === 'business' ? ' dark-mode' : '')
+            }
+          >
             <img
               src='./fair-protocol-face-transparent.png'
-              className='w-[30px] md:w-[50px] object-contain mr-3 md:mr-4'
+              className={
+                'w-[30px] md:w-[50px] object-contain mr-3 md:mr-4 ' +
+                (currentUserType === 'business' ? ' invert brightness-75' : '')
+              }
             />
             <span className='py-2'>FairAI</span>
           </h2>
-          <div className='dark-text font-medium text-2xl md:text-4xl '>Magazine</div>
+          <div
+            className={
+              'dark-text font-medium text-2xl md:text-4xl ' +
+              (currentUserType === 'business' ? ' text-white' : '')
+            }
+          >
+            Magazine
+          </div>
         </div>
 
-        <div className='w-full flex justify-center items-center gap-10'>
+        <div
+          className={
+            'w-full flex justify-center items-center gap-10 ' +
+            (currentUserType === 'business' ? ' text-white' : '')
+          }
+        >
           <div
             className='hover:scale-110 transition-all hidden md:flex flex-auto'
             onClick={() => scrollNews('left')}
@@ -218,7 +251,12 @@ function NewsSection() {
         </div>
 
         <div className='flex justify-center w-full mt-8 items-center gap-5 flex-wrap'>
-          <h2 className='text-md md:text-xl flex items-center dark-text'>
+          <h2
+            className={
+              'text-md md:text-xl flex items-center font-semibold dark-text ' +
+              (currentUserType === 'business' ? ' invert brightness-0' : '')
+            }
+          >
             <img
               src='./fair-protocol-face-transparent.png'
               alt=''
@@ -229,7 +267,10 @@ function NewsSection() {
           <a
             href='https://blog.getfair.ai/'
             target='_blank'
-            className='button-big-text outlined-only smaller cursor-pointer'
+            className={
+              'button-big-text outlined-only smaller ' +
+              (currentUserType === 'business' ? ' dark-mode' : '')
+            }
           >
             Check our blog <ArrowCircleRightRoundedIcon />
           </a>

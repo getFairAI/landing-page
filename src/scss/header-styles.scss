@@ -18,12 +18,3 @@
     width: 180px;
   }
 }
-
-.menu-open-animation {
-  background-image: url('../../public/blurred_asbtract_bg.jpg');
-  background-position: center;
-  background-size: cover;
-  z-index: 200 !important;
-  opacity: 0;
-  animation: 0.4s fadeInSlideDown ease forwards;
-}

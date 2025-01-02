@@ -17,6 +17,7 @@
  */
 
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 
 // const yScrollConfig = -0.5;
 
@@ -41,16 +42,49 @@ export default function ImgAnimate() {
   //   return () => window.removeEventListener('scroll', handleScroll);
   // }, [controls]);
 
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      transition={{ duration: 1, delay: 0.8 }}
-      animate={{ opacity: 1 }}
-    >
-      <img
-        src={'./blurred_asbtract_bg.jpg'}
-        className='opacity-50 object-fill w-[100vw] h-[100vh] background-image-blur'
-      />
-    </motion.div>
+    <>
+      {currentUserType === 'user' && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          animate={{ opacity: 1 }}
+        >
+          <img
+            src={'./blurred_asbtract_bg.jpg'}
+            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+          />
+        </motion.div>
+      )}
+
+      {currentUserType === 'business' && (
+        <motion.div
+          initial={{ opacity: 0, backgroundColor: 'transparent' }}
+          transition={{ duration: 1, delay: 0.2 }}
+          animate={{ opacity: 1, backgroundColor: 'rgb(30,30,30)' }}
+        >
+          <img
+            src={'./blurred_asbtract_bg_darkmode.jpg'}
+            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+          />
+        </motion.div>
+      )}
+
+      {currentUserType === 'developer' && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          animate={{ opacity: 1 }}
+        >
+          <img
+            src={'./blurred_asbtract_bg_purple.jpg'}
+            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+          />
+        </motion.div>
+      )}
+    </>
   );
 }

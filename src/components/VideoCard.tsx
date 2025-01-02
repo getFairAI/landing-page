@@ -20,16 +20,41 @@ import { motion } from 'framer-motion';
 
 // import styles
 import '../scss/video-card-styles.scss';
+import { useSearchParams } from 'react-router-dom';
 
-function GetCard1() {
+function GetCard1({ userType }: { userType: string }) {
   return (
     <>
-      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
-        <div className='card-title shadow-lg'>Reusable and Customizable</div>
+      <div
+        className={
+          'px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start ' +
+          (userType === 'business' ? 'dark-mode' : '')
+        }
+      >
+        <div className='card-title shadow-lg'>
+          {userType === 'user' && <>Reusable and customizable.</>}
+          {userType === 'business' && <>Powerful and dependable.</>}
+          {userType === 'developer' && <>Reuse, expand, costumize.</>}
+        </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Use existing AI solutions.
-          <br />
-          Tune them to fit your specific needs.
+          {userType === 'user' && (
+            <>
+              Use existing AI solutions. <br /> Tune them to fit your specific needs.
+            </>
+          )}
+          {userType === 'business' && (
+            <>
+              Get instant access to many pre-configured and ready to use AI solutions. <br /> Tune
+              them to your company's specific needs.
+            </>
+          )}
+          {userType === 'developer' && (
+            <>
+              Use, create and expand on top of existing great open-source AI solutions. <br /> Tune
+              them to fit your specific needs or the ones of your clients. <br /> Quickly develop
+              solutions without much effort.
+            </>
+          )}
         </div>
       </div>
       <div className='px-4 card-section mx-auto'>
@@ -43,7 +68,7 @@ function GetCard1() {
   );
 }
 
-function GetCard2() {
+function GetCard2({ userType }: { userType: string }) {
   return (
     <>
       <div className='p-4 card-section mx-auto'>
@@ -53,27 +78,82 @@ function GetCard2() {
           src='./images/browse-requests.png'
         />
       </div>
-      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
-        <div className='card-title shadow-lg'>Tailored to Your Needs</div>
+      <div
+        className={
+          'px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start ' +
+          (userType === 'business' ? 'dark-mode' : '')
+        }
+      >
+        <div className='card-title shadow-lg'>
+          {userType === 'user' && <>Tailored to your needs.</>}
+          {userType === 'business' && <>We make it happen.</>}
+          {userType === 'developer' && <>Requests are waiting for you.</>}
+        </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          State problems that AI can solve.
-          <br />
-          See them being solved by the open-source AI community.
+          {userType === 'user' && (
+            <>
+              State problems that AI can solve.
+              <br />
+              See them being solved by the open-source AI community.
+            </>
+          )}
+          {userType === 'business' && (
+            <>
+              State problems, get solutions, fast. <br /> Automate anything and everything. <br />{' '}
+              Solve complex real world problems with completely automated solutions and get great
+              results.
+            </>
+          )}
+          {userType === 'developer' && (
+            <>
+              The requests page shows you the current problems and solutions that business or other
+              users are looking to pay and see sorted out. <br /> Grab a request and develop it.
+              <br /> Deploy on FairAI with minimal effort. <br />
+              Get paid and get yourself known as a great developer.
+            </>
+          )}
         </div>
       </div>
     </>
   );
 }
 
-function GetCard3() {
+function GetCard3({ userType }: { userType: string }) {
   return (
     <>
-      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
-        <div className='card-title shadow-lg'>Private and Ownable</div>
+      <div
+        className={
+          'px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start ' +
+          (userType === 'business' ? 'dark-mode' : '')
+        }
+      >
+        <div className={'card-title shadow-lg ' + (userType === 'business' ? 'dark-mode' : '')}>
+          Secure, private and ownable.
+        </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Encrypt your AI prompts and responses.
-          <br />
-          Have digital property right over your AI-generated content.
+          {userType === 'user' && (
+            <>
+              Encrypt your AI prompts and responses. <br />
+              Have digital property right over your AI-generated content.
+            </>
+          )}
+
+          {userType === 'business' && (
+            <>
+              Completely E2E encrypted. <br /> Safe and trustable. <br /> Your company owns what it
+              creates. <br />
+              Copyrights automatically assigned to your company. <br /> Protects you, your company
+              and your products.
+            </>
+          )}
+
+          {userType === 'developer' && (
+            <>
+              State problems, get solutions, fast. <br /> Automate anything and everything. <br />{' '}
+              Solve complex real world problems with completely automated solutions and get great
+              results.
+            </>
+          )}
         </div>
       </div>
       <div className='p-4 card-section mx-auto'>
@@ -87,7 +167,7 @@ function GetCard3() {
   );
 }
 
-function GetCard4() {
+function GetCard4({ userType }: { userType: string }) {
   return (
     <>
       <div className='p-4 card-section mx-auto'>
@@ -97,27 +177,79 @@ function GetCard4() {
           src='./images/choose-operator.png'
         />
       </div>
-      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
-        <div className='card-title shadow-lg'>Risk Diversification</div>
+      <div
+        className={
+          'px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start ' +
+          (userType === 'business' ? 'dark-mode' : '')
+        }
+      >
+        <div className={'card-title shadow-lg ' + (userType === 'business' ? 'dark-mode' : '')}>
+          {userType === 'user' && <>Diversification.</>}
+          {userType === 'business' && <>Use it directly or host it, independently.</>}
+          {userType === 'developer' && <>Reusable and Customizable</>}
+        </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Pick and choose your AI hardware provider.
-          <br />
-          Change it anytime.
+          {userType === 'user' && (
+            <>
+              Pick and choose your AI hardware provider. <br />
+              Change it anytime.
+            </>
+          )}
+          {userType === 'business' && (
+            <>
+              We can host solutions for your company. <br /> Get it running fast and easily. <br />
+              But you can also host them yourself. <br /> Own your results and own your AI solution.
+            </>
+          )}
+          {userType === 'developer' && (
+            <>
+              State problems, get solutions, fast. <br /> Automate anything and everything. <br />
+              Solve complex real world problems with completely automated solutions and get great
+              results.
+            </>
+          )}
         </div>
       </div>
     </>
   );
 }
 
-function GetCard5() {
+function GetCard5({ userType }: { userType: string }) {
   return (
     <>
-      <div className='px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start'>
-        <div className='card-title shadow-lg'>Transparent and Open</div>
+      <div
+        className={
+          'px-4 my-0 md:my-4 flex flex-col card-section mx-auto items-center lg:items-start ' +
+          (userType === 'business' ? 'dark-mode' : '')
+        }
+      >
+        <div className={'card-title shadow-lg ' + (userType === 'business' ? 'dark-mode' : '')}>
+          {userType === 'user' && <>Transparent, open, strong.</>}
+          {userType === 'business' && <>Open-source based. Grows with you.</>}
+          {userType === 'developer' && <>Reusable and Customizable</>}
+        </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Support the open-source AI community.
-          <br />
-          Get traceable and verifiable AI-generated content in return.
+          {userType === 'user' && (
+            <>
+              Support the open-source AI community.
+              <br />
+              Get traceable and verifiable AI-generated content in return.
+            </>
+          )}
+          {userType === 'business' && (
+            <>
+              Based on the most recent and powerful open-source tecnologies. <br /> Your solution is
+              guaranteed to be clean and safe, while keeping it future proof and easily upgradable
+              and expandable when needed.
+            </>
+          )}
+          {userType === 'developer' && (
+            <>
+              State problems, get solutions, fast. <br /> Automate anything and everything. <br />
+              Solve complex real world problems with completely automated solutions and get great
+              results.
+            </>
+          )}
         </div>
       </div>
 
@@ -133,6 +265,9 @@ function GetCard5() {
 }
 
 export default function VideoCard() {
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   return (
     <div className='mt-20 w-[90%] max-w-[1800px] mx-auto' id='learn-more-video-section'>
       <motion.div
@@ -156,28 +291,24 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 xl:my-10 card-glasspane-container'
+            className={
+              'flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap my-5 xl:my-10 card-glasspane-container ' +
+              (currentUserType === 'business' ? 'dark-mode' : '')
+            }
           >
-            <GetCard1 />
+            <GetCard1 userType={currentUserType} />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
+            className={
+              'flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container ' +
+              (currentUserType === 'business' ? 'dark-mode' : '')
+            }
           >
-            <GetCard2 />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ scale: 1, opacity: 1, x: 0 }}
-            viewport={{ amount: 0.3, once: true }}
-            transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap md:flex-wrap my-5 xl:my-10 card-glasspane-container'
-          >
-            <GetCard3 />
+            <GetCard2 userType={currentUserType} />
           </motion.div>
 
           <motion.div
@@ -185,9 +316,12 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container'
+            className={
+              'flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap md:flex-wrap my-5 xl:my-10 card-glasspane-container ' +
+              (currentUserType === 'business' ? 'dark-mode' : '')
+            }
           >
-            <GetCard4 />
+            <GetCard3 userType={currentUserType} />
           </motion.div>
 
           <motion.div
@@ -195,9 +329,25 @@ export default function VideoCard() {
             whileInView={{ scale: 1, opacity: 1, x: 0 }}
             viewport={{ amount: 0.3, once: true }}
             transition={{ duration: 0.4, type: 'smooth' }}
-            className='flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 xl:mt-10 card-glasspane-container'
+            className={
+              'flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap-reverse xl:flex-wrap my-5 xl:my-10 card-glasspane-container ' +
+              (currentUserType === 'business' ? 'dark-mode' : '')
+            }
           >
-            <GetCard5 />
+            <GetCard4 userType={currentUserType} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ scale: 1, opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3, once: true }}
+            transition={{ duration: 0.4, type: 'smooth' }}
+            className={
+              'flex w-full gap-3 md:gap-10 justify-center md:justify-between items-start flex-wrap mt-5 xl:mt-10 card-glasspane-container ' +
+              (currentUserType === 'business' ? 'dark-mode' : '')
+            }
+          >
+            <GetCard5 userType={currentUserType} />
           </motion.div>
         </div>
       </motion.div>

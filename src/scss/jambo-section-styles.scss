@@ -40,6 +40,10 @@
 .animate-small-stars {
   opacity: 0;
   animation: 1s scaleInFadeIn ease 3s forwards;
+
+  &.dark-mode {
+    color: rgb(240, 240, 240);
+  }
 }
 
 .jambo-grey-text {
@@ -48,6 +52,10 @@
 
   @media only screen and (max-width: 600px) {
     line-height: 1.2 !important;
+  }
+
+  &.dark-mode {
+    color: rgb(240, 240, 240) !important;
   }
 }
 
@@ -75,6 +83,14 @@
     width: 4px;
     animation: 1.2s bgBlockSlideRight 2s forwards;
   }
+
+  &.dark-mode {
+    color: rgb(20, 20, 20);
+
+    &::after {
+      background-color: rgb(255, 255, 255);
+    }
+  }
 }
 
 .bold-underlined-text-jambo {
@@ -97,6 +113,14 @@
     @media only screen and (max-width: 600px) {
       height: 4px;
       left: -4px;
+    }
+  }
+
+  &.dark-mode {
+    color: rgb(240, 240, 240);
+
+    &::after {
+      background-color: rgb(240, 240, 240);
     }
   }
 

@@ -41,6 +41,7 @@ import {
 // icons
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import { useSearchParams } from 'react-router-dom';
 
 type Props = {
   tweet: Tweet;
@@ -94,6 +95,9 @@ export const CustomTweet = ({ fallback = <TweetSkeleton />, ...props }: TweetPro
 );
 
 export default function ScreenShotSec() {
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   const tweetIds = [
     '1677415435958992896',
     '1743286414861799782',
@@ -168,18 +172,35 @@ export default function ScreenShotSec() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, type: 'smooth' }}
             viewport={{ amount: 0.3, once: true }}
-            className='flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-center'
+            className={
+              'flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-center ' +
+              (currentUserType === 'business' ? ' dark-mode' : '')
+            }
           >
             <div className='flex justify-center flex-col w-full'>
               <h1 className='text-2xl md:text-4xl w-fit dark-text flex flex-wrap items-center gap-4 justify-center lg:justify-start'>
-                <span className='text-with-dark-bg very-rounded shadow-lg'>
+                <span
+                  className={
+                    'text-with-dark-bg very-rounded shadow-lg ' +
+                    (currentUserType === 'business' ? ' dark-mode' : '')
+                  }
+                >
                   <span className='p-2'>Everyone's</span>
                 </span>
-                <span className='font-medium'>AI Marketplace</span>
+                <span
+                  className={'font-medium ' + (currentUserType === 'business' ? ' text-white' : '')}
+                >
+                  AI Marketplace
+                </span>
               </h1>
             </div>
 
-            <div className='w-full flex justify-center items-center flex-nowrap gap-5'>
+            <div
+              className={
+                'w-full flex justify-center items-center flex-nowrap gap-5 ' +
+                (currentUserType === 'business' ? ' text-white' : '')
+              }
+            >
               <div
                 className='hover:scale-110 transition-all hidden md:flex justify-center flex-auto'
                 onClick={() => scrollNews('left')}
@@ -229,7 +250,12 @@ export default function ScreenShotSec() {
             </div>
 
             <div className='w-full flex flex-wrap gap-5 justify-center dark-text'>
-              <h2 className='text-md md:text-xl flex items-center'>
+              <h2
+                className={
+                  'text-md md:text-xl flex items-center font-semibold ' +
+                  (currentUserType === 'business' ? ' invert brightness-0' : '')
+                }
+              >
                 <img
                   src='./fair-protocol-face-transparent.png'
                   alt=''
@@ -240,7 +266,10 @@ export default function ScreenShotSec() {
               <a
                 href='https://twitter.com/getFairAI'
                 target='_blank'
-                className='text-bold button-big-text outlined-only smaller'
+                className={
+                  'text-bold button-big-text outlined-only smaller ' +
+                  (currentUserType === 'business' ? ' dark-mode' : '')
+                }
               >
                 @getFairAI
               </a>
