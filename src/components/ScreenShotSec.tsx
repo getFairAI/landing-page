@@ -174,7 +174,7 @@ export default function ScreenShotSec() {
             viewport={{ amount: 0.3, once: true }}
             className={
               'flex flex-col gap-10 card-glasspane-container w-[90%] max-w-[1800px] items-center ' +
-              (currentUserType === 'business' ? ' dark-mode' : '')
+              (currentUserType === 'developer' ? ' dark-mode' : '')
             }
           >
             <div className='flex justify-center flex-col w-full'>
@@ -182,13 +182,15 @@ export default function ScreenShotSec() {
                 <span
                   className={
                     'text-with-dark-bg very-rounded shadow-lg ' +
-                    (currentUserType === 'business' ? ' dark-mode' : '')
+                    (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
                 >
                   <span className='p-2'>Everyone's</span>
                 </span>
                 <span
-                  className={'font-medium ' + (currentUserType === 'business' ? ' text-white' : '')}
+                  className={
+                    'font-medium ' + (currentUserType === 'developer' ? ' text-white' : '')
+                  }
                 >
                   AI Marketplace
                 </span>
@@ -198,7 +200,7 @@ export default function ScreenShotSec() {
             <div
               className={
                 'w-full flex justify-center items-center flex-nowrap gap-5 ' +
-                (currentUserType === 'business' ? ' text-white' : '')
+                (currentUserType === 'developer' ? ' text-white' : '')
               }
             >
               <div
@@ -253,7 +255,7 @@ export default function ScreenShotSec() {
               <h2
                 className={
                   'text-md md:text-xl flex items-center font-semibold ' +
-                  (currentUserType === 'business' ? ' invert brightness-0' : '')
+                  (currentUserType === 'developer' ? ' invert brightness-0' : '')
                 }
               >
                 <img
@@ -267,8 +269,8 @@ export default function ScreenShotSec() {
                 href='https://twitter.com/getFairAI'
                 target='_blank'
                 className={
-                  'text-bold button-big-text outlined-only smaller ' +
-                  (currentUserType === 'business' ? ' dark-mode' : '')
+                  'text-bold button-big-text smaller ' +
+                  (currentUserType === 'developer' ? ' dark-mode' : '')
                 }
               >
                 @getFairAI

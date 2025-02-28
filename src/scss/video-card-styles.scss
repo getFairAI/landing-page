@@ -1,9 +1,9 @@
 .card-title {
-  font-size: 220%;
+  font-size: 200%;
   font-weight: 700;
   border-radius: 40px;
   padding: 0px 30px;
-  line-height: 2;
+  line-height: 2.15;
   background-color: rgb(70, 70, 70);
   color: white;
   width: max-content;
@@ -19,6 +19,15 @@
   @media only screen and (max-width: 400px) {
     font-size: 110%;
     padding: 5px 20px;
+  }
+
+  &.inverted {
+    background-color: white;
+    color: rgb(70, 70, 70);
+  }
+
+  &.dark-mode {
+    background-color: #3aaaaa;
   }
 }
 

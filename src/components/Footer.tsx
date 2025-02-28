@@ -122,7 +122,7 @@ export default function Footer() {
           <div className='flex flex-col'>
             <div
               className={
-                'lg:py-6 py-4 ' + (currentUserType === 'business' ? ' invert brightness-0' : '')
+                'lg:py-6 py-4 ' + (currentUserType === 'developer' ? ' invert brightness-0' : '')
               }
             >
               <HeaderLogo />
@@ -130,7 +130,7 @@ export default function Footer() {
             <p
               className={
                 'text-sm md:text-md font-medium px-0 sm:px-12 ' +
-                (currentUserType === 'business' ? ' text-gray-200' : 'text-gray-600')
+                (currentUserType === 'developer' ? ' text-gray-200' : 'text-gray-600')
               }
             >
               Fair is the first decentralised marketplace, powered by Arweave, where creators of
@@ -140,27 +140,27 @@ export default function Footer() {
             <div
               className={
                 'slg:px-14 pt-4 lg:pt-6 pl-0 sm:pl-9 ' +
-                (currentUserType === 'business' ? ' invert' : '')
+                (currentUserType === 'developer' ? ' invert' : '')
               }
             >
               <Socials />
             </div>
           </div>
         </div>
-        <div className={'min-w-[150px] ' + (currentUserType === 'business' ? ' invert' : '')}>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...productSection} />
         </div>
-        <div className={'min-w-[150px] ' + (currentUserType === 'business' ? ' invert' : '')}>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...integrationsSection} />
         </div>
-        <div className={'min-w-[150px] ' + (currentUserType === 'business' ? ' invert' : '')}>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...aboutSection} />
         </div>
       </div>
       <div
         className={
           'py-4 font-semibold ' +
-          (currentUserType === 'business' ? ' text-neutral-200' : ' text-neutral-600')
+          (currentUserType === 'developer' ? ' text-neutral-200' : ' text-neutral-600')
         }
       >
         <div className='border-b border-gray-400 my-4 mx-auto'></div>

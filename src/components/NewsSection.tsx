@@ -147,21 +147,21 @@ function NewsSection() {
         viewport={{ amount: 0.3, once: true }}
         className={
           'container card-glasspane-container w-[90%] max-w-[1800px] ' +
-          (currentUserType === 'business' ? ' dark-mode' : '')
+          (currentUserType === 'developer' ? ' dark-mode' : '')
         }
       >
         <div className='w-fit mb-8 flex gap-4 items-center flex-wrap justify-center lg:justify-start'>
           <h2
             className={
               'shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold' +
-              (currentUserType === 'business' ? ' dark-mode' : '')
+              (currentUserType === 'developer' ? ' dark-mode' : '')
             }
           >
             <img
               src='./fair-protocol-face-transparent.png'
               className={
                 'w-[30px] md:w-[50px] object-contain mr-3 md:mr-4 ' +
-                (currentUserType === 'business' ? ' invert brightness-75' : '')
+                (currentUserType === 'developer' ? ' invert brightness-75' : '')
               }
             />
             <span className='py-2'>FairAI</span>
@@ -169,7 +169,7 @@ function NewsSection() {
           <div
             className={
               'dark-text font-medium text-2xl md:text-4xl ' +
-              (currentUserType === 'business' ? ' text-white' : '')
+              (currentUserType === 'developer' ? ' text-white' : '')
             }
           >
             Magazine
@@ -179,7 +179,7 @@ function NewsSection() {
         <div
           className={
             'w-full flex justify-center items-center gap-10 ' +
-            (currentUserType === 'business' ? ' text-white' : '')
+            (currentUserType === 'developer' ? ' text-white' : '')
           }
         >
           <div
@@ -254,7 +254,7 @@ function NewsSection() {
           <h2
             className={
               'text-md md:text-xl flex items-center font-semibold dark-text ' +
-              (currentUserType === 'business' ? ' invert brightness-0' : '')
+              (currentUserType === 'developer' ? ' invert brightness-0' : '')
             }
           >
             <img
@@ -268,11 +268,10 @@ function NewsSection() {
             href='https://blog.getfair.ai/'
             target='_blank'
             className={
-              'button-big-text outlined-only smaller ' +
-              (currentUserType === 'business' ? ' dark-mode' : '')
+              'button-big-text smaller ' + (currentUserType === 'developer' ? ' dark-mode' : '')
             }
           >
-            Check our blog <ArrowCircleRightRoundedIcon />
+            Subscribe <ArrowCircleRightRoundedIcon />
           </a>
         </div>
       </motion.div>

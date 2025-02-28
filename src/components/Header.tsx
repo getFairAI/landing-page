@@ -59,7 +59,7 @@ export default function Header() {
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
       <div className='flex justify-between flex-wrap items-center px-8 lg:px-10 py-4'>
-        <div className={currentUserType === 'business' ? 'invert' : ''}>
+        <div className={currentUserType === 'developer' ? 'invert' : ''}>
           <LogoFun />
         </div>
         <HeaderLeftBtn />
@@ -73,14 +73,14 @@ export default function Header() {
           >
             <Tooltip
               classes={{ tooltip: 'tooltip-class' }}
-              title='I am an end-user looking for AI solutions to help me on personal projects.'
+              title='I want to explore AI! Easy and code-free.'
             >
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
                     'button-big-text smaller ' +
                     (currentUserType !== 'user' ? 'outlined-only' : '') +
-                    (currentUserType === 'business' ? ' dark-mode' : '')
+                    (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
                 >
                   User
@@ -96,13 +96,14 @@ export default function Header() {
           >
             <Tooltip
               classes={{ tooltip: 'tooltip-class' }}
-              title='I represent a business looking for AI solutions to optimize my development or work, or to help my clients.'
+              title='I want smarter solutions that help my business grow.'
             >
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
                     'button-big-text smaller ' +
-                    (currentUserType !== 'business' ? ' outlined-only' : ' dark-mode')
+                    (currentUserType !== 'business' ? ' outlined-only' : '') +
+                    (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
                 >
                   Business
@@ -118,14 +119,13 @@ export default function Header() {
           >
             <Tooltip
               classes={{ tooltip: 'tooltip-class' }}
-              title='I am an AI developer looking for freelance opportunities and help others discover my AI projects.'
+              title='I am an AI developer ready to solve real challenges and get paid.'
             >
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
                     'button-big-text smaller ' +
-                    (currentUserType !== 'developer' ? ' outlined-only' : '') +
-                    (currentUserType === 'business' ? '  dark-mode' : '')
+                    (currentUserType !== 'developer' ? ' outlined-only' : ' dark-mode')
                   }
                 >
                   AI Developer
@@ -162,14 +162,14 @@ const HeaderLeftBtn = () => {
     <div
       className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
     >
-      <div className={currentUserType === 'business' ? 'invert' : ''}>
+      <div className={currentUserType === 'developer' ? 'invert' : ''}>
         <SocialsHeader />
       </div>
       <a href={WHITEPAPER}>
         <button
           className={
             'font-semibold rounded-xl plausible-event-name=Docs+Click hover:bg-gray-200 hover:text-black py-1 px-3 duration-200 ' +
-            (currentUserType === 'business' ? 'text-white' : 'text-gray-600')
+            (currentUserType === 'developer' ? 'text-white' : 'text-gray-600')
           }
         >
           Docs

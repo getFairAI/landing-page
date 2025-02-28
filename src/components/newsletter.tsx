@@ -85,15 +85,15 @@ const Newsletter = () => {
         </div>
         </div> */}
 
-        <div className='w-full flex flex-col gap-5 max-w-[800px] items-center'>
+        <div className='w-full flex flex-col gap-8 max-w-[800px] items-center'>
+          <NewsletterPreview />
           <a href={appLink} target='blank'>
             <div className='plausible-event-name=Open+App+Bottom+Click'>
               <span className='button-big-text w-fit'>
-                Start your journey <ArrowCircleRightRoundedIcon />
+                Start now <ArrowCircleRightRoundedIcon />
               </span>
             </div>
           </a>
-          <NewsletterPreview />
         </div>
       </motion.div>
     </section>

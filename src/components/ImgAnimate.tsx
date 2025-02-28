@@ -60,7 +60,7 @@ export default function ImgAnimate() {
         </motion.div>
       )}
 
-      {currentUserType === 'business' && (
+      {currentUserType === 'developer' && (
         <motion.div
           initial={{ opacity: 0, backgroundColor: 'transparent' }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -73,7 +73,7 @@ export default function ImgAnimate() {
         </motion.div>
       )}
 
-      {currentUserType === 'developer' && (
+      {currentUserType === 'business' && (
         <motion.div
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 0.2 }}

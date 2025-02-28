@@ -98,7 +98,8 @@ export default function JamboSection() {
           <div className='w-fit flex flex-col items-center lg:items-start min-height-change-size-backers'>
             <span
               className={
-                'jambo-grey-text font-medium ' + (currentUserType === 'business' ? 'dark-mode' : '')
+                'jambo-grey-text font-medium ' +
+                (currentUserType === 'developer' ? 'dark-mode' : '')
               }
             >
               <BoltRoundedIcon style={{ height: '20px', verticalAlign: 'sub' }} />
@@ -111,12 +112,12 @@ export default function JamboSection() {
                   alt='Arweave Logo'
                   className={
                     'w-full max-w-[200px] object-contain ' +
-                    (currentUserType === 'business' ? 'invert' : '')
+                    (currentUserType === 'developer' ? 'invert' : '')
                   }
                 />
               </a>
               <a href='https://arbitrum.io/' target='_blank'>
-                {currentUserType === 'business' && (
+                {currentUserType === 'developer' && (
                   <img
                     src='./logos/arbitrum-logo-darkmode.png'
                     alt='Arbitrum Logo'
@@ -124,7 +125,7 @@ export default function JamboSection() {
                   />
                 )}
 
-                {currentUserType !== 'business' && (
+                {currentUserType !== 'developer' && (
                   <img
                     src='./logos/arbitrum-logo.png'
                     alt='Arbitrum Logo'
@@ -138,7 +139,8 @@ export default function JamboSection() {
           <div className='w-fit flex flex-col items-center lg:items-start min-height-change-size-backers'>
             <span
               className={
-                'jambo-grey-text font-medium ' + (currentUserType === 'business' ? 'dark-mode' : '')
+                'jambo-grey-text font-medium ' +
+                (currentUserType === 'developer' ? 'dark-mode' : '')
               }
             >
               <FavoriteRoundedIcon
@@ -153,12 +155,12 @@ export default function JamboSection() {
                   alt='Forward Research Logo'
                   className={
                     'w-full max-w-[190px] object-contain ' +
-                    (currentUserType === 'business' ? 'invert' : '')
+                    (currentUserType === 'developer' ? 'invert' : '')
                   }
                 />
               </a>
               <a href='https://www.techstars.com/' target='_blank'>
-                {currentUserType === 'business' && (
+                {currentUserType === 'developer' && (
                   <img
                     src='./logos/techstars-logo-darkmode.png'
                     alt='Techstars Logo'
@@ -166,7 +168,7 @@ export default function JamboSection() {
                   />
                 )}
 
-                {currentUserType !== 'business' && (
+                {currentUserType !== 'developer' && (
                   <img
                     src='./logos/techstars-logo.png'
                     alt='Techstars Logo'
@@ -208,19 +210,19 @@ function UserSection() {
         </div>
         <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
-            <span className='ml-3'>Discover the full potential of a</span>
+            <span className='mr-3'>Discover open-source AI tools for</span>
+            <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
+              anything.
+            </span>
           </div>
           <div className='flex flex-wrap w-full justify-center'>
-            <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
-              democratized
-            </span>
-            <span className='ml-5 mr-5'>and</span>
+            <span className='ml-5 mr-5'>Easy, fast, and</span>
             <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right'>
-              truly open
+              no code needed.
             </span>
           </div>
           <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
-            AI marketplace
+            Explore the AI world.
           </div>
         </h1>
         <div className='w-8 md:w-10 flex-col justify-start hidden sm:flex'>
@@ -266,7 +268,7 @@ function UserSection() {
   );
 }
 
-function BusinessSection() {
+function DevSection() {
   const { appLink } = useContext(LinksContext);
 
   return (
@@ -292,19 +294,16 @@ function BusinessSection() {
         </div>
         <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text dark-mode'>
           <div>
-            <span className='ml-3'>Discover how easily AI can help you</span>
+            <span className='mr-3'>The AI Marketplace Built for Developers Like You.</span>
           </div>
           <div className='flex flex-wrap w-full justify-center'>
-            <span className='bold-underlined-text-jambo animate-bg-block-slide-right dark-mode'>
-              grow
-            </span>
-            <span className='ml-5 mr-5'>and achieve success</span>
+            <span className='ml-5 mr-5'>Build AI.</span>
             <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right dark-mode'>
-              fast
+              Solve Problems.
             </span>
           </div>
           <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right dark-mode'>
-            Get your tailored AI solution
+            Get Paid.
           </div>
         </h1>
         <div className='w-8 md:w-10 flex-col justify-start hidden sm:flex'>
@@ -350,7 +349,7 @@ function BusinessSection() {
   );
 }
 
-function DevSection() {
+function BusinessSection() {
   const { appLink } = useContext(LinksContext);
 
   return (
@@ -376,19 +375,16 @@ function DevSection() {
         </div>
         <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
-            <span className='ml-3'>Create, deploy and earn on a</span>
+            <span className='ml-3'>Your Problem.</span>
           </div>
           <div className='flex flex-wrap w-full justify-center'>
+            <span className='ml-5 mr-5'>A World of </span>
             <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
-              democratized
-            </span>
-            <span className='ml-5 mr-5'>and</span>
-            <span className='bold-underlined-text-jambo delay500ms animate-bg-block-slide-right'>
-              truly open
+              AI Experts.
             </span>
           </div>
           <div className='text-with-dark-bg-jambo very-rounded w-fit mx-auto mt-4 animate-bg-block-slide-right'>
-            AI marketplace
+            The Right Solution.
           </div>
         </h1>
         <div className='w-8 md:w-10 flex-col justify-start hidden sm:flex'>
@@ -424,7 +420,7 @@ function DevSection() {
           <a href={appLink}>
             <div className='plausible-event-name=Try+Now+Click'>
               <span className='button-big-text min-height-change-size-button'>
-                Start earning now <ArrowCircleRightRoundedIcon />
+                Start evolving now <ArrowCircleRightRoundedIcon />
               </span>
             </div>
           </a>
