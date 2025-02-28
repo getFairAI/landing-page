@@ -165,7 +165,7 @@ export const Faq = () => {
           </h2>
           <div className='flex flex-col w-full mt-10'>
             {currentUserType === 'user' &&
-              questionsUser.map((question, index) => {
+              questionsUser.map((_, index) => {
                 return (
                   <Accordion
                     i={index}
@@ -176,7 +176,7 @@ export const Faq = () => {
                 );
               })}
             {currentUserType === 'business' &&
-              questionsBusiness.map((question, index) => {
+              questionsBusiness.map((_, index) => {
                 return (
                   <Accordion
                     i={index}
@@ -187,7 +187,7 @@ export const Faq = () => {
                 );
               })}
             {currentUserType === 'developer' &&
-              questionsDeveloper.map((question, index) => {
+              questionsDeveloper.map((_, index) => {
                 return (
                   <Accordion
                     i={index}
