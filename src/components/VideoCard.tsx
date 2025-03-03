@@ -27,6 +27,7 @@ import {
   ArrowCircleRightRounded,
   SettingsSuggestRounded,
   AutoAwesomeRounded,
+  StarRounded,
 } from '@mui/icons-material';
 import { LinksContext } from '../context/links';
 import { useContext } from 'react';
@@ -41,21 +42,51 @@ function GetCard1({ userType }: { userType: string }) {
           (userType === 'developer' ? 'dark-mode' : '')
         }
       >
-        <div className='card-title shadow-lg'>
-          {userType === 'user' && <>Ready-to-Use & Customizable.</>}
-          {userType === 'developer' && <>You have the skills. We have opportunities.</>}
+        <div
+          className={'card-title shadow-lg' + (userType === 'developer' ? ' primary-color-bg' : '')}
+        >
+          {userType === 'user' && <>Ready-to-Use & Customizable</>}
+          {userType === 'developer' && (
+            <div className='flex items-center gap-3'>
+              <StarRounded
+                className='rounded-full flex-none bg-white p-1 -ml-3'
+                style={{
+                  color: '#3aaaaa',
+                  fontSize: '42px',
+                }}
+              />
+              <span>You Have Skills, We Have Opportunities</span>
+            </div>
+          )}
         </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           {userType === 'user' && (
-            <>
-              Access AI tools ready to use. <br /> Adjust them to fit your needs.
-            </>
+            <div className='bullets-wrapper'>
+              <div className='bullet'>
+                <CheckRounded />
+                <span>Access AI tools ready to use.</span>
+              </div>
+              <div className='bullet'>
+                <CheckRounded />
+                <span>Adjust them to fit your needs.</span>
+              </div>
+            </div>
           )}
           {userType === 'developer' && (
-            <>
-              Pick a challenge, submit your AI solution. <br />
-              Get paid for your work in an open and decentralized AI marketplace.
-            </>
+            <div className='flex flex-col gap-4 text-neutral-700 text-2xl'>
+              <div className='flex gap-3 rounded-xl bg-white py-2 px-3 items-center'>
+                <div className='rounded-full flex items-center justify-center bg-neutral-700 w-[35px] h-[35px] text-xl flex-none text-white'>
+                  1
+                </div>
+                <span>Pick a challenge, submit your AI solution.</span>
+              </div>
+              <div className='flex gap-3 rounded-xl bg-white py-2 px-3 items-center'>
+                <div className='rounded-full flex items-center justify-center bg-neutral-700 w-[35px] h-[35px] text-xl flex-none text-white'>
+                  2
+                </div>
+                <span>Get paid for your work in an open and decentralized AI marketplace.</span>
+              </div>
+            </div>
           )}
         </div>
       </div>
@@ -64,14 +95,14 @@ function GetCard1({ userType }: { userType: string }) {
           <img
             id='solutions'
             className='rounded-3xl border-4 border-neutral-700 shadow-xl'
-            src='./images/solutions.png'
+            src='./images/solutions2.png'
           />
         )}
         {userType === 'developer' && (
           <img
             id='requests'
             className='rounded-3xl border-4 border-neutral-700 shadow-xl'
-            src='./images/browse-requests.png'
+            src='./images/browse-requestsv2.png'
           />
         )}
       </div>
@@ -95,11 +126,22 @@ function GetCard2({ userType }: { userType: string }) {
           (userType === 'developer' ? 'dark-mode' : '')
         }
       >
-        <div className='card-title shadow-lg'>Complete Control.</div>
+        <div className='card-title shadow-lg'>Complete Control</div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Secure, private, and yours. <br />
-          Use AI with confidence, knowing your data is protected. <br />
-          Everything you create is yours, with digital property rights.
+          <div className='bullets-wrapper'>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Secure, private, and yours.</span>
+            </div>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Use AI with confidence, knowing your data is protected.</span>
+            </div>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Everything you create is yours, with digital property rights.</span>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -116,11 +158,19 @@ function GetCard3({ userType }: { userType: string }) {
         }
       >
         <div className={'card-title shadow-lg ' + (userType === 'developer' ? 'dark-mode' : '')}>
-          AI That's Open, Transparent, Powerful.
+          AI That's Open, Transparent, Powerful
         </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Support the open-source AI community and get AI you can trust in return. <br />
-          Fully open, fully verifiable.
+          <div className='bullets-wrapper'>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Support the open-source AI community and get AI you can trust in return.</span>
+            </div>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Fully open, fully verifiable.</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className='p-4 card-section mx-auto'>
@@ -151,11 +201,19 @@ function GetCard4({ userType }: { userType: string }) {
         }
       >
         <div className={'card-title shadow-lg ' + (userType === 'developer' ? 'dark-mode' : '')}>
-          Switch Providers Anytime.
+          Switch Providers Anytime
         </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
-          Choose where your AI runs. <br />
-          Balance price, speed, and availability.
+          <div className='bullets-wrapper'>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Choose where your AI runs.</span>
+            </div>
+            <div className='bullet'>
+              <CheckRounded />
+              <span>Balance price, speed, and availability.</span>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -166,7 +224,7 @@ function HowItWorksSection({ userType }: { userType: string }) {
   const { appLink } = useContext(LinksContext);
   return (
     <div className='w-full flex flex-col items-center'>
-      <div className='flex w-full justify-center'>
+      <div className='flex flex-col w-full justify-center items-center'>
         <div className='mb-8 card-title shadow-lg inverted flex gap-3 items-center'>
           <SettingsSuggestRounded
             className='text-[#3aaaaa]'
@@ -174,6 +232,14 @@ function HowItWorksSection({ userType }: { userType: string }) {
           />
           <span>How it works</span>
         </div>
+
+        {userType === 'business' && (
+          <div className='text-2xl font-medium w-full max-w-[800px] text-center mb-10 text-neutral-700'>
+            You know the problem. We know the solution. <br />
+            Post your challenge, get matched with experts, and start transforming your business
+            without changing the way you work.
+          </div>
+        )}
       </div>
 
       <div className={'px-4 my-4 flex w-full max-w-[1500px]'}>
@@ -185,11 +251,11 @@ function HowItWorksSection({ userType }: { userType: string }) {
         >
           <div
             className={
-              'card-title shadow-lg flex justify-between gap-4 pl-0' +
+              'card-title shadow-lg flex justify-between gap-4 items-center' +
               (userType === 'developer' ? ' dark-mode' : '')
             }
           >
-            <div className='rounded-full bg-white text-[#3aaaaa] w-[72px] h-[72px] flex justify-center items-center'>
+            <div className='rounded-full bg-white text-[#3aaaaa] w-[45px] h-[45px] -ml-4 flex justify-center items-center'>
               1
             </div>
             {userType === 'business' && <>Tell Us Your Challenge</>}
@@ -258,11 +324,11 @@ function HowItWorksSection({ userType }: { userType: string }) {
         >
           <div
             className={
-              'card-title shadow-lg flex justify-between gap-4 pl-0' +
+              'card-title shadow-lg flex justify-between gap-4 items-center' +
               (userType === 'developer' ? ' dark-mode' : '')
             }
           >
-            <div className='rounded-full bg-white text-[#3aaaaa] w-[72px] h-[72px] flex justify-center items-center'>
+            <div className='rounded-full bg-white text-[#3aaaaa] w-[45px] h-[45px] -ml-4 flex justify-center items-center'>
               2
             </div>
 
@@ -336,11 +402,11 @@ function HowItWorksSection({ userType }: { userType: string }) {
         >
           <div
             className={
-              'card-title shadow-lg flex justify-between gap-4 pl-0' +
+              'card-title shadow-lg flex justify-between gap-4 items-center' +
               (userType === 'developer' ? ' dark-mode' : '')
             }
           >
-            <div className='rounded-full bg-white text-[#3aaaaa] w-[72px] h-[72px] flex justify-center items-center'>
+            <div className='rounded-full bg-white text-[#3aaaaa] w-[45px] h-[45px] -ml-4 flex justify-center items-center'>
               3
             </div>
 
@@ -361,7 +427,7 @@ function HowItWorksSection({ userType }: { userType: string }) {
             )}
           </div>
 
-          <div className='card-description flex flex-col gap-2 w-full px-8  text-lg'>
+          <div className='card-description flex flex-col gap-2 w-full px-8 text-lg'>
             <div className='flex gap-3 items-center rounded-xl bg-white py-2 px-3'>
               <CheckRounded
                 className='rounded-full p-1 bg-neutral-700 text-white'
@@ -407,14 +473,20 @@ function HowItWorksSection({ userType }: { userType: string }) {
 
           <div className='px-4 my-4 flex w-full justify-end max-w-[1500px]'>
             <div className='card-glasspane-container w-full max-w-[900px]'>
-              <div className='card-title shadow-lg flex justify-between gap-4 pl-0'>
-                <div className='rounded-full bg-white text-[#3aaaaa] w-[72px] h-[72px] flex justify-center items-center'>
+              <div className='card-title shadow-lg flex justify-between gap-4 items-center'>
+                <div className='rounded-full bg-white text-[#3aaaaa] w-[45px] h-[45px] -ml-4 flex justify-center items-center'>
                   4
                 </div>
-                Done! Yes, it's really that simple.
+                Done! It's Really That Simple
               </div>
-              <div className='card-description my-6 px-11 text-2xl'>
-                Your solution is ready, no extra steps, no hidden complexity.
+              <div className='card-description w-full px-8 text-lg mt-8'>
+                <div className='flex gap-3 items-center rounded-xl bg-white py-2 px-3'>
+                  <CheckRounded
+                    className='rounded-full p-1 bg-neutral-700 text-white'
+                    style={{ height: '35px', width: '35px' }}
+                  />
+                  Your solution is ready, no extra steps, no hidden complexity.
+                </div>
               </div>
             </div>
           </div>
@@ -473,7 +545,7 @@ function ContactsCards() {
               />
               <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Message</span>
               <textarea
-                rows={8}
+                rows={13}
                 maxLength={4000}
                 id='input-message'
                 className='w-full border-2 border-neutral-500 rounded-xl p-3'

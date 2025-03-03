@@ -66,17 +66,25 @@ const ContentPlaceholder = ({ i, currentUserType }: { i: number; currentUserType
     variants={{ collapsed: { scale: 0.95, opacity: 0 }, open: { scale: 1, opacity: 1 } }}
     transition={{ duration: 0.2 }}
     className={
-      'px-3 md:px-14 text-md lg:text-xl py-4 dark-text ' +
+      'px-3 md:px-14 text-md lg:text-xl py-4 dark-text' +
       (currentUserType === 'developer' ? ' text-white' : '')
     }
   >
-    {currentUserType === 'user' && <div style={{ whiteSpace: 'pre-wrap' }}>{textsUser[i]}</div>}
-    {currentUserType === 'business' && (
-      <div style={{ whiteSpace: 'pre-wrap' }}>{textsBusiness[i]}</div>
-    )}
-    {currentUserType === 'developer' && (
-      <div style={{ whiteSpace: 'pre-wrap' }}>{textsDeveloper[i]}</div>
-    )}
+    <div
+      className='px-5 py-4 rounded-2xl font-medium'
+      style={{
+        backgroundColor:
+          currentUserType === 'developer' ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.5)',
+      }}
+    >
+      {currentUserType === 'user' && <div style={{ whiteSpace: 'pre-wrap' }}>{textsUser[i]}</div>}
+      {currentUserType === 'business' && (
+        <div style={{ whiteSpace: 'pre-wrap' }}>{textsBusiness[i]}</div>
+      )}
+      {currentUserType === 'developer' && (
+        <div style={{ whiteSpace: 'pre-wrap' }}>{textsDeveloper[i]}</div>
+      )}
+    </div>
   </motion.div>
 );
 
@@ -105,12 +113,15 @@ const Accordion = ({
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
           <KeyboardArrowDownIcon />
         </motion.div>
-        <h1 className='text-xl lg:text-3xl w-fit dark-text mx-3 my-3 px-4 py-1 rounded-3xl cursor-pointer hover:bg-neutral-600 hover:text-white transition-all duration-300'>
-          <span className={currentUserType === 'developer' ? ' text-white' : ''}>
-            {currentUserType === 'user' && <>{questionsUser[i]}</>}
-            {currentUserType === 'business' && <>{questionsBusiness[i]}</>}
-            {currentUserType === 'developer' && <>{questionsDeveloper[i]}</>}
-          </span>
+        <h1
+          className={
+            'text-xl lg:text-3xl w-fit dark-text mx-3 my-3 px-4 py-1 rounded-3xl cursor-pointer hover:bg-white transition-all duration-300' +
+            (currentUserType === 'developer' ? ' text-white hover:text-neutral-800' : '')
+          }
+        >
+          {currentUserType === 'user' && <>{questionsUser[i]}</>}
+          {currentUserType === 'business' && <>{questionsBusiness[i]}</>}
+          {currentUserType === 'developer' && <>{questionsDeveloper[i]}</>}
         </h1>
       </motion.header>
       <div>
@@ -168,6 +179,7 @@ export const Faq = () => {
               questionsUser.map((_, index) => {
                 return (
                   <Accordion
+                    key={index}
                     i={index}
                     expanded={expanded}
                     setExpanded={setExpanded}
@@ -179,6 +191,7 @@ export const Faq = () => {
               questionsBusiness.map((_, index) => {
                 return (
                   <Accordion
+                    key={index}
                     i={index}
                     expanded={expanded}
                     setExpanded={setExpanded}
@@ -190,6 +203,7 @@ export const Faq = () => {
               questionsDeveloper.map((_, index) => {
                 return (
                   <Accordion
+                    key={index}
                     i={index}
                     expanded={expanded}
                     setExpanded={setExpanded}

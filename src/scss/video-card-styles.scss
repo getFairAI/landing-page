@@ -29,12 +29,18 @@
   &.dark-mode {
     background-color: #3aaaaa;
   }
+
+  &.primary-color-bg {
+    background-color: #3aaaaa !important;
+    color: white !important;
+  }
 }
 
 .card-description {
   font-size: 180%;
   font-weight: 600;
   color: rgb(70, 70, 70);
+  width: 100%;
 
   @media only screen and (max-width: 700px) {
     font-size: 130%;
@@ -42,6 +48,36 @@
 
   @media only screen and (max-width: 400px) {
     font-size: 100%;
+  }
+
+  .bullets-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    .bullet {
+      font-size: 26px;
+      display: flex;
+      gap: 12px;
+      border-radius: 12px;
+      padding: 10px 20px;
+      // align-items: center;
+      background-color: rgba(255, 255, 255, 0.6);
+
+      svg {
+        margin-top: 5px;
+        flex: none;
+        display: flex;
+        color: white;
+        border-radius: 50%;
+        font-size: 30px;
+        padding: 3px;
+        justify-content: center;
+        align-items: center;
+        background-color: #3aaaaa;
+      }
+    }
   }
 }
 

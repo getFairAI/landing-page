@@ -274,6 +274,17 @@ function NewsSection() {
             Subscribe <ArrowCircleRightRoundedIcon />
           </a>
         </div>
+
+        {/* <div className='w-full p-4 h-[400px]'>
+          <script
+            src='https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js'
+            data-button-color='#000000'
+            data-button-text-color='#FFFFFF'
+            data-site='https://blog.getfair.ai/'
+            data-locale='en'
+            async
+          ></script>
+        </div> */}
       </motion.div>
     </section>
   );
