@@ -1,3 +1,4 @@
 src/**/_*.tsx
+src/scripts
 node_modules
 dist
