@@ -16,25 +16,31 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 import emailjs from '@emailjs/browser';
-import { CheckCircleRounded } from '@mui/icons-material';
+import { CancelRounded, CheckCircleRounded } from '@mui/icons-material';
 import { CircularProgress, TextField } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-type ContactFormData = {
+interface ContactFormData {
   user_fullname: string;
   user_email: string;
   user_message: string;
-};
+}
 
 export default function ContactForm() {
+  const defaultValues = {
+    user_fullname: '',
+    user_email: '',
+    user_message: '',
+  };
+
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, isDirty, isValid, errors },
     reset,
-  } = useForm<ContactFormData>({ mode: 'onChange' });
+  } = useForm<ContactFormData>({ mode: 'onChange', defaultValues: defaultValues });
   const [stateMessage, setStateMessage] = useState<null | 'sent' | 'error'>(null);
 
   const submitMessage = async () => {
@@ -44,11 +50,11 @@ export default function ContactForm() {
 
     setStateMessage(null);
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, 'contact-us-form', PUBLIC_KEY);
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, '#contact-us-form', PUBLIC_KEY);
       setStateMessage('sent');
-      reset({});
+      reset(defaultValues);
     } catch (error) {
-      console.log(error);
+      console.error('Error submitting form data:', error);
       setStateMessage('error');
     }
   };
@@ -133,8 +139,8 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             className='w-full flex justify-center mt-8'
           >
-            <div className='px-4 py-1 rounded-xl bg-white flex gap-2 items-center text-red-950 font-medium'>
-              <CheckCircleRounded />
+            <div className='px-4 py-1 rounded-xl bg-white flex gap-2 items-center text-red-700 font-medium'>
+              <CancelRounded />
               An error ocurred. Please try again.
             </div>
           </motion.div>
