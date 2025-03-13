@@ -1,3 +1,4 @@
+// THE FOLLOWING 2 TS RULES WERE ADDED BECAUSE EMAILJS RETURNS AN ANY TYPE
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
@@ -23,7 +24,7 @@ import { CheckCircleRounded } from '@mui/icons-material';
 import { CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import { SyntheticEvent, useState } from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 type ContactFormData = {
   user_fullname: string;
@@ -40,15 +41,14 @@ export default function ContactForm() {
   } = useForm<ContactFormData>({ mode: 'onBlur' });
   const [stateMessage, setStateMessage] = useState<null | 'sent' | 'error'>(null);
 
-  const submitMessage = async (fieldValues: FieldValues) => {
-    console.log(fieldValues);
+  const submitMessage = async () => {
     const SERVICE_ID = 'service_5s8jchq';
     const TEMPLATE_ID = 'template_231dukm';
     const PUBLIC_KEY = '4HHqO-lLCP9kvCE2z';
 
     setStateMessage(null);
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, fieldValues, PUBLIC_KEY);
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, 'contact-us-form', PUBLIC_KEY);
       setStateMessage('sent');
       reset({});
     } catch (error) {
@@ -71,7 +71,8 @@ export default function ContactForm() {
     <div className='w-full'>
       <form
         className='w-full flex flex-col gap-3 items-center px-4'
-        onSubmit={onPromise(handleSubmit(submitMessage))}
+        onSubmit={handleSubmit(submitMessage)}
+        id='contact-us-form'
       >
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Full Name</span>
         <input
