@@ -1,27 +1,44 @@
-/* eslint-env node */
-
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+  },
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:react-hooks/recommended',
+    'prettier',
   ],
+  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: true,
-    tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier', 'react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
+    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+    quotes: ['error', 'single', { avoidEscape: true }],
+    semi: ['error', 'always'],
+    'react/react-in-jsx-scope': 'off',
+    camelcase: 'error',
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
+    'no-duplicate-imports': 'error',
+    '@typescript-eslint/triple-slash-reference': [
+      'error',
+      {
+        path: 'never',
+        types: 'always',
+        lib: 'never',
+      },
     ],
-    '@typescript-eslint/no-non-null-assertion': 'off',
   },
-}
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+    react: {
+      version: 'detect',
+    },
+  },
+};
