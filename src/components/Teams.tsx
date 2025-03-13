@@ -57,7 +57,7 @@ export default function Teams() {
             <FavoriteRoundedIcon style={{ height: '20px', marginTop: '4px' }} />
             <span className='ml-2'>
               We are a team of three software engineers with a passion for AI and technology. After
-              working as consultants for three years, we pursued a master's degree in AI, which
+              working as consultants for three years, we pursued a master&apos;s degree in AI, which
               solidified our expertise in the field. We then decided to create FairAI, an
               open-source AI project, and quit our jobs to make it a reality. Our diverse skills and
               characteristics make us the perfect team for this project and contribute to the

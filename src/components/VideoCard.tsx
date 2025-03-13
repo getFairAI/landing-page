@@ -159,7 +159,7 @@ function GetCard3({ userType }: { userType: string }) {
         }
       >
         <div className={'card-title shadow-lg ' + (userType === 'developer' ? 'dark-mode' : '')}>
-          AI That's Open, Transparent, Powerful
+          AI That&apos;s Open, Transparent, Powerful
         </div>
         <div className='card-description mt-5 md:mt-10 px-8'>
           <div className='bullets-wrapper'>
@@ -478,7 +478,7 @@ function HowItWorksSection({ userType }: { userType: string }) {
                 <div className='rounded-full bg-white text-[#3aaaaa] w-[45px] h-[45px] -ml-4 flex justify-center items-center'>
                   4
                 </div>
-                Done! It's Really That Simple
+                Done! It&apos;s Really That Simple
               </div>
               <div className='card-description w-full px-8 text-lg mt-8'>
                 <div className='flex gap-3 items-center rounded-xl bg-white py-2 px-3'>
@@ -511,10 +511,10 @@ function ContactsCards() {
         <div className='w-full flex gap-10 flex-wrap max-w-[1400px]'>
           <div className='card-glasspane-container flex-grow flex flex-col items-center'>
             <div className='text-2xl font-semibold opacity-75 bg-neutral-900 w-fit px-4 py-1 rounded-3xl text-white'>
-              Not sure where to start? We’ll guide you.
+              Not sure where to start? We&apos;ll guide you.
             </div>
             <div className='text-lg font-semibold opacity-50 px-4 mt-1'>
-              Choose a time that works for you and we'll be there.
+              Choose a time that works for you and we&apos;ll be there.
             </div>
             <div className='mt-5 rounded-3xl overflow-hidden shadow-xl w-full border-2 border-neutral-500'>
               <CalendlyInlineWidget />
@@ -525,7 +525,7 @@ function ContactsCards() {
               Not ready for a call? Send us a message.
             </div>
             <div className='text-lg font-semibold opacity-50 px-4 mt-1'>
-              We'll respond to you shortly, typically within an hour.
+              We&apos;ll respond to you shortly, typically within an hour.
             </div>
 
             <div className='w-full mt-6'>

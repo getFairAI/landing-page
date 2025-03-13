@@ -106,7 +106,7 @@ export default function JamboSection() {
               Empowered by
             </span>
             <div className='flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-2'>
-              <a href='https://www.arweave.org/' target='_blank'>
+              <a href='https://www.arweave.org/' target='_blank' rel='noreferrer'>
                 <img
                   src='./logos/arweave-logo-2.png'
                   alt='Arweave Logo'
@@ -116,7 +116,7 @@ export default function JamboSection() {
                   }
                 />
               </a>
-              <a href='https://arbitrum.io/' target='_blank'>
+              <a href='https://arbitrum.io/' target='_blank' rel='noreferrer'>
                 {currentUserType === 'developer' && (
                   <img
                     src='./logos/arbitrum-logo-darkmode.png'
@@ -149,7 +149,7 @@ export default function JamboSection() {
               Backed by
             </span>
             <div className='flex flex-wrap justify-center items-center gap-5 md:gap-10 mt-2'>
-              <a href='https://fwd.g8way.io/' target='_blank'>
+              <a href='https://fwd.g8way.io/' target='_blank' rel='noreferrer'>
                 <img
                   src='./logos/forward-research-logo-2.png'
                   alt='Forward Research Logo'
@@ -159,7 +159,7 @@ export default function JamboSection() {
                   }
                 />
               </a>
-              <a href='https://www.techstars.com/' target='_blank'>
+              <a href='https://www.techstars.com/' target='_blank' rel='noreferrer'>
                 {currentUserType === 'developer' && (
                   <img
                     src='./logos/techstars-logo-darkmode.png'

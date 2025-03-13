@@ -26,7 +26,7 @@ import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRou
 
 const sidebar = {
   open: {
-    clipPath: `circle(2000px at calc(100vw - 54px) 36px)`,
+    clipPath: 'circle(2000px at calc(100vw - 54px) 36px)',
     transition: {
       type: 'spring',
       stiffness: 20,

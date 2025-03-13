@@ -16,28 +16,22 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
-
-import { Suspense } from 'react';
 import { Tweet } from 'react-tweet/api';
 import {
   type TweetProps,
-  TweetNotFound,
-  TweetSkeleton,
-  TweetActions,
-  TweetInReplyTo,
-} from 'react-tweet';
-
-import {
   type TwitterComponents,
   TweetContainer,
   TweetHeader,
   TweetBody,
   TweetInfo,
   enrichTweet,
+  TweetNotFound,
+  TweetSkeleton,
+  TweetActions,
+  TweetInReplyTo,
 } from 'react-tweet';
-
 // icons
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
@@ -185,7 +179,7 @@ export default function ScreenShotSec() {
                     (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
                 >
-                  <span className='p-2'>Everyone's</span>
+                  <span className='p-2'>Everyone&apos;s</span>
                 </span>
                 <span
                   className={
@@ -272,6 +266,7 @@ export default function ScreenShotSec() {
                   'text-bold button-big-text smaller ' +
                   (currentUserType === 'developer' ? ' dark-mode' : '')
                 }
+                rel='noreferrer'
               >
                 @getFairAI
               </a>

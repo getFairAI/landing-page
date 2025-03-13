@@ -39,6 +39,7 @@ export default function Socials() {
         href={TWITTER_LINK}
         target='_blank'
         className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Twitter`}
+        rel='noreferrer'
       >
         <FaXTwitter className={iconDimension} />
       </a>
@@ -46,6 +47,7 @@ export default function Socials() {
         href={GHOST_LINK}
         target='_blank'
         className={`${blackIcons} ${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Ghost`}
+        rel='noreferrer'
       >
         <Icon style={{ overflow: 'auto', width: '2rem', height: '2rem', display: 'flex' }}>
           <img
@@ -58,6 +60,7 @@ export default function Socials() {
         href={DISCORD_LINK}
         target='_blank'
         className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Discord`}
+        rel='noreferrer'
       >
         <FaDiscord className={iconDimension} />
       </a>
@@ -65,6 +68,7 @@ export default function Socials() {
         href={LINKEDIN_LINK}
         target='_blank'
         className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=LinkedIn`}
+        rel='noreferrer'
       >
         <FaLinkedin className={iconDimension} />
       </a>
@@ -72,6 +76,7 @@ export default function Socials() {
         href={YOUTUBE_LINK}
         target='_blank'
         className={`${hoverAnimation} plausible-event-name=Footer+Link+Click plausible-event-link=Youtube`}
+        rel='noreferrer'
       >
         <FaYoutube className={iconDimension} />
       </a>
@@ -79,6 +84,7 @@ export default function Socials() {
         href={GIT_LINK}
         target='_blank'
         className={`${hoverAnimation} ${blackIcons} plausible-event-name=Footer+Link+Click plausible-event-link=Git`}
+        rel='noreferrer'
       >
         <FaGithub className={iconDimension} />
       </a>

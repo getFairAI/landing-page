@@ -46,6 +46,7 @@ export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
               ' ',
               '+',
             )}`}
+            rel='noreferrer'
           >
             <FaLinkedin className='text-blue-700 mx-auto mt-2' />
           </a>
@@ -56,6 +57,7 @@ export default function TeamMember(memberProps: Readonly<TeamMemberProps>) {
               ' ',
               '+',
             )}`}
+            rel='noreferrer'
           >
             <FaXTwitter className='mx-auto mt-2' />
           </a>

@@ -160,7 +160,9 @@ const HeaderLeftBtn = () => {
 
   return (
     <div
-      className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
+      className={
+        'lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex'
+      }
     >
       <div className={currentUserType === 'developer' ? 'invert' : ''}>
         <SocialsHeader />
