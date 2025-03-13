@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --host",
+    "start": "set INLINE_RUNTIME_CHUNK=false && vite --host",
     "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -13,10 +13,13 @@
     "deploy": "ts-node --esm ./scripts/deploy.ts"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
+    "@uidotdev/usehooks": "^2.4.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^10.15.1",
     "magic-snowflakes": "^6.3.0",
     "popmotion": "^11.0.5",
@@ -24,6 +27,7 @@
     "react-calendly": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.54.2",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.22.1",
     "react-tweet": "^3.2.1",

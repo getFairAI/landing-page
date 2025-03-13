@@ -29,7 +29,7 @@ const textsDeveloper = [
   'Yes, FairAI is designed for experienced AI developers. You can use your skills to tackle challenges and build effective AI solutions.',
   "No! You don't need to worry about infrastructure. FairAI handles the computing power and infrastructure needed to run AI solutions. You focus on building AI, and we take care of the rest.",
   'Payments are based on milestones. Once you and the company agree on the project milestones, you will receive secure payment upon completing each stage. This guarantees fairness for both parties.',
-  'Can I work alone, or do I need a team? You can work independently or with a group. FairAI offers flexibility, allowing you to decide how you wish to collaborate on a project.',
+  'You can work independently or with a group. FairAI offers flexibility, allowing you to decide how you wish to collaborate on a project.',
 ];
 
 const questionsDeveloper = [

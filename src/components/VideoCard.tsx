@@ -32,6 +32,7 @@ import {
 import { LinksContext } from '../context/links';
 import { useContext } from 'react';
 import { InlineWidget } from 'react-calendly';
+import ContactForm from './contact-us-widget';
 
 function GetCard1({ userType }: { userType: string }) {
   return (
@@ -526,35 +527,9 @@ function ContactsCards() {
             <div className='text-lg font-semibold opacity-50 px-4 mt-1'>
               We'll respond to you shortly, typically within an hour.
             </div>
-            <div className='w-full flex flex-col gap-3 mt-8 items-center px-6'>
-              <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Full Name</span>
-              <input
-                type='text'
-                maxLength={200}
-                id='input-name'
-                className='w-full border-2 border-neutral-500 rounded-xl p-3'
-                placeholder='How should we call you?'
-              />
-              <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Email</span>
-              <input
-                type='email'
-                maxLength={200}
-                id='input-email'
-                className='w-full border-2 border-neutral-500 rounded-xl p-3'
-                placeholder='Where can we reach you?'
-              />
-              <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Message</span>
-              <textarea
-                rows={13}
-                maxLength={4000}
-                id='input-message'
-                className='w-full border-2 border-neutral-500 rounded-xl p-3'
-                placeholder='How can we help? Feel free to share any defails.'
-              />
-            </div>
 
-            <div className='w-full flex flex-col justify-end items-center mt-6'>
-              <button className='button-big-text smaller w-fit'>Send Message</button>
+            <div className='w-full mt-6'>
+              <ContactForm />
             </div>
           </div>
         </div>
