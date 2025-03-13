@@ -23,20 +23,23 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface ContactFormData {
-  user_fullname: string;
-  user_email: string;
-  user_message: string;
+  userFullname: string;
+  userEmail: string;
+  userMessage: string;
 }
+
+type fieldsOptionsForRecord = 'userFullname' | 'userEmail' | 'userMessage';
 
 export default function ContactForm() {
   const defaultValues = {
-    user_fullname: '',
-    user_email: '',
-    user_message: '',
+    userFullname: '',
+    userEmail: '',
+    userMessage: '',
   };
 
   const {
     register,
+    getValues,
     handleSubmit,
     formState: { isSubmitting, isDirty, isValid, errors },
     reset,
@@ -50,7 +53,11 @@ export default function ContactForm() {
 
     setStateMessage(null);
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, '#contact-us-form', PUBLIC_KEY);
+      const userValues: Record<fieldsOptionsForRecord, string> = getValues();
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, userValues, {
+        publicKey: PUBLIC_KEY,
+      });
       setStateMessage('sent');
       reset(defaultValues);
     } catch (error) {
@@ -70,9 +77,9 @@ export default function ContactForm() {
           className='w-full'
           placeholder='How should we call you?'
           disabled={isSubmitting}
-          {...register('user_fullname', { required: true, maxLength: 100 })}
-          error={errors.user_fullname ? true : false}
-          helperText={errors.user_fullname ? 'Please provide your full name.' : false}
+          {...register('userFullname', { required: true, maxLength: 100 })}
+          error={errors.userFullname ? true : false}
+          helperText={errors.userFullname ? 'Please provide your full name.' : false}
         />
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Email</span>
         <TextField
@@ -82,7 +89,7 @@ export default function ContactForm() {
           className='w-full'
           placeholder='Where can we reach you?'
           disabled={isSubmitting}
-          {...register('user_email', {
+          {...register('userEmail', {
             required: true,
             maxLength: 100,
             pattern: {
@@ -90,8 +97,8 @@ export default function ContactForm() {
               message: 'Invalid email address',
             },
           })}
-          error={errors.user_email ? true : false}
-          helperText={errors.user_email ? 'Please provide a valid email.' : false}
+          error={errors.userEmail ? true : false}
+          helperText={errors.userEmail ? 'Please provide a valid email.' : false}
         />
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Message</span>
         <TextField
@@ -102,9 +109,9 @@ export default function ContactForm() {
           className='w-full'
           placeholder='How can we help? Feel free to share any defails.'
           disabled={isSubmitting}
-          {...register('user_message', { required: true, maxLength: 5000 })}
-          error={errors.user_message ? true : false}
-          helperText={errors.user_message ? 'Please type your message.' : false}
+          {...register('userMessage', { required: true, maxLength: 5000 })}
+          error={errors.userMessage ? true : false}
+          helperText={errors.userMessage ? 'Please type your message.' : false}
         />
 
         {isSubmitting && (
