@@ -1,3 +1,5 @@
+@import './animations.scss';
+
 .dark-text {
   color: rgb(70, 70, 70);
 }
@@ -214,18 +216,46 @@
   font-weight: 600 !important;
 }
 
-.form-input {
-  background-color: white;
-  border: 2px solid rgb(70, 70, 70);
+.MuiOutlinedInput-root > fieldset {
+  border: none !important;
+}
+
+.MuiOutlinedInput-root {
+  padding: 0px !important;
+}
+
+.MuiOutlinedInput-root > input,
+.MuiOutlinedInput-root > textarea {
+  border: none !important;
+  outline: 2px solid rgb(80, 80, 80);
   border-radius: 12px;
-  padding: 10px 12px;
+  background-color: white;
+  color: rgb(70, 70, 70);
+  z-index: 1;
+  transition: 0.2 all;
 
-  &:invalid {
-    border: 2px solid darkred !important;
-    background-color: rgb(255, 224, 224) !important ;
+  &:focus,
+  &:focus-within {
+    outline: 2px solid #3aaaaa !important;
   }
+}
 
-  &:disabled {
-    filter: contrast(0.85) !important;
-  }
+.MuiOutlinedInput-root.Mui-error > input,
+.MuiOutlinedInput-root.Mui-error > textarea {
+  outline: 2px solid red !important;
+}
+
+.MuiOutlinedInput-root > textarea {
+  padding: 15px;
+}
+
+.MuiFormHelperText-root {
+  opacity: 0;
+  animation: 0.3s ease fadeInSlideDown forwards !important;
+  font-weight: 500 !important;
+  background-color: white;
+  margin: 0 !important;
+  margin-top: -10px !important;
+  padding: 15px 10px 5px 10px !important;
+  border-radius: 0px 0px 15px 15px !important;
 }

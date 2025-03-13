@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "set INLINE_RUNTIME_CHUNK=false && vite --host",
+    "npx": "npx",
     "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

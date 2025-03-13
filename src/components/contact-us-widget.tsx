@@ -1,7 +1,3 @@
-// THE FOLLOWING 2 TS RULES WERE ADDED BECAUSE EMAILJS RETURNS AN ANY TYPE
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 /*
  * Fair Protocol - Landing Page
  * Copyright (C) 2023 Fair Protocol
@@ -21,9 +17,9 @@
  */
 import emailjs from '@emailjs/browser';
 import { CheckCircleRounded } from '@mui/icons-material';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, TextField } from '@mui/material';
 import { motion } from 'framer-motion';
-import { SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 type ContactFormData = {
@@ -38,7 +34,7 @@ export default function ContactForm() {
     handleSubmit,
     formState: { isSubmitting, isDirty, isValid, errors },
     reset,
-  } = useForm<ContactFormData>({ mode: 'onBlur' });
+  } = useForm<ContactFormData>({ mode: 'onChange' });
   const [stateMessage, setStateMessage] = useState<null | 'sent' | 'error'>(null);
 
   const submitMessage = async () => {
@@ -57,55 +53,58 @@ export default function ContactForm() {
     }
   };
 
-  function onPromise<T>(promise: (event: SyntheticEvent) => Promise<T>) {
-    return (event: SyntheticEvent) => {
-      if (promise) {
-        promise(event).catch((error) => {
-          console.log('Unexpected error', error);
-        });
-      }
-    };
-  }
-
   return (
     <div className='w-full'>
       <form
         className='w-full flex flex-col gap-3 items-center px-4'
-        onSubmit={handleSubmit(submitMessage)}
+        onSubmit={() => {
+          handleSubmit(submitMessage);
+        }}
         id='contact-us-form'
       >
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Full Name</span>
-        <input
-          type='text'
+        <TextField
+          variant='outlined'
           maxLength={200}
           id='input-fullname'
-          className='w-full form-input'
+          className='w-full'
           placeholder='How should we call you?'
           disabled={isSubmitting}
           {...register('user_fullname', { required: true, maxLength: 100 })}
-          aria-invalid={errors.user_fullname ? 'true' : 'false'}
+          error={errors.user_fullname ? true : false}
+          helperText={errors.user_fullname ? 'Please provide your full name.' : false}
         />
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Email</span>
-        <input
+        <TextField
           type='email'
           maxLength={200}
           id='input-email'
-          className='w-full form-input'
+          className='w-full'
           placeholder='Where can we reach you?'
           disabled={isSubmitting}
-          {...register('user_email', { required: true, maxLength: 100 })}
-          aria-invalid={errors.user_email ? 'true' : 'false'}
+          {...register('user_email', {
+            required: true,
+            maxLength: 100,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'Invalid email address',
+            },
+          })}
+          error={errors.user_email ? true : false}
+          helperText={errors.user_email ? 'Please provide a valid email.' : false}
         />
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Message</span>
-        <textarea
-          rows={10}
+        <TextField
+          multiline
+          minRows={8}
           maxLength={5000}
           id='input-message'
-          className='w-full form-input'
+          className='w-full'
           placeholder='How can we help? Feel free to share any defails.'
           disabled={isSubmitting}
           {...register('user_message', { required: true, maxLength: 5000 })}
-          aria-invalid={errors.user_message ? 'true' : 'false'}
+          error={errors.user_message ? true : false}
+          helperText={errors.user_message ? 'Please type your message.' : false}
         />
 
         {isSubmitting && (
@@ -149,7 +148,7 @@ export default function ContactForm() {
 
         <div className='w-full flex flex-col justify-end items-center mt-6'>
           <button
-            type='button'
+            type='submit'
             className='button-big-text smaller w-fit'
             disabled={isSubmitting || !isDirty || !isValid}
           >
