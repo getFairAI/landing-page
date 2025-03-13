@@ -55,13 +55,7 @@ export default function ContactForm() {
 
   return (
     <div className='w-full'>
-      <form
-        className='w-full flex flex-col gap-3 items-center px-4'
-        onSubmit={() => {
-          handleSubmit(submitMessage);
-        }}
-        id='contact-us-form'
-      >
+      <form className='w-full flex flex-col gap-3 items-center px-4' id='contact-us-form'>
         <span className='text-neutral-700 font-medium w-full pl-2 -mb-3'>Full Name</span>
         <TextField
           variant='outlined'
@@ -151,6 +145,7 @@ export default function ContactForm() {
             type='submit'
             className='button-big-text smaller w-fit'
             disabled={isSubmitting || !isDirty || !isValid}
+            onClick={handleSubmit(submitMessage)}
           >
             Send Message
           </button>
