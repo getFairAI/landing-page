@@ -64,7 +64,7 @@ export default function Header() {
         </div>
         <HeaderLeftBtn />
 
-        <div className='flex gap-3 flex-wrap justify-center flex-grow-1 xl:absolute top-0 xl:top-3 left-0 xl:left-[50%] translate-x-0 xl:translate-x-[-50%] w-full xl:w-fit'>
+        <div className='flex gap-2 md:gap-4 flex-wrap justify-center flex-grow-1 xl:absolute top-0 xl:top-3 left-0 xl:left-[50%] translate-x-0 xl:translate-x-[-50%] w-full xl:w-fit mt-2 md:mt-0'>
           <a
             className='cursor-pointer'
             onClick={() => {
@@ -78,8 +78,8 @@ export default function Header() {
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
-                    'button-big-text smaller ' +
-                    (currentUserType !== 'user' ? 'outlined-only' : '') +
+                    'button-big-text smaller top-header-button ' +
+                    (currentUserType !== 'user' ? ' outlined-only' : '') +
                     (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
                 >
@@ -101,7 +101,7 @@ export default function Header() {
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
-                    'button-big-text smaller ' +
+                    'button-big-text smaller top-header-button ' +
                     (currentUserType !== 'business' ? ' outlined-only' : '') +
                     (currentUserType === 'developer' ? ' dark-mode' : '')
                   }
@@ -124,7 +124,7 @@ export default function Header() {
               <div className='plausible-event-name=Im+A+User+Click w-fit'>
                 <span
                   className={
-                    'button-big-text smaller ' +
+                    'button-big-text smaller top-header-button ' +
                     (currentUserType !== 'developer' ? ' outlined-only' : ' dark-mode')
                   }
                 >

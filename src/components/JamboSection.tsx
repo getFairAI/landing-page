@@ -208,7 +208,7 @@ function UserSection() {
             }}
           />
         </div>
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
+        <h1 className='text-2xl md:text-4xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
             <span className='mr-3'>Discover open-source AI tools for</span>
             <span className='bold-underlined-text-jambo animate-bg-block-slide-right'>
@@ -292,7 +292,7 @@ function DevSection() {
             }}
           />
         </div>
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text dark-mode'>
+        <h1 className='text-2xl md:text-4xl text-center jambo-grey-text mx-10 min-height-change-size-text dark-mode'>
           <div>
             <span className='mr-3'>The AI Marketplace Built for Developers Like You.</span>
           </div>
@@ -373,7 +373,7 @@ function BusinessSection() {
             }}
           />
         </div>
-        <h1 className='lg:text-5xl text-3xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
+        <h1 className='text-2xl md:text-4xl text-center jambo-grey-text mx-10 min-height-change-size-text'>
           <div>
             <span className='ml-3'>Your Problem.</span>
           </div>

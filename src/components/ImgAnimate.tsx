@@ -55,7 +55,7 @@ export default function ImgAnimate() {
         >
           <img
             src={'./blurred_asbtract_bg.jpg'}
-            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+            className='opacity-50 object-cover w-[100vw] h-[100vh]'
           />
         </motion.div>
       )}
@@ -68,7 +68,7 @@ export default function ImgAnimate() {
         >
           <img
             src={'./blurred_asbtract_bg_darkmode.jpg'}
-            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+            className='opacity-50 object-cover w-[100vw] h-[100vh]'
           />
         </motion.div>
       )}
@@ -81,7 +81,8 @@ export default function ImgAnimate() {
         >
           <img
             src={'./blurred_asbtract_bg_purple.jpg'}
-            className='opacity-50 object-fill w-[100vw] h-[100vh]'
+            className='opacity-75 object-cover w-[100vw] h-[100vh]'
+            style={{ filter: 'blur(2px)' }}
           />
         </motion.div>
       )}

@@ -1,24 +1,28 @@
 .card-title {
-  font-size: 200%;
+  font-size: 28px;
   font-weight: 700;
   border-radius: 40px;
-  padding: 0px 30px;
+  padding: 0px 24px;
   line-height: 2.15;
   background-color: rgb(70, 70, 70);
   color: white;
   width: max-content;
 
   @media only screen and (max-width: 700px) {
-    font-size: 150%;
-    width: fit-content;
+    font-size: 24px;
+    width: 100%;
     line-height: 1.4;
-    padding: 5px 30px;
-    text-align: center;
+    padding: 8px 24px;
   }
 
   @media only screen and (max-width: 400px) {
-    font-size: 110%;
-    padding: 5px 20px;
+    font-size: 100%;
+    padding: 4px 20px;
+
+    .MuiSvgIcon-root {
+      width: 25px !important;
+      height: 25px !important;
+    }
   }
 
   &.inverted {
@@ -40,14 +44,17 @@
   font-size: 180%;
   font-weight: 600;
   color: rgb(70, 70, 70);
+  padding: 0px 30px;
   width: 100%;
 
   @media only screen and (max-width: 700px) {
     font-size: 130%;
+    padding: 0px 10px;
   }
 
   @media only screen and (max-width: 400px) {
     font-size: 100%;
+    padding: 0px 10px;
   }
 
   .bullets-wrapper {
@@ -57,25 +64,98 @@
     width: 100%;
 
     .bullet {
-      font-size: 26px;
+      font-size: 18px;
       display: flex;
       gap: 12px;
-      border-radius: 12px;
-      padding: 10px 20px;
+      border-radius: 14px;
+      padding: 8px 12px;
       // align-items: center;
       background-color: rgba(255, 255, 255, 0.6);
 
+      &.bigger-text {
+        line-height: 1.3;
+        font-size: 22px;
+      }
+
       svg {
-        margin-top: 5px;
         flex: none;
         display: flex;
         color: white;
         border-radius: 50%;
         font-size: 30px;
-        padding: 3px;
+        padding: 4px;
         justify-content: center;
         align-items: center;
         background-color: #3aaaaa;
+      }
+
+      &.grey-inverted {
+        background-color: white;
+        color: rgb(70, 70, 70);
+
+        svg {
+          background-color: rgb(70, 70, 70);
+        }
+      }
+
+      .number-badge {
+        flex: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #3aaaaa;
+        color: white;
+        font-size: 24px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+
+        &.grey-inverted {
+          background-color: rgb(70, 70, 70);
+        }
+      }
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 20px;
+        padding: 8px 10px;
+
+        svg {
+          margin-top: 0px;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        font-size: 18px;
+        padding: 8px 15px;
+
+        &.bigger-text {
+          font-size: 16px;
+        }
+
+        svg {
+          font-size: 26px;
+        }
+
+        .number-badge {
+          font-size: 20px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        font-size: 16px;
+        padding: 5px 10px;
+
+        &.bigger-text {
+          line-height: 1.4;
+          font-size: 14px;
+        }
+
+        svg {
+          font-size: 20px;
+        }
       }
     }
   }
