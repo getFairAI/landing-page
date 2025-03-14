@@ -30,6 +30,7 @@ import {
 } from '../constants';
 import { useContext, useEffect, useState } from 'react';
 import { LinksContext } from '../context/links';
+import { useSearchParams } from 'react-router-dom';
 
 // Aux Section
 
@@ -63,6 +64,8 @@ function Section({ title, content }: SectionProps) {
 }
 
 export default function Footer() {
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
   const { appLink } = useContext(LinksContext);
   const [productSection, setProductSection] = useState({
     title: 'Product',
@@ -117,31 +120,50 @@ export default function Footer() {
       <div className='flex flex-wrap justify-center gap-5'>
         <div className='flex basis-1 pt-4 flex-auto max-w-[1100px] min-w-[250px]'>
           <div className='flex flex-col'>
-            <div className='lg:py-6 py-4'>
+            <div
+              className={
+                'lg:py-6 py-4 ' + (currentUserType === 'developer' ? ' invert brightness-0' : '')
+              }
+            >
               <HeaderLogo />
             </div>
-            <p className='text-sm md:text-md font-medium text-gray-600 px-0 sm:px-12'>
+            <p
+              className={
+                'text-sm md:text-md font-medium px-0 sm:px-12 ' +
+                (currentUserType === 'developer' ? ' text-gray-200' : 'text-gray-600')
+              }
+            >
               Fair is the first decentralised marketplace, powered by Arweave, where creators of
               open-source AI models can monetise their work while users retain ownership and
               intellectual property rights of AI-generated content.
             </p>
-            <div className='slg:px-14 pt-4 lg:pt-6 pl-0 sm:pl-9'>
+            <div
+              className={
+                'slg:px-14 pt-4 lg:pt-6 pl-0 sm:pl-9 ' +
+                (currentUserType === 'developer' ? ' invert' : '')
+              }
+            >
               <Socials />
             </div>
           </div>
         </div>
-        <div className='min-w-[150px]'>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...productSection} />
         </div>
-        <div className='min-w-[150px]'>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...integrationsSection} />
         </div>
-        <div className='min-w-[150px]'>
+        <div className={'min-w-[150px] ' + (currentUserType === 'developer' ? ' invert' : '')}>
           <Section {...aboutSection} />
         </div>
       </div>
-      <div className='py-4 font-semibold text-neutral-600'>
-        <div className='border-b border-gray-300 my-4 mx-auto'></div>
+      <div
+        className={
+          'py-4 font-semibold ' +
+          (currentUserType === 'developer' ? ' text-neutral-200' : ' text-neutral-600')
+        }
+      >
+        <div className='border-b border-gray-400 my-4 mx-auto'></div>
         <div className='text-center'>&copy; 2024 FairAI, Inc.</div>
       </div>
     </footer>

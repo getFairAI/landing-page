@@ -32,6 +32,7 @@ export default function ListItem({ href, title, extraClasses, relative }: ListIt
         href={href}
         target={relative ? '_self' : '_blank'}
         className={extraClasses ? `text-[#646464] ${extraClasses}` : 'text-[#646464]'}
+        rel='noreferrer'
       >
         <FiArrowUpRight className='inline-block mr-1 mb-1' />
         {title}

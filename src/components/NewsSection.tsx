@@ -20,15 +20,26 @@
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import '../scss/news-section-styles.scss';
 
 function NewsSection() {
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   const newsItems = [
+    {
+      title: "We're Back – It's Time for FairAI's Wrapped 2024! 🎉",
+      date: 'Dec 10, 2024',
+      link: 'https://blog.getfair.ai/fairai-wrapped-2024/',
+      image: './images/wrapped2024.jpg',
+    },
     {
       title: 'Companies can now create AI requests on FairAI marketplace',
       date: 'May 17, 2024',
-      link: 'https://www.techstars.com/newsroom/announcing-the-techstars-web3-class-of-2024',
+      link: 'https://blog.getfair.ai/companies-can-now-create-ai-requests-on-fairai-marketplace/',
       image: './images/companies-request-solutions.png',
     },
     {
@@ -128,6 +139,50 @@ function NewsSection() {
     }
   };
 
+  useEffect(() => {
+    const subscribeDiv = document.getElementById('subscribe-email-div');
+    if (subscribeDiv) {
+      const script = document.createElement('script');
+      subscribeDiv.appendChild(
+        script /*  document.getElementById('subscribe-email-div')?.parentNode! */,
+      );
+
+      script.src = 'src/scripts/signup-form.min.js';
+      script.setAttribute('data-button-color', '#3aaaaa');
+      script.setAttribute('data-form-border', '1px solid black');
+      script.setAttribute('data-button-text-color', '#FFFFFF');
+      script.setAttribute('data-site', 'https://blog.getfair.ai/');
+      script.async = true;
+      script.onload = () => {
+        setTimeout(() => {
+          const iframe = document.querySelector("iframe[title='signup frame']");
+          if (iframe) {
+            const iframeDoc = (iframe as HTMLIFrameElement).contentDocument;
+            if (iframeDoc) {
+              const form = iframeDoc.getElementsByTagName('form')[0];
+              form.style.borderRadius = '28px';
+              form.style.border = '2px solid rgb(90,90,90)';
+              form.style.overflow = 'hidden';
+              form.style.padding = '4px';
+
+              const button = iframeDoc.getElementsByTagName('button')[0];
+              button.style.borderRadius = '24px';
+              button.style.width = '140px';
+              button.style.fontWeight = '600';
+            }
+          }
+          // (element as HTMLElement).style.border = '4px solid black';
+        }, 200);
+      };
+
+      return () => {
+        subscribeDiv?.removeChild(script);
+      };
+    } else {
+      // ignore
+    }
+  }, []);
+
   return (
     <section className='mt-16 xl:mt-40 flex justify-center'>
       <motion.div
@@ -135,20 +190,43 @@ function NewsSection() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, type: 'smooth' }}
         viewport={{ amount: 0.3, once: true }}
-        className='container card-glasspane-container w-[90%] max-w-[1800px]'
+        className={
+          'container card-glasspane-container w-[90%] max-w-[1800px] ' +
+          (currentUserType === 'developer' ? ' dark-mode' : '')
+        }
       >
         <div className='w-fit mb-8 flex gap-4 items-center flex-wrap justify-center lg:justify-start'>
-          <h2 className='shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold'>
+          <h2
+            className={
+              'shadow-lg text-2xl md:text-3xl flex text-with-dark-bg very-rounded font-bold' +
+              (currentUserType === 'developer' ? ' dark-mode' : '')
+            }
+          >
             <img
               src='./fair-protocol-face-transparent.png'
-              className='w-[30px] md:w-[50px] object-contain mr-3 md:mr-4'
+              className={
+                'w-[30px] md:w-[50px] object-contain mr-3 md:mr-4 ' +
+                (currentUserType === 'developer' ? ' invert brightness-75' : '')
+              }
             />
             <span className='py-2'>FairAI</span>
           </h2>
-          <div className='dark-text font-medium text-2xl md:text-4xl '>Magazine</div>
+          <div
+            className={
+              'dark-text font-medium text-2xl md:text-4xl ' +
+              (currentUserType === 'developer' ? ' text-white' : '')
+            }
+          >
+            Magazine
+          </div>
         </div>
 
-        <div className='w-full flex justify-center items-center gap-10'>
+        <div
+          className={
+            'w-full flex justify-center items-center gap-10 ' +
+            (currentUserType === 'developer' ? ' text-white' : '')
+          }
+        >
           <div
             className='hover:scale-110 transition-all hidden md:flex flex-auto'
             onClick={() => scrollNews('left')}
@@ -217,22 +295,36 @@ function NewsSection() {
           </div>
         </div>
 
-        <div className='flex justify-center w-full mt-8 items-center gap-5 flex-wrap'>
-          <h2 className='text-md md:text-xl flex items-center dark-text'>
-            <img
-              src='./fair-protocol-face-transparent.png'
-              alt=''
-              className='invert opacity-70 w-[40px] mr-3'
-            />
-            Stay updated
-          </h2>
-          <a
-            href='https://blog.getfair.ai/'
-            target='_blank'
-            className='button-big-text outlined-only smaller cursor-pointer'
-          >
-            Check our blog <ArrowCircleRightRoundedIcon />
-          </a>
+        <div className='flex justify-between w-full mt-8 items-center gap-5 flex-wrap px-6'>
+          {/* <div className='flex-grow flex gap-3 flex-wrap items-center'>
+            <a
+              href='https://blog.getfair.ai/'
+              target='_blank'
+              className={
+                'button-big-text smaller ' + (currentUserType === 'developer' ? ' dark-mode' : '')
+              }
+            >
+              Check out our blog <ArrowCircleRightRoundedIcon />
+            </a>
+          </div> */}
+
+          <div className='flex-grow flex gap-3 flex-wrap items-center justify-center'>
+            <h2
+              className={
+                'text-md md:text-xl flex items-center font-semibold dark-text ' +
+                (currentUserType === 'developer' ? ' invert brightness-0' : '')
+              }
+            >
+              <img
+                src='./fair-protocol-face-transparent.png'
+                alt=''
+                className='invert opacity-70 w-[40px] mr-3'
+              />
+              Stay updated
+            </h2>
+
+            <div className='w-full max-w-[400px]' id={'subscribe-email-div'}></div>
+          </div>
         </div>
       </motion.div>
     </section>

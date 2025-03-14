@@ -24,9 +24,12 @@ import { WHITEPAPER } from '../constants';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import HeaderMenuButton from './HeaderMenuHamburger';
 
+import { useSearchParams } from 'react-router-dom';
+
 // import needed scss styles
 import '../scss/header-styles.scss';
 import { LinksContext } from '../context/links';
+import { Tooltip } from '@mui/material';
 
 const initialConfig = {
   opacity: 0,
@@ -45,11 +48,92 @@ const transitionConfig = {
 };
 
 export default function Header() {
+  const [urlParams, setUrlParams] = useSearchParams();
+
+  const handleUrlParamsSet = (newParam: string) => {
+    setUrlParams({ ['userType']: newParam });
+  };
+
+  const currentUserType = urlParams.get('userType') ?? 'business';
+
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
-      <div className='flex justify-between items-center px-8 lg:px-10 py-4'>
-        <LogoFun />
+      <div className='flex justify-between flex-wrap items-center px-8 lg:px-10 py-4'>
+        <div className={currentUserType === 'developer' ? 'invert' : ''}>
+          <LogoFun />
+        </div>
         <HeaderLeftBtn />
+
+        <div className='flex gap-2 md:gap-4 flex-wrap justify-center flex-grow-1 xl:absolute top-0 xl:top-3 left-0 xl:left-[50%] translate-x-0 xl:translate-x-[-50%] w-full xl:w-fit mt-2 md:mt-0'>
+          <a
+            className='cursor-pointer'
+            onClick={() => {
+              handleUrlParamsSet('user');
+            }}
+          >
+            <Tooltip
+              classes={{ tooltip: 'tooltip-class' }}
+              title='I want to explore AI! Easy and code-free.'
+            >
+              <div className='plausible-event-name=Im+A+User+Click w-fit'>
+                <span
+                  className={
+                    'button-big-text smaller top-header-button ' +
+                    (currentUserType !== 'user' ? ' outlined-only' : '') +
+                    (currentUserType === 'developer' ? ' dark-mode' : '')
+                  }
+                >
+                  User
+                </span>
+              </div>
+            </Tooltip>
+          </a>
+          <a
+            className='cursor-pointer'
+            onClick={() => {
+              handleUrlParamsSet('business');
+            }}
+          >
+            <Tooltip
+              classes={{ tooltip: 'tooltip-class' }}
+              title='I want smarter solutions that help my business grow.'
+            >
+              <div className='plausible-event-name=Im+A+User+Click w-fit'>
+                <span
+                  className={
+                    'button-big-text smaller top-header-button ' +
+                    (currentUserType !== 'business' ? ' outlined-only' : '') +
+                    (currentUserType === 'developer' ? ' dark-mode' : '')
+                  }
+                >
+                  Business
+                </span>
+              </div>
+            </Tooltip>
+          </a>
+          <a
+            className='cursor-pointer'
+            onClick={() => {
+              handleUrlParamsSet('developer');
+            }}
+          >
+            <Tooltip
+              classes={{ tooltip: 'tooltip-class' }}
+              title='I am an AI developer ready to solve real challenges and get paid.'
+            >
+              <div className='plausible-event-name=Im+A+User+Click w-fit'>
+                <span
+                  className={
+                    'button-big-text smaller top-header-button ' +
+                    (currentUserType !== 'developer' ? ' outlined-only' : ' dark-mode')
+                  }
+                >
+                  AI Developer
+                </span>
+              </div>
+            </Tooltip>
+          </a>
+        </div>
 
         <div className='block lg:hidden'>
           <HeaderMenuButton />
@@ -71,14 +155,25 @@ const LogoFun = () => {
 
 const HeaderLeftBtn = () => {
   const { appLink } = useContext(LinksContext);
+  const [urlParams] = useSearchParams();
+  const currentUserType = urlParams.get('userType') ?? 'business';
 
   return (
     <div
-      className={`lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex`}
+      className={
+        'lg:flex-row flex-col gap-3 lg:pt-0 pt-12 items-center lg:px-0 px-3 hidden lg:flex'
+      }
     >
-      <SocialsHeader />
+      <div className={currentUserType === 'developer' ? 'invert' : ''}>
+        <SocialsHeader />
+      </div>
       <a href={WHITEPAPER}>
-        <button className='font-semibold rounded-xl text-gray-600 plausible-event-name=Docs+Click hover:bg-gray-200 hover:text-black py-1 px-3 duration-200'>
+        <button
+          className={
+            'font-semibold rounded-xl plausible-event-name=Docs+Click hover:bg-gray-200 hover:text-black py-1 px-3 duration-200 ' +
+            (currentUserType === 'developer' ? 'text-white' : 'text-gray-600')
+          }
+        >
           Docs
         </button>
       </a>

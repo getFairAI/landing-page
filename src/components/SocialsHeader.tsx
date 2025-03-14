@@ -30,6 +30,7 @@ export default function SocialsHeader() {
         className={
           'text-black p-2 rounded-full hover:bg-gray-200 duration-200 plausible-event-name=Twitter+Click'
         }
+        rel='noreferrer'
       >
         <FaXTwitter className={iconDimension} />
       </a>
@@ -37,6 +38,7 @@ export default function SocialsHeader() {
         href={DISCORD_LINK}
         target='_blank'
         className='text-black p-2 rounded-full hover:bg-gray-200 hover:text-indigo-500 duration-200 plausible-event-name=Discord+Click'
+        rel='noreferrer'
       >
         <FaDiscord className={iconDimension} />
       </a>

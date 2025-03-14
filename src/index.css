@@ -19,3 +19,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Noto Sans', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
 
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import { LinksContext } from '../context/links';
@@ -37,28 +37,6 @@ const NewsletterPreview = () => {
 const Newsletter = () => {
   const { appLink } = useContext(LinksContext);
 
-  useEffect(() => {
-    const subscribeDiv = document.getElementById('subscribe-email-div');
-    if (subscribeDiv) {
-      const script = document.createElement('script');
-      subscribeDiv.appendChild(
-        script /*  document.getElementById('subscribe-email-div')?.parentNode! */,
-      );
-
-      script.src = 'https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js';
-      script.setAttribute('data-button-color', '#3aaaaa');
-      script.setAttribute('data-button-text-color', '#FFFFFF');
-      script.setAttribute('data-site', 'https://blog.getfair.ai/');
-      script.async = true;
-
-      return () => {
-        subscribeDiv?.removeChild(script);
-      };
-    } else {
-      // ignore
-    }
-  }, []);
-
   return (
     <section className='flex justify-center mt-16 xl:mt-40 mb-20'>
       <motion.div
@@ -68,32 +46,15 @@ const Newsletter = () => {
         viewport={{ amount: 0.3, once: true }}
         className='flex flex-wrap-reverse sm:flex-nowrap gap-10 w-[90%] max-w-[1800px] items-start justify-center'
       >
-        {/* <div className='w-full flex flex-col justify-end h-fit sm:h-[80%]'>
-          {/* <div className='mb-3 font-bold'>
-          <div className='py-1 text-2xl md:text-4xl'>
-            <h1 className='ml-3 dark-text font-[600] leading-normal'>Follow our <span className='text-[#3aaaaa] dark-text font-[600] leading-normal'>Journey</span></h1>
-          </div>
-        </div>
-
-          <div className='w-full max-w-full md:max-w-[450px]'>
-          <Box
-            id={'subscribe-email-div'}
-            sx={{
-              width: '100%',
-            }}
-          ></Box>
-        </div>
-        </div> */}
-
-        <div className='w-full flex flex-col gap-5 max-w-[800px] items-center'>
+        <div className='w-full flex flex-col gap-8 max-w-[800px] items-center'>
+          <NewsletterPreview />
           <a href={appLink} target='blank'>
             <div className='plausible-event-name=Open+App+Bottom+Click'>
               <span className='button-big-text w-fit'>
-                Start your journey <ArrowCircleRightRoundedIcon />
+                Start now <ArrowCircleRightRoundedIcon />
               </span>
             </div>
           </a>
-          <NewsletterPreview />
         </div>
       </motion.div>
     </section>
