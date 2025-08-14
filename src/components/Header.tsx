@@ -59,9 +59,7 @@ export default function Header() {
   return (
     <motion.div initial={initialConfig} animate={animateConfig} transition={transitionConfig}>
       <div className='flex justify-between flex-wrap items-center px-8 lg:px-10 py-4'>
-        <div className={currentUserType === 'developer' ? 'invert' : ''}>
-          <LogoFun />
-        </div>
+        <LogoFun currentUserType={currentUserType} />
         <HeaderLeftBtn />
 
         <div className='flex gap-2 md:gap-4 flex-wrap justify-center flex-grow-1 xl:absolute top-0 xl:top-3 left-0 xl:left-[50%] translate-x-0 xl:translate-x-[-50%] w-full xl:w-fit mt-2 md:mt-0'>
@@ -143,15 +141,15 @@ export default function Header() {
   );
 }
 
-const LogoFun = () => {
+function LogoFun({ currentUserType }: { currentUserType: string }) {
   return (
     <div className='logo-wrapper'>
       <div className='project-logo'>
-        <HeaderLogo />
+        <HeaderLogo invertLogoColor={currentUserType === 'developer'} />
       </div>
     </div>
   );
-};
+}
 
 const HeaderLeftBtn = () => {
   const { appLink } = useContext(LinksContext);

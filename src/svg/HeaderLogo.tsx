@@ -20,16 +20,17 @@ import { IconButton } from '@mui/material';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const HeaderLog = () => {
+function HeaderLog({ invertLogoColor }: { invertLogoColor: boolean }) {
   const navigate = useNavigate();
 
   const handleClick = useCallback(() => navigate('/'), [navigate]);
 
   return (
     <IconButton sx={{ display: 'flex', padding: 0 }} onClick={handleClick} disableRipple>
-      <img src={'./logo_non_capitalized_black_transp.svg'} alt='FairAI Logo' />
+      {!invertLogoColor && <img src={'./fairai-v3-logo-color-black.svg'} alt='FairAI Logo' />}
+      {invertLogoColor && <img src={'./fairai-v3-logo-color-white.svg'} alt='FairAI Logo' />}
     </IconButton>
   );
-};
+}
 
 export default HeaderLog;

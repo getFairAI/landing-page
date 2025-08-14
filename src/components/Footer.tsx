@@ -119,17 +119,13 @@ export default function Footer() {
     <footer className='px-10 md:px-20 mt-10'>
       <div className='flex flex-wrap justify-center gap-5'>
         <div className='flex basis-1 pt-4 flex-auto max-w-[1100px] min-w-[250px]'>
-          <div className='flex flex-col'>
-            <div
-              className={
-                'lg:py-6 py-4 ' + (currentUserType === 'developer' ? ' invert brightness-0' : '')
-              }
-            >
-              <HeaderLogo />
+          <div className='flex flex-col w-full'>
+            <div className='lg:py-6 py-4 max-w-[140px]'>
+              <HeaderLogo invertLogoColor={currentUserType === 'developer'} />
             </div>
             <p
               className={
-                'text-sm md:text-md font-medium px-0 sm:px-12 ' +
+                'text-sm md:text-md font-medium pr-0 sm:pr-8' +
                 (currentUserType === 'developer' ? ' text-gray-200' : 'text-gray-600')
               }
             >
@@ -139,8 +135,7 @@ export default function Footer() {
             </p>
             <div
               className={
-                'slg:px-14 pt-4 lg:pt-6 pl-0 sm:pl-9 ' +
-                (currentUserType === 'developer' ? ' invert' : '')
+                'slg:px-14 pt-4 lg:pt-6 pr-2 ' + (currentUserType === 'developer' ? ' invert' : '')
               }
             >
               <Socials />
@@ -164,7 +159,7 @@ export default function Footer() {
         }
       >
         <div className='border-b border-gray-400 my-4 mx-auto'></div>
-        <div className='text-center'>&copy; 2024 FairAI, Inc.</div>
+        <div className='text-center'>&copy; {new Date().getFullYear()} FairAI, Inc.</div>
       </div>
     </footer>
   );
